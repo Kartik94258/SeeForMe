@@ -10,7 +10,6 @@ Usage:
 import time
 from typing import List, Tuple, Dict
 
-import numpy as np
 import torch
 from PIL import Image
 from transformers import TrOCRProcessor, VisionEncoderDecoderModel, logging
@@ -55,54 +54,78 @@ def run_recognizer(
     model,
     crops: List[Image.Image],
     device: str = "cuda",
-    max_new_tokens: int = 32
+    max_new_tokens: int = 32,
+    batch_size: int = 4,
 ) -> Tuple[List[Dict], float]:
-    """
-    Run TrOCR on a list of cropped text images.
+    """Recognize cropped text regions in small batches.
 
-    Args:
-        processor:      TrOCR processor
-        model:          TrOCR model
-        crops:          List of PIL.Image crops (RGB)
-        device:         "cuda" or "cpu"
-        max_new_tokens: max tokens to generate per crop
-
-    Returns:
-        results: List of dicts {"text": str, "confidence": float}
-                 one per crop, in the same order as input
-        latency: total inference time in seconds for all crops
+    Batching avoids repeatedly invoking the model for every single word.
+    Confidence retains the original metric: mean maximum-token probability,
+    excluding generated steps after each sequence's first EOS token.
     """
     if not crops:
         return [], 0.0
 
-    results = []
+    batch_size = max(1, int(batch_size))
+    results: List[Dict] = []
     t0 = time.perf_counter()
 
-    for crop in crops:
-        px = processor(
-            images=crop.convert("RGB"),
-            return_tensors="pt"
+    for offset in range(0, len(crops), batch_size):
+        batch_crops = [crop.convert("RGB") for crop in crops[offset:offset + batch_size]]
+        pixel_values = processor(
+            images=batch_crops,
+            return_tensors="pt",
         ).pixel_values.to(device)
 
-        with torch.no_grad():
+        with torch.inference_mode():
             out = model.generate(
-                px,
+                pixel_values,
                 max_new_tokens=max_new_tokens,
                 output_scores=True,
-                return_dict_in_generate=True
+                return_dict_in_generate=True,
             )
 
-        text = processor.batch_decode(
-            out.sequences, skip_special_tokens=True
-        )[0].strip()
+        texts = processor.batch_decode(out.sequences, skip_special_tokens=True)
+        if out.scores:
+            # [batch, steps], with one maximum-softmax probability per generated token.
+            per_step_confidence = torch.stack(
+                [torch.softmax(score.float(), dim=-1).amax(dim=-1) for score in out.scores],
+                dim=1,
+            )
 
-        # Confidence = mean of per-token max softmax probabilities
-        conf = float(np.mean([
-            torch.softmax(s, dim=-1).max().item()
-            for s in out.scores
-        ])) if out.scores else 0.0
+            step_count = per_step_confidence.shape[1]
+            token_ids = out.sequences[:, 1:1 + step_count]
+            positions = torch.arange(step_count, device=token_ids.device).unsqueeze(0)
 
-        results.append({"text": text, "confidence": conf})
+            eos_ids = model.generation_config.eos_token_id
+            if eos_ids is not None:
+                if isinstance(eos_ids, int):
+                    eos_ids = [eos_ids]
+                eos_mask = torch.zeros_like(token_ids, dtype=torch.bool)
+                for eos_id in eos_ids:
+                    eos_mask |= token_ids.eq(eos_id)
+                # Include the EOS token itself, but ignore padded decoding steps after it.
+                lengths = torch.where(eos_mask, positions + 1, step_count).amin(dim=1).clamp(min=1)
+            else:
+                lengths = torch.full(
+                    (per_step_confidence.shape[0],),
+                    step_count,
+                    dtype=torch.long,
+                    device=per_step_confidence.device,
+                )
 
-    latency = time.perf_counter() - t0
-    return results, latency
+            active_steps = positions < lengths.unsqueeze(1)
+            confidence_tensor = (
+                (per_step_confidence * active_steps).sum(dim=1)
+                / active_steps.sum(dim=1).clamp(min=1)
+            )
+            confidences = confidence_tensor.float().cpu().tolist()
+        else:
+            confidences = [0.0] * len(texts)
+
+        results.extend(
+            {"text": text.strip(), "confidence": float(confidence)}
+            for text, confidence in zip(texts, confidences)
+        )
+
+    return results, time.perf_counter() - t0
