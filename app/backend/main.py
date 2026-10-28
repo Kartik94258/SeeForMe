@@ -68,12 +68,22 @@ pipeline: Pipeline | None = None
 pipeline_lock = asyncio.Lock()
 
 
-async def run_pipeline(image: Image.Image) -> dict:
-    """Run the shared model off the event loop and serialize inference requests."""
+async def run_pipeline(
+    image: Image.Image,
+    *,
+    max_crops_override: int = None,
+) -> dict:
+    """Run shared model off-loop; use a smaller crop budget for live frames."""
     if pipeline is None:
         raise HTTPException(status_code=503, detail="OCR pipeline is still loading.")
     async with pipeline_lock:
-        return await run_in_threadpool(pipeline.run, image)
+        if max_crops_override is None:
+            return await run_in_threadpool(pipeline.run, image)
+        return await run_in_threadpool(
+            pipeline.run,
+            image,
+            max_crops_override=max_crops_override,
+        )
 
 
 @app.on_event("startup")
@@ -380,7 +390,7 @@ async def ocr_stream(websocket: WebSocket):
                 continue
 
             try:
-                result = await run_pipeline(image)
+                result = await run_pipeline(image, max_crops_override=8)
             except Exception as exc:
                 print(f"OCR stream processing failed: {exc}")
                 await websocket.send_json({
