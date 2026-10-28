@@ -37,7 +37,7 @@ import yaml
 from PIL import Image
 
 from src.detection.detector import load_detector, run_detector
-from src.postprocessing.cropper import crop_boxes
+from src.postprocessing.cropper import crop_boxes_with_boxes
 from src.postprocessing.reading_order import sort_boxes
 from src.postprocessing.deduplicator import deduplicate_boxes
 from src.recognition.recognizer import load_recognizer, run_recognizer
@@ -161,7 +161,11 @@ class Pipeline:
             boxes_ordered = boxes_ordered[:self.max_crops]
 
         # ── 5. Crop ──
-        crops = crop_boxes(img_pil, boxes_ordered, padding=self.crop_padding)
+        crops, boxes_ordered = crop_boxes_with_boxes(
+            img_pil, boxes_ordered, padding=self.crop_padding
+        )
+        if not crops:
+            return self._empty_result(det_latency)
 
         # ── 6. Recognition ──
         rec_results, rec_latency = run_recognizer(
