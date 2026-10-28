@@ -1,65 +1,106 @@
 import { useEffect, useRef, useCallback, useState } from "react";
 
 export function useCamera({ active }) {
-  const videoRef  = useRef(null);
+  const videoRef = useRef(null);
   const streamRef = useRef(null);
-  const [error, setError]   = useState(null);
-  const [ready, setReady]   = useState(false);
-
-  const start = useCallback(async () => {
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({
-        video: {
-          facingMode: "environment",
-          width:      { ideal: 1280 },
-          height:     { ideal: 720 },
-        },
-        audio: false,
-      });
-      streamRef.current = stream;
-      if (videoRef.current) {
-        videoRef.current.srcObject = stream;
-        videoRef.current.onloadedmetadata = () => {
-          videoRef.current.play();
-          setReady(true);
-        };
-      }
-      setError(null);
-    } catch (err) {
-      setError(err.name === "NotAllowedError" ? "permission_denied" : "unavailable");
-    }
-  }, []);
+  const [error, setError] = useState(null);
+  const [ready, setReady] = useState(false);
 
   const stop = useCallback(() => {
-    streamRef.current?.getTracks().forEach((t) => t.stop());
+    streamRef.current?.getTracks().forEach((track) => track.stop());
     streamRef.current = null;
+
+    if (videoRef.current) {
+      videoRef.current.onloadedmetadata = null;
+      videoRef.current.srcObject = null;
+    }
+
     setReady(false);
-    if (videoRef.current) videoRef.current.srcObject = null;
   }, []);
 
-  // Capture a JPEG frame from the video element
+  useEffect(() => {
+    let cancelled = false;
+    let localStream = null;
+
+    async function start() {
+      try {
+        if (!navigator.mediaDevices?.getUserMedia) {
+          throw new Error("CAMERA_UNAVAILABLE");
+        }
+
+        localStream = await navigator.mediaDevices.getUserMedia({
+          video: {
+            facingMode: "environment",
+            width: { ideal: 1280 },
+            height: { ideal: 720 },
+          },
+          audio: false,
+        });
+
+        if (cancelled) {
+          localStream.getTracks().forEach((track) => track.stop());
+          return;
+        }
+
+        streamRef.current = localStream;
+
+        const video = videoRef.current;
+        if (!video) {
+          localStream.getTracks().forEach((track) => track.stop());
+          streamRef.current = null;
+          return;
+        }
+
+        video.srcObject = localStream;
+        await video.play();
+
+        if (!cancelled) {
+          setError(null);
+          setReady(true);
+        }
+      } catch (err) {
+        if (!cancelled) {
+          console.error("Camera startup failed:", err);
+          setReady(false);
+          setError(
+            err.name === "NotAllowedError" || err.name === "SecurityError"
+              ? "permission_denied"
+              : "unavailable"
+          );
+        }
+      }
+    }
+
+    if (active) start();
+    else stop();
+
+    return () => {
+      cancelled = true;
+      localStream?.getTracks().forEach((track) => track.stop());
+      if (streamRef.current === localStream) streamRef.current = null;
+      if (videoRef.current?.srcObject === localStream) {
+        videoRef.current.srcObject = null;
+      }
+    };
+  }, [active, stop]);
+
   const captureFrame = useCallback((quality = 0.6) => {
     const video = videoRef.current;
-    if (!video || !ready) return null;
+
+    if (!video || !ready || !video.videoWidth || !video.videoHeight) {
+      return null;
+    }
 
     const canvas = document.createElement("canvas");
-    canvas.width  = video.videoWidth;
+    canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
-    const ctx = canvas.getContext("2d");
-    ctx.drawImage(video, 0, 0);
-    const dataUrl = canvas.toDataURL("image/jpeg", quality);
-    // Strip the data URI prefix to get raw base64
-    return dataUrl.split(",")[1];
-  }, [ready]);
 
-  useEffect(() => {
-    if (active) {
-      start();
-    } else {
-      stop();
-    }
-    return stop;
-  }, [active, start, stop]);
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return null;
+
+    ctx.drawImage(video, 0, 0);
+    return canvas.toDataURL("image/jpeg", quality).split(",")[1];
+  }, [ready]);
 
   return { videoRef, ready, error, captureFrame };
 }
