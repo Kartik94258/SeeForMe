@@ -51,12 +51,18 @@ export default function CameraTab({ t, onDetection }) {
       awaitingAudioRef.current = true;
     }
 
-    if (data.type === "audio" && data.audio) {
-      // Audio arrived — TTS is done. Allow frames again once playback finishes.
+    if (data.type === "audio") {
+      // The backend finished TTS (or reported an error); never leave scanning blocked.
       awaitingAudioRef.current = false;
-      if (audioUnlockedRef.current) {
+
+      if (data.audio && audioUnlockedRef.current) {
         lastAudioRef.current = data.audio;
         enqueue(data.audio);
+      }
+
+      if (!data.audio && data.feedback) {
+        setFeedback(data.feedback);
+        addLog(data.feedback, "warning");
       }
     }
 
