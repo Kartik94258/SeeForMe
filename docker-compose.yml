@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8000:8000"
+      - "8000:7860"
     environment:
       - HF_REPO=MoCamaraData/trocr-ocr-accessibility
       - DEVICE=cpu
