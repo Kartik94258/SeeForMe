@@ -1,35 +1,30 @@
-import { useRef, useCallback, useState } from "react";
+import { useRef, useCallback, useEffect, useState } from "react";
 
 export function useAudioQueue() {
   const queueRef = useRef([]);
   const currentRef = useRef(null);
   const currentUrlRef = useRef(null);
+  const cleanupCurrentRef = useRef(null);
   const isPlayingRef = useRef(false);
+  const pausedRef = useRef(false);
+  const mountedRef = useRef(true);
   const playNextRef = useRef(null);
   const [playing, setPlaying] = useState(false);
+  const [paused, setPaused] = useState(false);
 
   const playNext = useCallback(() => {
-    if (isPlayingRef.current) return;
+    if (isPlayingRef.current || pausedRef.current) return;
 
     if (queueRef.current.length === 0) {
-      setPlaying(false);
+      if (mountedRef.current) {
+        setPlaying(false);
+        setPaused(false);
+      }
       return;
     }
 
-    // If the current clip was paused, discard it before starting the next clip.
-    // Replay always starts from the beginning using the retained base64 payload.
-    if (currentRef.current) {
-      const pausedAudio = currentRef.current;
-      pausedAudio.onended = null;
-      pausedAudio.onerror = null;
-      pausedAudio.pause();
-      if (currentUrlRef.current) URL.revokeObjectURL(currentUrlRef.current);
-      currentRef.current = null;
-      currentUrlRef.current = null;
-    }
-
     const base64Mp3 = queueRef.current.shift();
-    let audio;
+    let audio = null;
 
     try {
       const bytes = atob(base64Mp3);
@@ -42,7 +37,11 @@ export function useAudioQueue() {
       currentRef.current = audio;
       currentUrlRef.current = url;
       isPlayingRef.current = true;
-      setPlaying(true);
+      pausedRef.current = false;
+      if (mountedRef.current) {
+        setPlaying(true);
+        setPaused(false);
+      }
 
       let cleaned = false;
       const cleanup = () => {
@@ -50,16 +49,30 @@ export function useAudioQueue() {
         cleaned = true;
         URL.revokeObjectURL(url);
 
-        // Ignore late events from audio that has already been stopped/replaced.
+        // Ignore late events from audio that has already been replaced or stopped.
         if (currentRef.current !== audio) return;
 
         currentRef.current = null;
         currentUrlRef.current = null;
+        cleanupCurrentRef.current = null;
         isPlayingRef.current = false;
-        setPlaying(false);
-        setTimeout(() => playNextRef.current?.(), 0);
+        pausedRef.current = false;
+        if (mountedRef.current) {
+          setPlaying(false);
+          setPaused(false);
+          setTimeout(() => {
+            if (mountedRef.current) playNextRef.current?.();
+          }, 0);
+        }
       };
 
+      cleanupCurrentRef.current = cleanup;
+      audio.onplay = () => {
+        if (currentRef.current === audio && !pausedRef.current && mountedRef.current) {
+          isPlayingRef.current = true;
+          setPlaying(true);
+        }
+      };
       audio.onended = cleanup;
       audio.onerror = cleanup;
       audio.play().catch(cleanup);
@@ -69,10 +82,17 @@ export function useAudioQueue() {
         currentRef.current = null;
         if (currentUrlRef.current) URL.revokeObjectURL(currentUrlRef.current);
         currentUrlRef.current = null;
+        cleanupCurrentRef.current = null;
       }
       isPlayingRef.current = false;
-      setPlaying(false);
-      setTimeout(() => playNextRef.current?.(), 0);
+      pausedRef.current = false;
+      if (mountedRef.current) {
+        setPlaying(false);
+        setPaused(false);
+        setTimeout(() => {
+          if (mountedRef.current) playNextRef.current?.();
+        }, 0);
+      }
     }
   }, []);
 
@@ -86,9 +106,9 @@ export function useAudioQueue() {
 
   const stop = useCallback(() => {
     queueRef.current = [];
-
     const audio = currentRef.current;
     if (audio) {
+      audio.onplay = null;
       audio.onended = null;
       audio.onerror = null;
       audio.pause();
@@ -97,21 +117,65 @@ export function useAudioQueue() {
     if (currentUrlRef.current) URL.revokeObjectURL(currentUrlRef.current);
     currentRef.current = null;
     currentUrlRef.current = null;
+    cleanupCurrentRef.current = null;
     isPlayingRef.current = false;
-    setPlaying(false);
+    pausedRef.current = false;
+    if (mountedRef.current) {
+      setPlaying(false);
+      setPaused(false);
+    }
   }, []);
 
+  // This button toggles pause/resume so playback cannot get stuck in a paused state.
   const pause = useCallback(() => {
-    currentRef.current?.pause();
-    isPlayingRef.current = false;
-    setPlaying(false);
+    const audio = currentRef.current;
+    if (!audio) return;
+
+    if (!pausedRef.current) {
+      audio.pause();
+      pausedRef.current = true;
+      isPlayingRef.current = false;
+      if (mountedRef.current) {
+        setPlaying(false);
+        setPaused(true);
+      }
+      return;
+    }
+
+    pausedRef.current = false;
+    isPlayingRef.current = true;
+    if (mountedRef.current) {
+      setPaused(false);
+      setPlaying(true);
+    }
+    audio.play().catch(() => cleanupCurrentRef.current?.());
   }, []);
 
-  // A paused clip remains busy until replayed, replaced, or stopped.
   const isBusy = useCallback(
     () => isPlayingRef.current || currentRef.current !== null || queueRef.current.length > 0,
     [],
   );
 
-  return { enqueue, stop, pause, playing, isBusy };
+  useEffect(() => {
+    mountedRef.current = true;
+    return () => {
+      mountedRef.current = false;
+      queueRef.current = [];
+      const audio = currentRef.current;
+      if (audio) {
+        audio.onplay = null;
+        audio.onended = null;
+        audio.onerror = null;
+        audio.pause();
+      }
+      if (currentUrlRef.current) URL.revokeObjectURL(currentUrlRef.current);
+      currentRef.current = null;
+      currentUrlRef.current = null;
+      cleanupCurrentRef.current = null;
+      isPlayingRef.current = false;
+      pausedRef.current = false;
+    };
+  }, []);
+
+  return { enqueue, stop, pause, playing, paused, isBusy };
 }
