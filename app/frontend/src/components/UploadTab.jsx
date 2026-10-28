@@ -58,6 +58,10 @@ export default function UploadTab({ t, onDetection }) {
         setDetectedText(data.text);
         addLog(t.detection.success, "success");
         if (data.audio) play(data.audio);
+        else if (data.feedback) {
+          setFeedback(data.feedback);
+          addLog(data.feedback, "warning");
+        }
       } else if (data.feedback) {
         setFeedback(data.feedback);
         const type = data.feedback.includes("clear") ? "warning" : "info";
