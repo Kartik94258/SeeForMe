@@ -366,19 +366,55 @@ async def ocr_image_base64(payload: ImagePayload):
 async def ocr_stream(websocket: WebSocket):
     await websocket.accept()
 
-    last_text          = ""
+    last_text = ""
+    last_text_seen = 0.0
     last_feedback_time = 0.0
+    send_lock = asyncio.Lock()
+    # OCR should not wait for cloud TTS. Keep only a few pending announcements
+    # so speech remains useful without building a long queue of stale phrases.
+    tts_queue: asyncio.Queue = asyncio.Queue(maxsize=3)
 
+    async def send_message(message: dict) -> None:
+        async with send_lock:
+            await websocket.send_json(message)
+
+    async def speech_worker() -> None:
+        while True:
+            job = await tts_queue.get()
+            try:
+                result = job["result"]
+                tokens = job["tokens"]
+                audio_bytes, audio_feedback, tts_elapsed = await synthesize_safely(tokens)
+                include_tts_latency(result, tts_elapsed)
+                audio_b64 = base64.b64encode(audio_bytes).decode() if audio_bytes else ""
+                await send_message({
+                    "type": "audio",
+                    "text": job["text"],
+                    "tokens": tokens,
+                    "boxes": job["boxes"],
+                    "feedback": audio_feedback,
+                    "audio": audio_b64,
+                    "meta": job["meta"],
+                })
+            except asyncio.CancelledError:
+                raise
+            except WebSocketDisconnect:
+                return
+            except Exception as exc:
+                print(f"Streaming speech delivery failed: {exc}")
+            finally:
+                tts_queue.task_done()
+
+    worker_task = asyncio.create_task(speech_worker())
     try:
         while True:
             data = await websocket.receive_text()
-
             now = time.monotonic()
 
             try:
                 image = decode_base64_image(data)
             except HTTPException as exc:
-                await websocket.send_json({
+                await send_message({
                     "type": "feedback",
                     "text": "",
                     "tokens": [],
@@ -386,14 +422,15 @@ async def ocr_stream(websocket: WebSocket):
                     "feedback": exc.detail,
                     "audio": "",
                 })
-                await websocket.send_json({"type": "processed"})
+                await send_message({"type": "processed"})
                 continue
 
             try:
+                # Live reading prioritizes latency; uploads keep the full crop limit.
                 result = await run_pipeline(image, max_crops_override=8)
             except Exception as exc:
                 print(f"OCR stream processing failed: {exc}")
-                await websocket.send_json({
+                await send_message({
                     "type": "feedback",
                     "text": "",
                     "tokens": [],
@@ -401,68 +438,79 @@ async def ocr_stream(websocket: WebSocket):
                     "feedback": "OCR processing failed. Please try again.",
                     "audio": "",
                 })
-                await websocket.send_json({"type": "processed"})
+                await send_message({"type": "processed"})
                 continue
 
-            include_tts_latency(result, 0.0)
             tokens, boxes = extract_detections(result["gated_results"])
-            text          = " ".join(tokens)
-
+            text = " ".join(tokens)
             meta = {
-                "n_spoken":   result["n_spoken"],
+                "n_boxes": result["n_boxes"],
+                "n_spoken": result["n_spoken"],
                 "n_silenced": result["n_silenced"],
-                "latency":    result["latency"],
-                "streaming":  True
+                "latency": result["latency"],
+                "streaming": True,
             }
 
+            # Let the client capture the next frame as soon as OCR has finished.
+            # TTS runs in the worker above and cannot stall the camera scan loop.
             if tokens and is_new_text(text, last_text):
                 last_text = text
+                last_text_seen = now
 
-                await websocket.send_json({
-                    "type":     "text",
-                    "text":     text,
-                    "tokens":   tokens,
-                    "boxes":    boxes,
+                await send_message({
+                    "type": "text",
+                    "text": text,
+                    "tokens": tokens,
+                    "boxes": boxes,
                     "feedback": "",
-                    "audio":    "",
-                    "meta":     meta
+                    "audio": "",
+                    "meta": meta,
                 })
 
-                audio_bytes, audio_feedback, tts_elapsed = await synthesize_safely(tokens)
-                include_tts_latency(result, tts_elapsed)
-                audio_b64 = base64.b64encode(audio_bytes).decode() if audio_bytes else ""
-
-                # Always send the completion message so the frontend can resume scanning.
-                await websocket.send_json({
-                    "type":     "audio",
-                    "text":     text,
-                    "tokens":   tokens,
-                    "boxes":    boxes,
-                    "feedback": audio_feedback,
-                    "audio":    audio_b64,
-                    "meta":     meta
-                })
-
+                job = {
+                    "result": result,
+                    "text": text,
+                    "tokens": tokens,
+                    "boxes": boxes,
+                    "meta": meta,
+                }
+                if tts_queue.full():
+                    # Drop the oldest waiting phrase, not the phrase currently speaking.
+                    try:
+                        tts_queue.get_nowait()
+                        tts_queue.task_done()
+                    except asyncio.QueueEmpty:
+                        pass
+                tts_queue.put_nowait(job)
             else:
+                # Once the text has been out of view for a short period, allow it
+                # to be announced again when the user points back at it.
+                if not tokens and now - last_text_seen > 2.5:
+                    last_text = ""
+
                 feedback = build_feedback_message(result)
                 if feedback and (now - last_feedback_time) >= FEEDBACK_COOLDOWN:
                     last_feedback_time = now
-                    await websocket.send_json({
-                        "type":     "feedback",
-                        "text":     "",
-                        "tokens":   [],
-                        "boxes":    [],
+                    await send_message({
+                        "type": "feedback",
+                        "text": "",
+                        "tokens": [],
+                        "boxes": [],
                         "feedback": feedback,
-                        "audio":    "",
-                        "meta":     meta
+                        "audio": "",
+                        "meta": meta,
                     })
 
-            # Acknowledge only after OCR and speech synthesis are complete.
-            # Otherwise the browser can send frames that pile up while TTS is awaiting the cloud.
-            await websocket.send_json({"type": "processed"})
+            await send_message({"type": "processed"})
 
     except WebSocketDisconnect:
         pass
+    finally:
+        worker_task.cancel()
+        try:
+            await worker_task
+        except asyncio.CancelledError:
+            pass
 
 
 # ---------------------------------------------------------------------------
