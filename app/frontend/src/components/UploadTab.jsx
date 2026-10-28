@@ -57,8 +57,8 @@ export default function UploadTab({ t, onDetection }) {
       if (data.text) {
         setDetectedText(data.text);
         addLog(t.detection.success, "success");
-        if (data.audio) play(data.audio);
-        else if (data.feedback) {
+        play(data.audio || "", data.text);
+        if (!data.audio && data.feedback) {
           setFeedback(data.feedback);
           addLog(data.feedback, "warning");
         }
@@ -152,7 +152,7 @@ export default function UploadTab({ t, onDetection }) {
         feedback={feedback}
         playing={playing}
         paused={paused}
-        onReplay={replay}
+        onReplay={() => replay(detectedText)}
         onPause={pause}
         onStop={stop}
         onClear={handleClear}
