@@ -317,10 +317,6 @@ async def ocr_stream(websocket: WebSocket):
                 "streaming":  True
             }
 
-            # Backpressure: let the client send the next frame once OCR is done.
-            # This keeps slow model inference from accumulating stale camera frames.
-            await websocket.send_json({"type": "processed"})
-
             if tokens and is_new_text(text, last_text):
                 last_text = text
 
@@ -367,6 +363,10 @@ async def ocr_stream(websocket: WebSocket):
                         "audio":    "",
                         "meta":     meta
                     })
+
+            # Acknowledge only after OCR and speech synthesis are complete.
+            # Otherwise the browser can send frames that pile up while TTS is awaiting the cloud.
+            await websocket.send_json({"type": "processed"})
 
     except WebSocketDisconnect:
         pass
