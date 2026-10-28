@@ -76,8 +76,15 @@ class Pipeline:
         self.cfg    = _load_config(config_path)
         self.device = device
 
-        # Load models
-        self.detector              = load_detector(device=device)
+        # Load the detector architecture from config so a faster model can be
+        # deployed without changing the pipeline code.
+        self.detector_arch = self.cfg.get("detection", {}).get(
+            "model", "db_mobilenet_v3_large"
+        )
+        self.detector = load_detector(
+            device=device,
+            architecture=self.detector_arch,
+        )
         self.processor, self.model = load_recognizer(
             device=device,
             cache_dir=model_cache_dir,
