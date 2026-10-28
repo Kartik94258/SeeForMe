@@ -50,7 +50,7 @@ app.add_middleware(
 # Config
 # ---------------------------------------------------------------------------
 HF_REPO           = os.getenv("HF_REPO", "MoCamaraData/trocr-ocr-accessibility")
-DEVICE            = os.getenv("DEVICE", "cuda")
+DEVICE            = os.getenv("DEVICE", "cpu")
 VOICE             = "en-US-AriaNeural"
 SIMILARITY_THRESH = 0.80
 FRAME_INTERVAL_S  = 0.30
@@ -332,14 +332,22 @@ async def ocr_stream(websocket: WebSocket):
                     "meta":     meta
                 })
 
-                audio_bytes = await synthesize(tokens)
-                audio_b64   = base64.b64encode(audio_bytes).decode()
+                try:
+                    audio_bytes = await synthesize(tokens)
+                    audio_b64   = base64.b64encode(audio_bytes).decode()
+                    audio_feedback = ""
+                except Exception as exc:
+                    print(f"TTS error: {exc}")
+                    audio_b64 = ""
+                    audio_feedback = "Speech synthesis failed"
+
+                # Always send the completion message so the frontend can resume scanning.
                 await websocket.send_json({
                     "type":     "audio",
                     "text":     text,
                     "tokens":   tokens,
                     "boxes":    boxes,
-                    "feedback": "",
+                    "feedback": audio_feedback,
                     "audio":    audio_b64,
                     "meta":     meta
                 })
