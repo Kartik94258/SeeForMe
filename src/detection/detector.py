@@ -11,12 +11,17 @@ Usage:
 import time
 from typing import List, Tuple
 
+from src.detection.box_parser import detection_rows_to_boxes
+
 import numpy as np
 import torch
 from doctr.models import detection_predictor
 
 
-def load_detector(device: str = "cuda") -> object:
+def load_detector(
+    device: str = "cuda",
+    architecture: str = "db_mobilenet_v3_large",
+) -> object:
     """
     Args:
         device: "cuda" for GPU, "cpu" for local testing
@@ -24,9 +29,9 @@ def load_detector(device: str = "cuda") -> object:
     Returns:
         docTR detection predictor (already moved to device)
     """
-    print(f"Loading detector (db_resnet50) on {device}...")
+    print(f"Loading detector ({architecture}) on {device}...")
     model = detection_predictor(
-        "db_resnet50",
+        architecture,
         pretrained=True,
         assume_straight_pages=True
     ).to(device)
@@ -58,19 +63,12 @@ def run_detector(
         result = model([img_np])
     latency = time.perf_counter() - t0
 
-    boxes = []
     try:
-        for row in result[0]["words"]:
-            # docTR returns [x_min, y_min, x_max, y_max, confidence]
-            # in relative coordinates [0, 1] — convert to absolute pixels
-            x1 = row[0] * img_w
-            y1 = row[1] * img_h
-            x2 = row[2] * img_w
-            y2 = row[3] * img_h
-            w, h = x2 - x1, y2 - y1
-            if w > 0 and h > 0:
-                boxes.append([float(x1), float(y1), float(w), float(h)])
-    except (KeyError, IndexError, TypeError):
-        pass
+        rows = result[0]["words"]
+    except (KeyError, IndexError, TypeError, AttributeError) as exc:
+        # Do not silently report "no text" when the detector output format changes.
+        print(f"WARNING: unexpected docTR detection output: {exc}")
+        return [], latency
 
+    boxes = detection_rows_to_boxes(rows, img_w, img_h)
     return boxes, latency
