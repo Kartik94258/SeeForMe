@@ -14,7 +14,7 @@ export default function UploadTab({ t, onDetection }) {
   const previewUrlRef = useRef(null);
   const requestRef = useRef(null);
 
-  const { play, pause, stop, replay, playing, paused } = useAudioPlayer();
+  const { play, pause, stop, replay, playing, paused, audioError } = useAudioPlayer();
 
   useEffect(() => () => {
     requestRef.current?.abort();
@@ -25,6 +25,13 @@ export default function UploadTab({ t, onDetection }) {
     const time = new Date().toLocaleTimeString();
     setLog((prev) => [...prev.slice(-49), { message, type, time }]);
   }, []);
+
+  useEffect(() => {
+    if (audioError) {
+      setFeedback(audioError);
+      addLog(audioError, "warning");
+    }
+  }, [audioError, addLog]);
 
   const handleFile = useCallback(async (file) => {
     if (!file) return;
