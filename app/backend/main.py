@@ -8,6 +8,7 @@ Endpoints:
   WS   /ocr/stream           — websocket, continuous webcam frames
 """
 
+import asyncio
 import base64
 import binascii
 import io
@@ -25,6 +26,7 @@ from fastapi import FastAPI, File, HTTPException, UploadFile, WebSocket, WebSock
 from fastapi.middleware.cors import CORSMiddleware
 from PIL import Image
 from pydantic import BaseModel
+from starlette.concurrency import run_in_threadpool
 
 # ---------------------------------------------------------------------------
 # Path setup — works locally and inside Docker
@@ -60,6 +62,15 @@ FEEDBACK_COOLDOWN = 2.0
 # Pipeline — loaded once at startup
 # ---------------------------------------------------------------------------
 pipeline: Pipeline | None = None
+pipeline_lock = asyncio.Lock()
+
+
+async def run_pipeline(image: Image.Image) -> dict:
+    """Run the shared model off the event loop and serialize inference requests."""
+    if pipeline is None:
+        raise HTTPException(status_code=503, detail="OCR pipeline is still loading.")
+    async with pipeline_lock:
+        return await run_in_threadpool(pipeline.run, image)
 
 
 @app.on_event("startup")
@@ -172,13 +183,6 @@ def is_new_text(current: str, previous: str) -> bool:
     return similarity(current, previous) < SIMILARITY_THRESH
 
 
-def compress_frame(image: Image.Image, quality: int = 60) -> Image.Image:
-    buffer = io.BytesIO()
-    image.save(buffer, format="JPEG", quality=quality)
-    buffer.seek(0)
-    return Image.open(buffer).convert("RGB")
-
-
 def load_image_from_bytes(image_bytes: bytes) -> Image.Image:
     try:
         return Image.open(io.BytesIO(image_bytes)).convert("RGB")
@@ -225,7 +229,7 @@ async def ocr_image(file: UploadFile = File(...)):
     image_bytes = await file.read()
     image = load_image_from_bytes(image_bytes)
 
-    result        = pipeline.run(image)
+    result = await run_pipeline(image)
     tokens, boxes = extract_detections(result["gated_results"])
     text          = " ".join(tokens)
 
@@ -258,7 +262,7 @@ async def ocr_image(file: UploadFile = File(...)):
 async def ocr_image_base64(payload: ImagePayload):
     image = decode_base64_image(payload.image)
 
-    result        = pipeline.run(image)
+    result = await run_pipeline(image)
     tokens, boxes = extract_detections(result["gated_results"])
     text          = " ".join(tokens)
 
@@ -306,9 +310,8 @@ async def ocr_stream(websocket: WebSocket):
 
             image_bytes = base64.b64decode(data)
             image       = load_image_from_bytes(image_bytes)
-            image       = compress_frame(image, quality=60)
 
-            result        = pipeline.run(image)
+            result = await run_pipeline(image)
             tokens, boxes = extract_detections(result["gated_results"])
             text          = " ".join(tokens)
 
