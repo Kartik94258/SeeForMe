@@ -3,19 +3,19 @@
 # All src/ modules read from here — never hardcode values elsewhere.
 
 detection:
-  model: "db_resnet50"
+  model: "db_mobilenet_v3_large"
   iou_threshold: 0.5
   assume_straight_pages: true
   dedup_iou_threshold: 0.5     # Phase 5: suppress overlapping boxes above this IoU
 
 recognition:
   model: "microsoft/trocr-base-printed"
-  max_new_tokens: 32
+  max_new_tokens: 24
   confidence_threshold: 0.75   # gate: below this → silent (validated in Phase 5)
   crop_padding: 4              # pixels of padding around each detected box
-  max_crops: 12                # Phase 5: cap crops per image to bound worst-case latency
+  max_crops: 12                # Uploads can contain more regions; live mode uses 8
   batch_size_gpu: 4             # Recognize several words per GPU inference pass
-  batch_size_cpu: 2             # Conservative batch size for CPU-only hosting
+  batch_size_cpu: 4             # Fewer CPU generation passes for live scanning
 
 reading_order:
   row_tolerance: 0.6           # fraction of median box height for row grouping

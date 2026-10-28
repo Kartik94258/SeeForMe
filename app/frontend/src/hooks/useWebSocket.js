@@ -87,11 +87,25 @@ export function useWebSocket({ onMessage, active }) {
   const sendFrame = useCallback((base64Frame) => {
     const ws = wsRef.current;
     if (ws?.readyState === WebSocket.OPEN) {
-      ws.send(base64Frame);
-      return true;
+      try {
+        ws.send(base64Frame);
+        return true;
+      } catch (error) {
+        console.error("Unable to send camera frame:", error);
+        ws.close();
+      }
     }
     return false;
   }, []);
+
+  const reconnect = useCallback(() => {
+    disconnect();
+    if (!activeRef.current) return;
+    reconnectTimer.current = setTimeout(() => {
+      reconnectTimer.current = null;
+      if (activeRef.current) connect();
+    }, 250);
+  }, [connect, disconnect]);
 
   useEffect(() => {
     if (active) connect();
@@ -100,5 +114,5 @@ export function useWebSocket({ onMessage, active }) {
     return disconnect;
   }, [active, connect, disconnect]);
 
-  return { connected, sendFrame };
+  return { connected, sendFrame, reconnect };
 }

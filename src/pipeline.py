@@ -76,8 +76,15 @@ class Pipeline:
         self.cfg    = _load_config(config_path)
         self.device = device
 
-        # Load models
-        self.detector              = load_detector(device=device)
+        # Load the detector architecture from config so a faster model can be
+        # deployed without changing the pipeline code.
+        self.detector_arch = self.cfg.get("detection", {}).get(
+            "model", "db_mobilenet_v3_large"
+        )
+        self.detector = load_detector(
+            device=device,
+            architecture=self.detector_arch,
+        )
         self.processor, self.model = load_recognizer(
             device=device,
             cache_dir=model_cache_dir,
@@ -99,7 +106,7 @@ class Pipeline:
         self.recognition_batch_size = (
             self.cfg["recognition"].get("batch_size_gpu", 4)
             if "cuda" in str(self.device).lower()
-            else self.cfg["recognition"].get("batch_size_cpu", 2)
+            else self.cfg["recognition"].get("batch_size_cpu", 4)
         )
         self.row_tolerance     = self.cfg["reading_order"]["row_tolerance"]
         self.max_new_tokens    = self.cfg["recognition"]["max_new_tokens"]
@@ -107,11 +114,16 @@ class Pipeline:
         self.dedup_iou_thresh  = self.cfg["detection"].get("dedup_iou_threshold", 0.5)
 
         print(f"\nPipeline ready ✓")
+        print(f"  Detector        : {self.detector_arch}")
         print(f"  Confidence gate : {self.conf_threshold}")
         print(f"  Latency budget  : {self.budget_s}s")
         print(f"  TTS backend     : {tts_backend}")
 
-    def run(self, image_input: Union[str, Path, np.ndarray, Image.Image]) -> Dict:
+    def run(
+        self,
+        image_input: Union[str, Path, np.ndarray, Image.Image],
+        max_crops_override: int = None,
+    ) -> Dict:
         """
         Run the full pipeline on a single image.
 
@@ -156,9 +168,12 @@ class Pipeline:
         sorted_indices = sort_boxes(boxes, row_tolerance=self.row_tolerance)
         boxes_ordered  = [boxes[i] for i in sorted_indices]
 
-        # ── 4. Cap max crops (Phase 5) — bound worst-case latency ──
-        if len(boxes_ordered) > self.max_crops:
-            boxes_ordered = boxes_ordered[:self.max_crops]
+        # Live camera can use a smaller region budget; uploads keep the full cap.
+        crop_limit = self.max_crops if max_crops_override is None else max(
+            1, min(self.max_crops, int(max_crops_override))
+        )
+        if len(boxes_ordered) > crop_limit:
+            boxes_ordered = boxes_ordered[:crop_limit]
 
         # ── 5. Crop ──
         crops, boxes_ordered = crop_boxes_with_boxes(
