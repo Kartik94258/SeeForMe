@@ -81,6 +81,7 @@ export function useCamera({ active }) {
       if (videoRef.current?.srcObject === localStream) {
         videoRef.current.srcObject = null;
       }
+      setReady(false);
     };
   }, [active, stop]);
 
