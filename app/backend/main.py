@@ -55,7 +55,6 @@ HF_REPO           = os.getenv("HF_REPO", "MoCamaraData/trocr-ocr-accessibility")
 DEVICE            = os.getenv("DEVICE", "cpu")
 VOICE             = "en-US-AriaNeural"
 SIMILARITY_THRESH = 0.80
-FRAME_INTERVAL_S  = 0.30
 FEEDBACK_COOLDOWN = 2.0
 
 # ---------------------------------------------------------------------------
@@ -304,8 +303,6 @@ async def ocr_stream(websocket: WebSocket):
             data = await websocket.receive_text()
 
             now = time.monotonic()
-            if now - last_frame_time < FRAME_INTERVAL_S:
-                continue
             last_frame_time = now
 
             image_bytes = base64.b64decode(data)
@@ -321,6 +318,10 @@ async def ocr_stream(websocket: WebSocket):
                 "latency":    result["latency"],
                 "streaming":  True
             }
+
+            # Backpressure: let the client send the next frame once OCR is done.
+            # This keeps slow model inference from accumulating stale camera frames.
+            await websocket.send_json({"type": "processed"})
 
             if tokens and is_new_text(text, last_text):
                 last_text = text
