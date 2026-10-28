@@ -96,6 +96,11 @@ class Pipeline:
         self.conf_threshold    = self.cfg["recognition"]["confidence_threshold"]
         self.crop_padding      = self.cfg["recognition"]["crop_padding"]
         self.max_crops         = self.cfg["recognition"].get("max_crops", 12)
+        self.recognition_batch_size = (
+            self.cfg["recognition"].get("batch_size_gpu", 4)
+            if "cuda" in str(self.device).lower()
+            else self.cfg["recognition"].get("batch_size_cpu", 2)
+        )
         self.row_tolerance     = self.cfg["reading_order"]["row_tolerance"]
         self.max_new_tokens    = self.cfg["recognition"]["max_new_tokens"]
         self.budget_s          = self.cfg["latency"]["budget_s"]
@@ -162,7 +167,8 @@ class Pipeline:
         rec_results, rec_latency = run_recognizer(
             self.processor, self.model, crops,
             device=self.device,
-            max_new_tokens=self.max_new_tokens
+            max_new_tokens=self.max_new_tokens,
+            batch_size=self.recognition_batch_size,
         )
 
         # ── 7. Confidence gate ──
