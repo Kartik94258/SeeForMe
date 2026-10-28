@@ -46,8 +46,8 @@ export default function CameraTab({ t, onDetection }) {
       return;
     }
 
-    // The server sends both text and audio for one detection; count it once.
-    if (data.type !== "audio") onDetection(data);
+    // Count once, after speech synthesis, so latency includes the TTS stage.
+    if (data.type === "audio" || data.type === "feedback") onDetection(data);
 
     if (data.type === "text" && data.text) {
       setDetectedText(data.text);
