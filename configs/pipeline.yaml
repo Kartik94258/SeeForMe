@@ -13,7 +13,7 @@ recognition:
   max_new_tokens: 24
   confidence_threshold: 0.75   # gate: below this → silent (validated in Phase 5)
   crop_padding: 4              # pixels of padding around each detected box
-  max_crops: 12                # Phase 5: cap crops per image to bound worst-case latency
+  max_crops: 12                # Uploads can contain more regions; live mode uses 8
   batch_size_gpu: 4             # Recognize several words per GPU inference pass
   batch_size_cpu: 4             # Fewer CPU generation passes for live scanning
 
