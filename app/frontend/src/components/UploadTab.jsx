@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import { useAudioPlayer } from "../hooks/useAudioPlayer";
 import DetectionPanel     from "./DetectionPanel";
 import { API }            from "../constants/api";
@@ -11,8 +11,15 @@ export default function UploadTab({ t, onDetection }) {
   const [log, setLog]               = useState([]);
   const [dragging, setDragging]     = useState(false);
   const fileRef = useRef(null);
+  const previewUrlRef = useRef(null);
+  const requestRef = useRef(null);
 
-  const { play, pause, stop, replay, playing } = useAudioPlayer();
+  const { play, pause, stop, replay, playing, paused } = useAudioPlayer();
+
+  useEffect(() => () => {
+    requestRef.current?.abort();
+    if (previewUrlRef.current) URL.revokeObjectURL(previewUrlRef.current);
+  }, []);
 
   const addLog = useCallback((message, type) => {
     const time = new Date().toLocaleTimeString();
@@ -21,7 +28,14 @@ export default function UploadTab({ t, onDetection }) {
 
   const handleFile = useCallback(async (file) => {
     if (!file) return;
-    setPreview(URL.createObjectURL(file));
+
+    requestRef.current?.abort();
+    const controller = new AbortController();
+    requestRef.current = controller;
+
+    if (previewUrlRef.current) URL.revokeObjectURL(previewUrlRef.current);
+    previewUrlRef.current = URL.createObjectURL(file);
+    setPreview(previewUrlRef.current);
     setAnalyzing(true);
     setDetectedText("");
     setFeedback("");
@@ -30,24 +44,36 @@ export default function UploadTab({ t, onDetection }) {
       const form = new FormData();
       form.append("file", file);
 
-      const res  = await fetch(API.ocrImage, { method: "POST", body: form });
-      const data = await res.json();
+      const res = await fetch(API.ocrImage, {
+        method: "POST",
+        body: form,
+        signal: controller.signal,
+      });
+      if (!res.ok) throw new Error(`OCR request failed (${res.status})`);
 
+      const data = await res.json();
       onDetection(data);
 
       if (data.text) {
         setDetectedText(data.text);
         addLog(t.detection.success, "success");
         if (data.audio) play(data.audio);
+        else if (data.feedback) {
+          setFeedback(data.feedback);
+          addLog(data.feedback, "warning");
+        }
       } else if (data.feedback) {
         setFeedback(data.feedback);
         const type = data.feedback.includes("clear") ? "warning" : "info";
         addLog(data.feedback, type);
       }
-    } catch {
-      addLog("Request failed", "info");
+    } catch (error) {
+      if (error.name !== "AbortError") addLog("Request failed", "info");
     } finally {
-      setAnalyzing(false);
+      if (requestRef.current === controller) {
+        requestRef.current = null;
+        setAnalyzing(false);
+      }
     }
   }, [onDetection, play, addLog, t]);
 
@@ -57,6 +83,20 @@ export default function UploadTab({ t, onDetection }) {
     const file = e.dataTransfer.files[0];
     if (file) handleFile(file);
   };
+
+  const handleClear = useCallback(() => {
+    requestRef.current?.abort();
+    requestRef.current = null;
+    setAnalyzing(false);
+    if (previewUrlRef.current) URL.revokeObjectURL(previewUrlRef.current);
+    previewUrlRef.current = null;
+    setPreview(null);
+    setDetectedText("");
+    setFeedback("");
+    setLog([]);
+    stop();
+    if (fileRef.current) fileRef.current.value = "";
+  }, [stop]);
 
   return (
     <div className="split-layout">
@@ -88,7 +128,11 @@ export default function UploadTab({ t, onDetection }) {
           type="file"
           accept="image/*"
           style={{ display: "none" }}
-          onChange={(e) => handleFile(e.target.files[0])}
+          onChange={(e) => {
+            const file = e.target.files?.[0];
+            e.target.value = "";
+            handleFile(file);
+          }}
         />
 
         {preview && (
@@ -107,10 +151,11 @@ export default function UploadTab({ t, onDetection }) {
         detectedText={detectedText}
         feedback={feedback}
         playing={playing}
+        paused={paused}
         onReplay={replay}
         onPause={pause}
         onStop={stop}
-        onClear={() => { setLog([]); setDetectedText(""); setFeedback(""); setPreview(null); }}
+        onClear={handleClear}
         log={log}
       />
     </div>

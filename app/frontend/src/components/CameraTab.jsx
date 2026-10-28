@@ -15,7 +15,7 @@ export default function CameraTab({ t, onDetection }) {
   const [log, setLog]                     = useState([]);
   const intervalRef    = useRef(null);
 
-  const { enqueue, stop: stopAudio, pause: pauseAudio, playing, isBusy } = useAudioQueue();
+  const { enqueue, stop: stopAudio, pause: pauseAudio, playing, paused, isBusy } = useAudioQueue();
   const lastAudioRef = useRef(null);
 
   // At most one camera frame may be in flight; the server ACKs after OCR.
@@ -35,8 +35,10 @@ export default function CameraTab({ t, onDetection }) {
   }, []);
 
   const handleReplay = useCallback(() => {
-    if (lastAudioRef.current) enqueue(lastAudioRef.current);
-  }, [enqueue]);
+    if (!lastAudioRef.current) return;
+    stopAudio();
+    enqueue(lastAudioRef.current);
+  }, [enqueue, stopAudio]);
 
   const handleMessage = useCallback((data) => {
     if (data.type === "processed") {
@@ -44,7 +46,8 @@ export default function CameraTab({ t, onDetection }) {
       return;
     }
 
-    onDetection(data);
+    // Count once, after speech synthesis, so latency includes the TTS stage.
+    if (data.type === "audio" || data.type === "feedback") onDetection(data);
 
     if (data.type === "text" && data.text) {
       setDetectedText(data.text);
@@ -181,6 +184,7 @@ export default function CameraTab({ t, onDetection }) {
         detectedText={detectedText}
         feedback={feedback}
         playing={playing}
+        paused={paused}
         onReplay={handleReplay}
         onPause={pauseAudio}
         onStop={stopAudio}

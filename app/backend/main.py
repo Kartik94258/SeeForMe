@@ -25,7 +25,7 @@ import wordninja
 from fastapi import FastAPI, File, HTTPException, UploadFile, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 from PIL import Image
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from starlette.concurrency import run_in_threadpool
 
 # ---------------------------------------------------------------------------
@@ -56,6 +56,10 @@ DEVICE            = os.getenv("DEVICE", "cpu")
 VOICE             = "en-US-AriaNeural"
 SIMILARITY_THRESH = 0.80
 FEEDBACK_COOLDOWN = 2.0
+MAX_IMAGE_BYTES = int(os.getenv("MAX_IMAGE_BYTES", str(12 * 1024 * 1024)))
+MAX_IMAGE_PIXELS = int(os.getenv("MAX_IMAGE_PIXELS", "30000000"))
+MAX_IMAGE_BASE64_CHARS = 4 * ((MAX_IMAGE_BYTES + 2) // 3)
+TTS_TIMEOUT_S = float(os.getenv("TTS_TIMEOUT_S", "8"))
 
 # ---------------------------------------------------------------------------
 # Pipeline — loaded once at startup
@@ -157,6 +161,41 @@ async def synthesize(tokens: list[str]) -> bytes:
     return buffer.getvalue()
 
 
+async def synthesize_safely(tokens: list[str]) -> tuple[bytes, str, float]:
+    """Bound cloud TTS latency and preserve OCR text when speech is unavailable."""
+    started = time.perf_counter()
+    try:
+        audio_bytes = await asyncio.wait_for(
+            synthesize(tokens),
+            timeout=TTS_TIMEOUT_S,
+        )
+        elapsed = time.perf_counter() - started
+        if not audio_bytes:
+            return b"", "Speech synthesis returned no audio", elapsed
+        return audio_bytes, "", elapsed
+    except asyncio.TimeoutError:
+        elapsed = time.perf_counter() - started
+        print(f"TTS timed out after {TTS_TIMEOUT_S:.1f}s")
+        return b"", "Speech synthesis timed out", elapsed
+    except Exception as exc:
+        elapsed = time.perf_counter() - started
+        print(f"TTS synthesis failed: {exc}")
+        return b"", "Speech synthesis failed", elapsed
+
+
+def include_tts_latency(result: dict, tts_seconds: float) -> None:
+    """Report OCR and TTS time separately while keeping total latency end-to-end."""
+    latency = result.get("latency")
+    if not isinstance(latency, dict):
+        return
+
+    ocr_seconds = latency.get("ocr_total_s", latency.get("total_s", 0.0))
+    latency["ocr_total_s"] = ocr_seconds
+    latency["tts_s"] = round(tts_seconds, 4)
+    latency["total_s"] = round(ocr_seconds + tts_seconds, 4)
+    latency["within_budget"] = latency["total_s"] <= getattr(pipeline, "budget_s", 2.0)
+
+
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
@@ -183,15 +222,28 @@ def is_new_text(current: str, previous: str) -> bool:
 
 
 def load_image_from_bytes(image_bytes: bytes) -> Image.Image:
+    if len(image_bytes) > MAX_IMAGE_BYTES:
+        raise HTTPException(status_code=413, detail=f"Image is too large (maximum {MAX_IMAGE_BYTES} bytes).")
     try:
-        return Image.open(io.BytesIO(image_bytes)).convert("RGB")
+        with Image.open(io.BytesIO(image_bytes)) as source:
+            if source.width * source.height > MAX_IMAGE_PIXELS:
+                raise HTTPException(
+                    status_code=413,
+                    detail="Image resolution is too large to process safely.",
+                )
+            source.load()
+            return source.convert("RGB")
+    except HTTPException:
+        raise
     except Exception as exc:
         raise HTTPException(status_code=400, detail="Uploaded data is not a valid image.") from exc
 
 
 def decode_base64_image(image_b64: str) -> Image.Image:
+    if len(image_b64) > MAX_IMAGE_BASE64_CHARS:
+        raise HTTPException(status_code=413, detail=f"Image is too large (maximum {MAX_IMAGE_BYTES} bytes).")
     try:
-        image_bytes = base64.b64decode(image_b64)
+        image_bytes = base64.b64decode(image_b64, validate=True)
     except (binascii.Error, ValueError) as exc:
         raise HTTPException(status_code=400, detail="Invalid base64 image payload.") from exc
     return load_image_from_bytes(image_bytes)
@@ -209,7 +261,7 @@ def build_feedback_message(result: dict) -> str:
 # Schema
 # ---------------------------------------------------------------------------
 class ImagePayload(BaseModel):
-    image: str
+    image: str = Field(max_length=MAX_IMAGE_BASE64_CHARS)
 
 
 # ---------------------------------------------------------------------------
@@ -225,7 +277,9 @@ async def health():
 # ---------------------------------------------------------------------------
 @app.post("/ocr/image")
 async def ocr_image(file: UploadFile = File(...)):
-    image_bytes = await file.read()
+    image_bytes = await file.read(MAX_IMAGE_BYTES + 1)
+    if len(image_bytes) > MAX_IMAGE_BYTES:
+        raise HTTPException(status_code=413, detail=f"Image is too large (maximum {MAX_IMAGE_BYTES} bytes).")
     image = load_image_from_bytes(image_bytes)
 
     result = await run_pipeline(image)
@@ -233,11 +287,15 @@ async def ocr_image(file: UploadFile = File(...)):
     text          = " ".join(tokens)
 
     audio_b64 = ""
+    audio_feedback = ""
+    tts_elapsed = 0.0
     if tokens:
-        audio_bytes = await synthesize(tokens)
-        audio_b64   = base64.b64encode(audio_bytes).decode()
+        audio_bytes, audio_feedback, tts_elapsed = await synthesize_safely(tokens)
+        if audio_bytes:
+            audio_b64 = base64.b64encode(audio_bytes).decode()
+    include_tts_latency(result, tts_elapsed)
 
-    feedback = build_feedback_message(result) if not tokens else ""
+    feedback = build_feedback_message(result) if not tokens else audio_feedback
 
     return {
         "text":     text,
@@ -266,11 +324,15 @@ async def ocr_image_base64(payload: ImagePayload):
     text          = " ".join(tokens)
 
     audio_b64 = ""
+    audio_feedback = ""
+    tts_elapsed = 0.0
     if tokens:
-        audio_bytes = await synthesize(tokens)
-        audio_b64   = base64.b64encode(audio_bytes).decode()
+        audio_bytes, audio_feedback, tts_elapsed = await synthesize_safely(tokens)
+        if audio_bytes:
+            audio_b64 = base64.b64encode(audio_bytes).decode()
+    include_tts_latency(result, tts_elapsed)
 
-    feedback = build_feedback_message(result) if not tokens else ""
+    feedback = build_feedback_message(result) if not tokens else audio_feedback
 
     return {
         "text":     text,
@@ -303,10 +365,36 @@ async def ocr_stream(websocket: WebSocket):
 
             now = time.monotonic()
 
-            image_bytes = base64.b64decode(data)
-            image       = load_image_from_bytes(image_bytes)
+            try:
+                image = decode_base64_image(data)
+            except HTTPException as exc:
+                await websocket.send_json({
+                    "type": "feedback",
+                    "text": "",
+                    "tokens": [],
+                    "boxes": [],
+                    "feedback": exc.detail,
+                    "audio": "",
+                })
+                await websocket.send_json({"type": "processed"})
+                continue
 
-            result = await run_pipeline(image)
+            try:
+                result = await run_pipeline(image)
+            except Exception as exc:
+                print(f"OCR stream processing failed: {exc}")
+                await websocket.send_json({
+                    "type": "feedback",
+                    "text": "",
+                    "tokens": [],
+                    "boxes": [],
+                    "feedback": "OCR processing failed. Please try again.",
+                    "audio": "",
+                })
+                await websocket.send_json({"type": "processed"})
+                continue
+
+            include_tts_latency(result, 0.0)
             tokens, boxes = extract_detections(result["gated_results"])
             text          = " ".join(tokens)
 
@@ -316,10 +404,6 @@ async def ocr_stream(websocket: WebSocket):
                 "latency":    result["latency"],
                 "streaming":  True
             }
-
-            # Backpressure: let the client send the next frame once OCR is done.
-            # This keeps slow model inference from accumulating stale camera frames.
-            await websocket.send_json({"type": "processed"})
 
             if tokens and is_new_text(text, last_text):
                 last_text = text
@@ -334,14 +418,9 @@ async def ocr_stream(websocket: WebSocket):
                     "meta":     meta
                 })
 
-                try:
-                    audio_bytes = await synthesize(tokens)
-                    audio_b64   = base64.b64encode(audio_bytes).decode()
-                    audio_feedback = ""
-                except Exception as exc:
-                    print(f"TTS error: {exc}")
-                    audio_b64 = ""
-                    audio_feedback = "Speech synthesis failed"
+                audio_bytes, audio_feedback, tts_elapsed = await synthesize_safely(tokens)
+                include_tts_latency(result, tts_elapsed)
+                audio_b64 = base64.b64encode(audio_bytes).decode() if audio_bytes else ""
 
                 # Always send the completion message so the frontend can resume scanning.
                 await websocket.send_json({
@@ -367,6 +446,10 @@ async def ocr_stream(websocket: WebSocket):
                         "audio":    "",
                         "meta":     meta
                     })
+
+            # Acknowledge only after OCR and speech synthesis are complete.
+            # Otherwise the browser can send frames that pile up while TTS is awaiting the cloud.
+            await websocket.send_json({"type": "processed"})
 
     except WebSocketDisconnect:
         pass

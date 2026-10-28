@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export default function DetectionPanel({ t, detectedText, feedback, playing, onReplay, onPause, onStop, onClear, log }) {
+export default function DetectionPanel({ t, detectedText, feedback, playing, paused, onReplay, onPause, onStop, onClear, log }) {
   const logRef = useRef(null);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export default function DetectionPanel({ t, detectedText, feedback, playing, onR
         </div>
         <div className={`speaking-badge ${playing ? "active" : ""}`}>
           <span className="status-dot" />
-          {playing ? t.detection.speaking : t.detection.idle}
+          {playing ? t.detection.speaking : paused ? t.detection.paused : t.detection.idle}
         </div>
       </div>
 
@@ -38,9 +38,7 @@ export default function DetectionPanel({ t, detectedText, feedback, playing, onR
         ) : (
           <p className="detected-text placeholder">{t.detection.waiting}</p>
         )}
-        {feedback && !detectedText && (
-          <p className="feedback-text">{feedback}</p>
-        )}
+        {feedback && <p className="feedback-text">{feedback}</p>}
       </div>
 
       <div className="audio-controls">
@@ -52,15 +50,15 @@ export default function DetectionPanel({ t, detectedText, feedback, playing, onR
           </span>
           {t.detection.replay}
         </button>
-        <button className="btn-secondary" onClick={onPause} disabled={!playing}>
+        <button className="btn-secondary" onClick={onPause} disabled={!playing && !paused}>
           <span className="btn-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" className="ui-icon ui-icon-inline">
               <path d="M8 6h3v12H8zM13 6h3v12h-3z" />
             </svg>
           </span>
-          {t.detection.pause}
+          {paused ? t.detection.resume : t.detection.pause}
         </button>
-        <button className="btn-secondary" onClick={onStop} disabled={!playing}>
+        <button className="btn-secondary" onClick={onStop} disabled={!playing && !paused}>
           <span className="btn-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" className="ui-icon ui-icon-inline">
               <path d="M7 7h10v10H7z" />
