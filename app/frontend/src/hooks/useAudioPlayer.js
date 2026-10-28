@@ -44,9 +44,11 @@ export function useAudioPlayer() {
     setPlaying(false);
     setPaused(false);
 
+    let createdUrl = null;
     try {
       const blob = base64ToBlob(base64Mp3, "audio/mpeg");
       const url = URL.createObjectURL(blob);
+      createdUrl = url;
       const audio = new Audio(url);
       audioRef.current = audio;
       urlRef.current = url;
@@ -82,6 +84,7 @@ export function useAudioPlayer() {
       audio.play().catch(cleanup);
     } catch (error) {
       console.error("Unable to decode or play speech audio:", error);
+      if (createdUrl && urlRef.current !== createdUrl) URL.revokeObjectURL(createdUrl);
       releaseCurrent();
     }
   }, [releaseCurrent]);
