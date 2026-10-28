@@ -295,7 +295,6 @@ async def ocr_stream(websocket: WebSocket):
     await websocket.accept()
 
     last_text          = ""
-    last_frame_time    = 0.0
     last_feedback_time = 0.0
 
     try:
@@ -303,7 +302,6 @@ async def ocr_stream(websocket: WebSocket):
             data = await websocket.receive_text()
 
             now = time.monotonic()
-            last_frame_time = now
 
             image_bytes = base64.b64decode(data)
             image       = load_image_from_bytes(image_bytes)
