@@ -39,10 +39,10 @@ def detection_rows_to_boxes(
         if x2 <= x1 or y2 <= y1:
             continue
 
-        left = x1 * image_width
-        top = y1 * image_height
-        width = (x2 - x1) * image_width
-        height = (y2 - y1) * image_height
+        left = round(x1 * image_width, 3)
+        top = round(y1 * image_height, 3)
+        width = round((x2 - x1) * image_width, 3)
+        height = round((y2 - y1) * image_height, 3)
         boxes.append([float(left), float(top), float(width), float(height)])
 
     return boxes
