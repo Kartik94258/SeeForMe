@@ -56,6 +56,8 @@ DEVICE            = os.getenv("DEVICE", "cpu")
 VOICE             = "en-US-AriaNeural"
 SIMILARITY_THRESH = 0.80
 FEEDBACK_COOLDOWN = 2.0
+MAX_IMAGE_BYTES = int(os.getenv("MAX_IMAGE_BYTES", str(12 * 1024 * 1024)))
+MAX_IMAGE_PIXELS = int(os.getenv("MAX_IMAGE_PIXELS", "30000000"))
 
 # ---------------------------------------------------------------------------
 # Pipeline — loaded once at startup
@@ -183,15 +185,29 @@ def is_new_text(current: str, previous: str) -> bool:
 
 
 def load_image_from_bytes(image_bytes: bytes) -> Image.Image:
+    if len(image_bytes) > MAX_IMAGE_BYTES:
+        raise HTTPException(status_code=413, detail="Image is too large (12 MiB maximum).")
     try:
-        return Image.open(io.BytesIO(image_bytes)).convert("RGB")
+        with Image.open(io.BytesIO(image_bytes)) as source:
+            if source.width * source.height > MAX_IMAGE_PIXELS:
+                raise HTTPException(
+                    status_code=413,
+                    detail="Image resolution is too large to process safely.",
+                )
+            source.load()
+            return source.convert("RGB")
+    except HTTPException:
+        raise
     except Exception as exc:
         raise HTTPException(status_code=400, detail="Uploaded data is not a valid image.") from exc
 
 
 def decode_base64_image(image_b64: str) -> Image.Image:
+    max_encoded_length = 4 * ((MAX_IMAGE_BYTES + 2) // 3)
+    if len(image_b64) > max_encoded_length:
+        raise HTTPException(status_code=413, detail="Image is too large (12 MiB maximum).")
     try:
-        image_bytes = base64.b64decode(image_b64)
+        image_bytes = base64.b64decode(image_b64, validate=True)
     except (binascii.Error, ValueError) as exc:
         raise HTTPException(status_code=400, detail="Invalid base64 image payload.") from exc
     return load_image_from_bytes(image_bytes)
@@ -225,7 +241,9 @@ async def health():
 # ---------------------------------------------------------------------------
 @app.post("/ocr/image")
 async def ocr_image(file: UploadFile = File(...)):
-    image_bytes = await file.read()
+    image_bytes = await file.read(MAX_IMAGE_BYTES + 1)
+    if len(image_bytes) > MAX_IMAGE_BYTES:
+        raise HTTPException(status_code=413, detail="Image is too large (12 MiB maximum).")
     image = load_image_from_bytes(image_bytes)
 
     result = await run_pipeline(image)
@@ -303,8 +321,19 @@ async def ocr_stream(websocket: WebSocket):
 
             now = time.monotonic()
 
-            image_bytes = base64.b64decode(data)
-            image       = load_image_from_bytes(image_bytes)
+            try:
+                image = decode_base64_image(data)
+            except HTTPException as exc:
+                await websocket.send_json({
+                    "type": "feedback",
+                    "text": "",
+                    "tokens": [],
+                    "boxes": [],
+                    "feedback": exc.detail,
+                    "audio": "",
+                })
+                await websocket.send_json({"type": "processed"})
+                continue
 
             result = await run_pipeline(image)
             tokens, boxes = extract_detections(result["gated_results"])
