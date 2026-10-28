@@ -100,11 +100,11 @@ export default function CameraTab({ t, onDetection }) {
     }
   }, [enqueue]);
 
-  // Send frames — but gate on audio state so we don't trigger new detections
-  // while the current one is still being spoken / synthesized.
+  // Keep exactly one camera frame in flight and wait for the server's OCR ACK.
   useEffect(() => {
-    if (!ready) {
+    if (!ready || !connected) {
       clearInterval(intervalRef.current);
+      frameInFlightRef.current = false;
       return;
     }
     intervalRef.current = setInterval(() => {
@@ -115,7 +115,7 @@ export default function CameraTab({ t, onDetection }) {
       if (frame && sendFrame(frame)) frameInFlightRef.current = true;
     }, FRAME_INTERVAL_MS);
     return () => clearInterval(intervalRef.current);
-  }, [ready, captureFrame, sendFrame, isBusy]);
+  }, [ready, connected, captureFrame, sendFrame, isBusy]);
 
   return (
     <div className="split-layout">
@@ -184,7 +184,7 @@ export default function CameraTab({ t, onDetection }) {
         onReplay={handleReplay}
         onPause={pauseAudio}
         onStop={stopAudio}
-        onClear={() => { setLog([]); setDetectedText(""); setFeedback(""); stopAudio(); frameInFlightRef.current = false; }}
+        onClear={() => { setLog([]); setDetectedText(""); setFeedback(""); stopAudio(); }}
         log={log}
       />
     </div>
