@@ -27,6 +27,7 @@ const en = {
     idle: "Listening",
     replay: "Replay",
     pause: "Pause",
+    resume: "Resume",
     stop: "Stop",
     clear: "Clear",
     noText: "No readable text detected",
