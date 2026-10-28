@@ -88,8 +88,17 @@ def run_recognizer(
         texts = processor.batch_decode(out.sequences, skip_special_tokens=True)
         if out.scores:
             # [batch, steps], with one maximum-softmax probability per generated token.
+            # Compute max softmax probability as exp(max(logits) - logsumexp(logits)).
+            # This is equivalent to softmax(...).max(...) but avoids materializing
+            # the full probability tensor for every generated step.
             per_step_confidence = torch.stack(
-                [torch.softmax(score.float(), dim=-1).amax(dim=-1) for score in out.scores],
+                [
+                    torch.exp(
+                        logits.max(dim=-1).values - torch.logsumexp(logits, dim=-1)
+                    )
+                    for score in out.scores
+                    for logits in [score.float()]
+                ],
                 dim=1,
             )
 
