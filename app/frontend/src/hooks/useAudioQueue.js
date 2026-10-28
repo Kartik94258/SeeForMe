@@ -25,6 +25,7 @@ export function useAudioQueue() {
 
     const base64Mp3 = queueRef.current.shift();
     let audio = null;
+    let url = null;
 
     try {
       const bytes = atob(base64Mp3);
@@ -32,7 +33,7 @@ export function useAudioQueue() {
       for (let i = 0; i < bytes.length; i++) buffer[i] = bytes.charCodeAt(i);
 
       const blob = new Blob([buffer], { type: "audio/mpeg" });
-      const url = URL.createObjectURL(blob);
+      url = URL.createObjectURL(blob);
       audio = new Audio(url);
       currentRef.current = audio;
       currentUrlRef.current = url;
@@ -78,6 +79,7 @@ export function useAudioQueue() {
       audio.play().catch(cleanup);
     } catch (error) {
       console.error("Unable to decode or play speech audio:", error);
+      if (url && currentUrlRef.current !== url) URL.revokeObjectURL(url);
       if (audio && currentRef.current === audio) {
         currentRef.current = null;
         if (currentUrlRef.current) URL.revokeObjectURL(currentUrlRef.current);
