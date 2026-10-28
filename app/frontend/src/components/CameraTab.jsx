@@ -5,6 +5,7 @@ import { useAudioQueue }  from "../hooks/useAudioQueue";
 import DetectionPanel     from "./DetectionPanel";
 
 const FRAME_INTERVAL_MS = 150;
+const FRAME_ACK_TIMEOUT_MS = 20000;
 
 export default function CameraTab({ t, onDetection }) {
   const [active, setActive]               = useState(false);
@@ -13,12 +14,14 @@ export default function CameraTab({ t, onDetection }) {
   const [detectedText, setDetectedText]   = useState("");
   const [feedback, setFeedback]           = useState("");
   const [log, setLog]                     = useState([]);
+  const [processing, setProcessing]       = useState(false);
   const intervalRef    = useRef(null);
 
-  const { enqueue, stop: stopAudio, pause: pauseAudio, speakText, playing, paused, isBusy } = useAudioQueue();
+  const { enqueue, stop: stopAudio, pause: pauseAudio, speakText, playing, paused } = useAudioQueue();
 
-  // At most one camera frame may be in flight; the server ACKs after OCR.
+  // Backpressure + watchdog: never queue stale frames, but recover if an ACK is lost.
   const frameInFlightRef = useRef(false);
+  const frameSentAtRef = useRef(0);
 
   const { videoRef, ready, error, captureFrame } = useCamera({ active });
 
@@ -48,6 +51,8 @@ export default function CameraTab({ t, onDetection }) {
   const handleMessage = useCallback((data) => {
     if (data.type === "processed") {
       frameInFlightRef.current = false;
+      frameSentAtRef.current = 0;
+      setProcessing(false);
       return;
     }
 
@@ -78,27 +83,51 @@ export default function CameraTab({ t, onDetection }) {
     }
   }, [onDetection, enqueue, addLog, handlePlaybackError, t]);
 
-  const { connected, sendFrame } = useWebSocket({
+  const { connected, sendFrame, reconnect } = useWebSocket({
     onMessage: handleMessage,
     active,
   });
 
-  // Keep exactly one camera frame in flight and wait for the server's OCR ACK.
+  // OCR frames continue while TTS is synthesized or played in the background.
+  // A watchdog reconnects if a server frame acknowledgement is ever lost.
   useEffect(() => {
     if (!ready || !connected) {
       clearInterval(intervalRef.current);
       frameInFlightRef.current = false;
+      frameSentAtRef.current = 0;
+      setProcessing(false);
       return;
     }
+
     intervalRef.current = setInterval(() => {
-      // Backpressure prevents slow inference from building a queue of stale frames.
-      // Allow one frame while TTS is synthesizing; pause during spoken playback.
-      if (frameInFlightRef.current || isBusy()) return;
-      const frame = captureFrame(0.6);
-      if (frame && sendFrame(frame)) frameInFlightRef.current = true;
+      if (frameInFlightRef.current) {
+        if (Date.now() - frameSentAtRef.current > FRAME_ACK_TIMEOUT_MS) {
+          frameInFlightRef.current = false;
+          frameSentAtRef.current = 0;
+          setProcessing(false);
+          setFeedback(t.camera.scanTimedOut);
+          addLog(t.camera.scanTimedOut, "warning");
+          reconnect();
+        }
+        return;
+      }
+
+      const frame = captureFrame(0.58);
+      if (!frame) return;
+
+      if (sendFrame(frame)) {
+        frameInFlightRef.current = true;
+        frameSentAtRef.current = Date.now();
+        setProcessing(true);
+      } else {
+        setFeedback(t.camera.connectionLost);
+        addLog(t.camera.connectionLost, "warning");
+        reconnect();
+      }
     }, FRAME_INTERVAL_MS);
+
     return () => clearInterval(intervalRef.current);
-  }, [ready, connected, captureFrame, sendFrame, isBusy]);
+  }, [ready, connected, captureFrame, sendFrame, reconnect, addLog, t]);
 
   return (
     <div className="split-layout">
@@ -106,7 +135,19 @@ export default function CameraTab({ t, onDetection }) {
         <div className="camera-status-bar">
           <div className="scan-status">
             <span className={`status-dot ${connected ? "green" : "red"}`} />
-            <span>{active ? t.camera.scanning : t.camera.pointCamera}</span>
+            <span aria-live="polite">
+              {!active
+                ? t.camera.pointCamera
+                : error
+                  ? (error === "permission_denied" ? t.camera.permissionDenied : t.camera.noCamera)
+                  : !ready
+                    ? t.camera.startingCamera
+                    : !connected
+                      ? t.camera.connecting
+                      : processing
+                        ? t.camera.processing
+                        : t.camera.scanning}
+            </span>
           </div>
           <div className="camera-badges">
             {connected     && <span className="badge blue">WS</span>}
