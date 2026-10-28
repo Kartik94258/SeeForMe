@@ -16,7 +16,9 @@ jobs:
         with:
           python-version: "3.11"
       - name: Compile backend and pipeline sources
-        run: python -m compileall -q app/backend src
+        run: python -m compileall -q app/backend src tests
+      - name: Test detection box parsing
+        run: python -m unittest discover -s tests -v
 
   frontend-build:
     name: Frontend production build
