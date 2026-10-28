@@ -261,9 +261,9 @@ def decode_base64_image(image_b64: str) -> Image.Image:
 
 def build_feedback_message(result: dict) -> str:
     if result["n_boxes"] == 0:
-        return "No readable text detected"
+        return "No text found. Move closer, improve lighting, and hold the camera steady."
     if result["n_spoken"] == 0 and result["n_silenced"] > 0:
-        return "Text detected but not clear enough to read"
+        return "Text found, but recognition confidence is low. Move closer or improve focus."
     return ""
 
 
@@ -314,6 +314,7 @@ async def ocr_image(file: UploadFile = File(...)):
         "feedback": feedback,
         "audio":    audio_b64,
         "meta": {
+            "n_boxes":    result["n_boxes"],
             "n_spoken":   result["n_spoken"],
             "n_silenced": result["n_silenced"],
             "latency":    result["latency"],
