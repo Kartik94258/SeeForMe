@@ -25,7 +25,7 @@ import wordninja
 from fastapi import FastAPI, File, HTTPException, UploadFile, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 from PIL import Image
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from starlette.concurrency import run_in_threadpool
 
 # ---------------------------------------------------------------------------
@@ -58,6 +58,7 @@ SIMILARITY_THRESH = 0.80
 FEEDBACK_COOLDOWN = 2.0
 MAX_IMAGE_BYTES = int(os.getenv("MAX_IMAGE_BYTES", str(12 * 1024 * 1024)))
 MAX_IMAGE_PIXELS = int(os.getenv("MAX_IMAGE_PIXELS", "30000000"))
+MAX_IMAGE_BASE64_CHARS = 4 * ((MAX_IMAGE_BYTES + 2) // 3)
 
 # ---------------------------------------------------------------------------
 # Pipeline — loaded once at startup
@@ -186,7 +187,7 @@ def is_new_text(current: str, previous: str) -> bool:
 
 def load_image_from_bytes(image_bytes: bytes) -> Image.Image:
     if len(image_bytes) > MAX_IMAGE_BYTES:
-        raise HTTPException(status_code=413, detail="Image is too large (12 MiB maximum).")
+        raise HTTPException(status_code=413, detail=f"Image is too large (maximum {MAX_IMAGE_BYTES} bytes).")
     try:
         with Image.open(io.BytesIO(image_bytes)) as source:
             if source.width * source.height > MAX_IMAGE_PIXELS:
@@ -203,9 +204,8 @@ def load_image_from_bytes(image_bytes: bytes) -> Image.Image:
 
 
 def decode_base64_image(image_b64: str) -> Image.Image:
-    max_encoded_length = 4 * ((MAX_IMAGE_BYTES + 2) // 3)
-    if len(image_b64) > max_encoded_length:
-        raise HTTPException(status_code=413, detail="Image is too large (12 MiB maximum).")
+    if len(image_b64) > MAX_IMAGE_BASE64_CHARS:
+        raise HTTPException(status_code=413, detail=f"Image is too large (maximum {MAX_IMAGE_BYTES} bytes).")
     try:
         image_bytes = base64.b64decode(image_b64, validate=True)
     except (binascii.Error, ValueError) as exc:
@@ -225,7 +225,7 @@ def build_feedback_message(result: dict) -> str:
 # Schema
 # ---------------------------------------------------------------------------
 class ImagePayload(BaseModel):
-    image: str
+    image: str = Field(max_length=MAX_IMAGE_BASE64_CHARS)
 
 
 # ---------------------------------------------------------------------------
@@ -243,7 +243,7 @@ async def health():
 async def ocr_image(file: UploadFile = File(...)):
     image_bytes = await file.read(MAX_IMAGE_BYTES + 1)
     if len(image_bytes) > MAX_IMAGE_BYTES:
-        raise HTTPException(status_code=413, detail="Image is too large (12 MiB maximum).")
+        raise HTTPException(status_code=413, detail=f"Image is too large (maximum {MAX_IMAGE_BYTES} bytes).")
     image = load_image_from_bytes(image_bytes)
 
     result = await run_pipeline(image)
@@ -335,7 +335,21 @@ async def ocr_stream(websocket: WebSocket):
                 await websocket.send_json({"type": "processed"})
                 continue
 
-            result = await run_pipeline(image)
+            try:
+                result = await run_pipeline(image)
+            except Exception as exc:
+                print(f"OCR stream processing failed: {exc}")
+                await websocket.send_json({
+                    "type": "feedback",
+                    "text": "",
+                    "tokens": [],
+                    "boxes": [],
+                    "feedback": "OCR processing failed. Please try again.",
+                    "audio": "",
+                })
+                await websocket.send_json({"type": "processed"})
+                continue
+
             tokens, boxes = extract_detections(result["gated_results"])
             text          = " ".join(tokens)
 
