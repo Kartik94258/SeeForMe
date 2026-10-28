@@ -27,6 +27,7 @@ const fr = {
     idle: "En ecoute",
     replay: "Rejouer",
     pause: "Pause",
+    resume: "Reprendre",
     stop: "Arreter",
     clear: "Effacer",
     noText: "Aucun texte lisible detecte",
