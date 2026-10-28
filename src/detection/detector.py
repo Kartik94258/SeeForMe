@@ -1,5 +1,5 @@
 """
-Wraps docTR db_resnet50 for text detection.
+Wraps a configurable docTR text detection architecture.
 
 Loads model once at startup, exposes a simple run_detector() interface.
 
