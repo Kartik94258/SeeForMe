@@ -9,7 +9,12 @@ const fr = {
     about: "A propos",
   },
   camera: {
-    scanning: "Recherche de texte lisible...",
+    scanning: "Recherche de texte...",
+    startingCamera: "Demarrage de la camera...",
+    connecting: "Connexion au service OCR...",
+    processing: "Lecture du texte...",
+    scanTimedOut: "Analyse trop longue. Reconnexion au service OCR...",
+    connectionLost: "Connexion perdue. Reconnexion...",
     tip: "Pointez la camera vers du texte imprime, gardez-la stable un instant, et l'application lira a voix haute le nouveau contenu.",
     paused: "En pause",
     noCamera: "Camera non disponible",
