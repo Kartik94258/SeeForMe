@@ -25,6 +25,7 @@ const fr = {
     title: "Texte detecte",
     speaking: "Lecture vocale",
     idle: "En ecoute",
+    paused: "En pause",
     replay: "Rejouer",
     pause: "Pause",
     resume: "Reprendre",
