@@ -88,7 +88,9 @@ export function useWebSocket({ onMessage, active }) {
     const ws = wsRef.current;
     if (ws?.readyState === WebSocket.OPEN) {
       ws.send(base64Frame);
+      return true;
     }
+    return false;
   }, []);
 
   useEffect(() => {
