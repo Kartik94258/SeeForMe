@@ -1,0 +1,80 @@
+name: Deploy to HuggingFace Spaces
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install huggingface_hub
+        run: pip install --upgrade huggingface_hub
+
+      - name: Upload to HuggingFace Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          python - <<'EOF'
+          import os
+          from huggingface_hub import HfApi
+
+          REPO_ID   = "MoCamaraData/visionlens-api"
+          REPO_TYPE = "space"
+          sha       = os.environ.get("GITHUB_SHA", "")[:7]
+          api       = HfApi(token=os.environ["HF_TOKEN"])
+
+          # Allow-list: exactly the files/folders the Space should contain.
+          # Note: README.md is excluded here and uploaded separately below
+          # from hf/README.md (which carries the HF Space frontmatter).
+          ALLOW = [
+              "app/**",
+              "configs/**",
+              "docs/**",
+              "notebooks/**",
+              "scripts/**",
+              "src/**",
+              "app.py",
+              "Dockerfile",
+              "docker-compose.yml",
+              ".gitignore",
+          ]
+
+          # Carve-outs inside ALLOW.
+          # The frontend lives under app/ but the Space only runs the backend.
+          IGNORE = [
+              "app/frontend/node_modules/**",
+              "app/frontend/dist/**",
+              "app/frontend/.vite/**",
+              "**/__pycache__/**",
+              "**/*.pyc",
+          ]
+
+          # 1. Upload the project tree (everything except README).
+          api.upload_folder(
+              folder_path=".",
+              repo_id=REPO_ID,
+              repo_type=REPO_TYPE,
+              commit_message=f"Sync from GitHub @ {sha}",
+              allow_patterns=ALLOW,
+              ignore_patterns=IGNORE,
+          )
+
+          # 2. Upload the Space-specific README (preserves HF frontmatter).
+          api.upload_file(
+              path_or_fileobj=".github/hf-readme.md",
+              path_in_repo="README.md",
+              repo_id=REPO_ID,
+              repo_type=REPO_TYPE,
+              commit_message=f"Sync Space README @ {sha}",
+          )
+          EOF

@@ -1,0 +1,33 @@
+# notebooks/
+
+Jupyter notebooks documenting the full research and development process — from dataset engineering through fine-tuning, benchmarking, and the final demo. Each notebook corresponds to a project phase.
+
+---
+
+## Notebook index
+
+| Notebook | Phase | Description |
+|---|---|---|
+| `01_dataset_engineering_and_eda.ipynb` | 1 | Dataset preparation and exploratory data analysis on COCO-Text |
+| `02a_detection_benchmark.ipynb` | 2a | Benchmark of text detection models (precision, recall, IoU) |
+| `02b_recognition_benchmark.ipynb` | 2b | Benchmark of OCR recognition models (CER, WER) |
+| `03_baseline_mvp.ipynb` | 3 | End-to-end baseline pipeline — detection + recognition + TTS |
+| `04_full_benchmark.ipynb` | 4 | Full system benchmark across the test set |
+| `05_accessibility_optimization.ipynb` | 5 | Confidence gating, IoU deduplication, reading order, latency profiling |
+| `06a_trocr_finetune.ipynb` | 6a | TrOCR fine-tuning on COCO-Text (training loop, loss curves) |
+| `06b_finetune_benchmark.ipynb` | 6b | Post-fine-tuning benchmark — comparison against baseline CER |
+| `06c_push_model_to_hub.ipynb` | 6c | Push fine-tuned model to HuggingFace Hub |
+| `07_demo.ipynb` | 7 | Interactive demo notebook using the full pipeline |
+
+---
+
+## Running notebooks
+
+All notebooks assume the project root is on `sys.path` and that `configs/paths.yaml` is present. For MLflow logging, load `configs/mlflow.env` before starting Jupyter:
+
+```bash
+export $(cat configs/mlflow.env | xargs)
+jupyter lab
+```
+
+The fine-tuning notebook (`06a`) requires a GPU and approximately 8 GB VRAM. All other notebooks run on CPU.

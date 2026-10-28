@@ -1,0 +1,28 @@
+# configs/pipeline.yaml
+# Single source of truth for all pipeline constants.
+# All src/ modules read from here — never hardcode values elsewhere.
+
+detection:
+  model: "db_resnet50"
+  iou_threshold: 0.5
+  assume_straight_pages: true
+  dedup_iou_threshold: 0.5     # Phase 5: suppress overlapping boxes above this IoU
+
+recognition:
+  model: "microsoft/trocr-base-printed"
+  max_new_tokens: 32
+  confidence_threshold: 0.75   # gate: below this → silent (validated in Phase 5)
+  crop_padding: 4              # pixels of padding around each detected box
+  max_crops: 12                # Phase 5: cap crops per image to bound worst-case latency
+
+reading_order:
+  row_tolerance: 0.6           # fraction of median box height for row grouping
+
+latency:
+  budget_s: 2.0                # hard requirement from Phase 0
+
+tts:
+  backend: "local"             # "local" (pyttsx3) | "cloud" (gTTS)
+  rate: 150                    # words per minute (pyttsx3 only)
+  volume: 1.0                  # 0.0 → 1.0 (pyttsx3 only)
+  lang: "en"                   # language code (gTTS only)

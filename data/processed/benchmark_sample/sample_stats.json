@@ -1,0 +1,19 @@
+{
+  "seed": 42,
+  "detection": {
+    "n_images": 200,
+    "total_gt_boxes": 960,
+    "mean_gt_boxes_per_image": 4.8,
+    "min_gt_boxes": 1,
+    "max_gt_boxes": 49
+  },
+  "recognition": {
+    "n_crops": 500,
+    "mean_text_len": 5.404,
+    "median_text_len": 5.0,
+    "mean_crop_w": 59.248,
+    "mean_crop_h": 33.916,
+    "min_crop_w": 18,
+    "min_crop_h": 15
+  }
+}

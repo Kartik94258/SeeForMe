@@ -1,0 +1,78 @@
+const fr = {
+  appName: "VisionLens",
+  tagline: "Assistant de lecture camera-vers-voix en temps reel",
+  apiConnected: "Connectee",
+  apiDisconnected: "Hors ligne",
+  tabs: {
+    live: "Camera en direct",
+    upload: "Televerser une image",
+    about: "A propos",
+  },
+  camera: {
+    scanning: "Recherche de texte lisible...",
+    tip: "Pointez la camera vers du texte imprime, gardez-la stable un instant, et l'application lira a voix haute le nouveau contenu.",
+    paused: "En pause",
+    noCamera: "Camera non disponible",
+    permissionDenied: "Permission camera refusee",
+    pointCamera: "Pointez votre camera vers du texte imprime",
+    enableAudio: "Activer le son",
+    enableAudioTip: "Cliquez sur Activer le son pour entendre les detections.",
+    activateTitle: "Demarrer la lecture en direct",
+    activateSub: "Utilisez la camera pour detecter du texte imprime et l'entendre a voix haute en temps reel.",
+    activateBtn: "Demarrer l'analyse",
+  },
+  detection: {
+    title: "Texte detecte",
+    speaking: "Lecture vocale",
+    idle: "En ecoute",
+    replay: "Rejouer",
+    pause: "Pause",
+    stop: "Arreter",
+    clear: "Effacer",
+    noText: "Aucun texte lisible detecte",
+    notClear: "Texte detecte mais pas assez clair pour etre lu",
+    success: "Nouveau texte detecte et lu a voix haute",
+    waiting: "En attente de texte lisible...",
+  },
+  stats: {
+    spoken: "Lus",
+    silenced: "Filtres",
+    avgLatency: "Latence moy.",
+    realtime: "Temps reel",
+    session: "cette session",
+    ready: "Pret",
+    readyDesc: "Le pipeline camera-vers-voix est actif",
+  },
+  upload: {
+    title: "Televerser une image",
+    drag: "Glissez-deposez une image ici",
+    or: "ou",
+    browse: "Parcourir",
+    analyze: "Analyser",
+    analyzing: "Analyse en cours...",
+    supported: "Formats pris en charge : JPG, PNG, WEBP",
+  },
+  about: {
+    title: "Assistant de lecture accessible",
+    description:
+      "VISION Ai est un assistant OCR en temps reel qui transforme du texte imprime en retour vocal. Il est concu pour aider a acceder rapidement aux panneaux, etiquettes, menus et courtes consignes grace a un flux camera en direct.",
+    problemTitle: "Pourquoi ce projet",
+    problem:
+      "Lire du texte imprime au quotidien peut etre lent ou inaccessible quand l'information n'existe qu'en format visuel. Ce projet explore comment la vision par ordinateur, l'OCR et la synthese vocale peuvent reduire cette friction dans une interface simple.",
+    workflowTitle: "Fonctionnement",
+    workflow:
+      "Chaque image de la camera est capturee, traitee par un detecteur puis un recognizer de texte, puis convertie en audio seulement lorsque le contenu est suffisamment nouveau. Cela limite les repetitions et garde l'experience reactive.",
+    stackTitle: "Pile technique",
+    impactTitle: "Objectif produit",
+    impact:
+      "L'objectif de design est la clarte plutot que la surcharge : entree camera rapide, etats systeme lisibles, et retour vocal prioritaire pour comprendre vite dans un environnement reel.",
+    tech: "Construit avec FastAPI, TrOCR et Edge TTS",
+    model: "Modele",
+    detector: "Detecteur",
+    recognizer: "Reconnaissance",
+    tts: "Synthese vocale",
+    author: "Projet de fin d'etudes - La Cite Collegiale, 2026",
+  },
+};
+
+export default fr;

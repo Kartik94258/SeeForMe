@@ -1,0 +1,12 @@
+python-doctr[torch]
+transformers
+torch
+pyyaml
+editdistance
+gtts
+typer==0.9.0
+click==8.1.7
+matplotlib
+pillow
+numpy
+python-multipart

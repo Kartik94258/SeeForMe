@@ -1,0 +1,108 @@
+# src/
+
+Core ML pipeline for the VisionLens OCR accessibility assistant. Framework-agnostic — used by the FastAPI backend, the Gradio demo, and the research notebooks.
+
+---
+
+## Pipeline flow
+
+```
+Image input  (file path, numpy array, or PIL.Image)
+    │
+    ├─ detection/      Text region detection — docTR db_resnet50
+    │                  Returns: List of [x, y, w, h] bounding boxes
+    │
+    ├─ postprocessing/ Three sequential transforms on the boxes:
+    │   ├─ deduplicator.py   IoU-based NMS — removes overlapping boxes
+    │   ├─ reading_order.py  Sorts boxes top-to-bottom, left-to-right
+    │   └─ cropper.py        Crops each box from the image (with padding)
+    │
+    ├─ recognition/    Text recognition — TrOCR (fine-tuned)
+    │                  Returns: List of {"text": str, "confidence": float}
+    │
+    ├─ confidence.py   Confidence gate — silences text below threshold (0.75)
+    │                  Returns: List of {"text", "confidence", "box", "gated"}
+    │
+    └─ tts/            Text-to-speech — local (pyttsx3) or cloud (edge-tts)
+```
+
+All hyperparameters are read from `configs/pipeline.yaml` — nothing is hardcoded in source files.
+
+---
+
+## Usage
+
+```python
+from src.pipeline import Pipeline
+
+pipe = Pipeline(
+    device="cuda",                              # or "cpu"
+    tts_backend="cloud",                        # "local" or "cloud"
+    recognition_checkpoint="MoCamaraData/trocr-ocr-accessibility"
+)
+
+result = pipe.run("path/to/image.jpg")
+# result["gated_results"]  — list of detected words with gate status
+# result["n_spoken"]       — count of high-confidence spoken words
+# result["n_silenced"]     — count of silenced words
+# result["latency"]        — detection_s, recognition_s, total_s
+# result["tts_output"]     — MP3 bytes (cloud backend) or None (local)
+```
+
+---
+
+## Sub-packages
+
+### detection/
+
+Wraps docTR's `db_resnet50` with a two-function interface: `load_detector(device)` and `run_detector(model, img_np, img_w, img_h)`. Returns boxes as `[x, y, w, h]` in absolute pixel coordinates (docTR's relative coords are converted here).
+
+### postprocessing/
+
+Three transforms applied in order before recognition:
+
+1. **`deduplicator.py`** — greedy IoU-based NMS at threshold 0.5. Keeps the highest-confidence box per overlap group. Added after benchmarking revealed low detection precision (0.34) caused by duplicate boxes for the same text region.
+2. **`reading_order.py`** — groups boxes into rows by median box height, then sorts left-to-right within each row.
+3. **`cropper.py`** — crops each box from the image with 4 px of padding, returns PIL Image patches ready for the recognizer.
+
+### recognition/
+
+Wraps TrOCR with `load_recognizer(checkpoint, device)` and `run_recognizer(processor, model, crops, device)`. Returns `[{"text": str, "confidence": float}]`. Confidence is the mean of per-token softmax probabilities. The fine-tuned checkpoint (`MoCamaraData/trocr-ocr-accessibility`) reaches **CER 0.1998** on COCO-Text.
+
+### tts/
+
+`Speaker` class with two swappable backends:
+
+| Backend | Library | Notes |
+|---|---|---|
+| `"local"` | pyttsx3 | Offline, synchronous |
+| `"cloud"` | edge-tts | Async, handled by `app/backend/main.py` — `Speaker` is a no-op |
+
+Token assembly (`fix_token` / `assemble_tokens`) splits glued words ("exithere" → "exit here") via `wordninja` and joins single-word detections into natural phrases before synthesis. Tokens ≤ 3 characters are treated as acronyms and never split.
+
+### utils/
+
+Shared evaluation functions used across benchmark notebooks and the deduplicator:
+
+| Function | Description |
+|---|---|
+| `compute_iou(box_a, box_b)` | Intersection over Union for `[x, y, w, h]` boxes |
+| `compute_cer(ref, hyp)` | Character Error Rate via edit distance |
+| `compute_wer(ref, hyp)` | Word Error Rate via edit distance |
+
+---
+
+## Dependencies (`requirements.txt`)
+
+```
+torch
+transformers
+python-doctr[torch]
+pillow
+numpy
+pyyaml
+pyttsx3
+gTTS
+wordninja
+editdistance
+```

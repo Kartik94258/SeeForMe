@@ -1,0 +1,9 @@
+﻿# Project paths
+paths:
+  raw_data: data/raw
+  processed_data: data/processed
+  splits: data/splits
+  model_weights: models/weights
+  benchmark_results: models/benchmark_results
+  figures: outputs/figures
+  results: outputs/results

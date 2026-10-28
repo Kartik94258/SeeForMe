@@ -1,0 +1,12 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - HF_REPO=MoCamaraData/trocr-ocr-accessibility
+      - DEVICE=cpu
+      - PROJECT_ROOT=/app
+    restart: unless-stopped

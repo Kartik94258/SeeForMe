@@ -1,0 +1,78 @@
+const en = {
+  appName: "VisionLens",
+  tagline: "Real-time camera-to-voice reading assistance",
+  apiConnected: "Connected",
+  apiDisconnected: "Offline",
+  tabs: {
+    live: "Live Camera",
+    upload: "Upload Image",
+    about: "About",
+  },
+  camera: {
+    scanning: "Looking for readable text...",
+    tip: "Point the camera at printed text, hold steady for a moment, and the app will read new text aloud.",
+    paused: "Paused",
+    noCamera: "Camera not available",
+    permissionDenied: "Camera permission denied",
+    pointCamera: "Point your camera at printed text",
+    enableAudio: "Enable Audio",
+    enableAudioTip: "Click Enable Audio to hear detections.",
+    activateTitle: "Start Live Reading",
+    activateSub: "Use your camera to detect printed text and hear it spoken aloud in real time.",
+    activateBtn: "Start Scanning",
+  },
+  detection: {
+    title: "Detected Text",
+    speaking: "Speaking",
+    idle: "Listening",
+    replay: "Replay",
+    pause: "Pause",
+    stop: "Stop",
+    clear: "Clear",
+    noText: "No readable text detected",
+    notClear: "Text detected but not clear enough to read",
+    success: "New text detected and read aloud",
+    waiting: "Waiting for readable text...",
+  },
+  stats: {
+    spoken: "Spoken",
+    silenced: "Filtered",
+    avgLatency: "Avg Latency",
+    realtime: "Real-time",
+    session: "this session",
+    ready: "Ready",
+    readyDesc: "Camera-to-voice pipeline is active",
+  },
+  upload: {
+    title: "Upload Image",
+    drag: "Drag and drop an image here",
+    or: "or",
+    browse: "Browse file",
+    analyze: "Analyze",
+    analyzing: "Analyzing...",
+    supported: "Supports JPG, PNG, WEBP",
+  },
+  about: {
+    title: "Accessibility Reading Assistant",
+    description:
+      "VISION Ai is a real-time OCR assistant that turns printed text into spoken feedback. It is designed to help users quickly access signage, labels, menus, and short printed instructions through a live camera workflow.",
+    problemTitle: "Why It Exists",
+    problem:
+      "Reading everyday printed text can be slow or inaccessible when the information is only available visually. This project explores how computer vision, OCR, and text-to-speech can reduce that friction in a simple mobile-style interface.",
+    workflowTitle: "How It Works",
+    workflow:
+      "Each frame is captured from the camera, processed through a text detector and recognizer, then converted into spoken output only when the text is new enough to matter. That keeps the experience responsive without repeating the same phrase over and over.",
+    stackTitle: "Technical Stack",
+    impactTitle: "Design Goal",
+    impact:
+      "The product focus is clarity over clutter: fast camera input, readable system status, and voice-first feedback that supports quick comprehension in real environments.",
+    tech: "Built with FastAPI, TrOCR, and Edge TTS",
+    model: "Model",
+    detector: "Detector",
+    recognizer: "Recognizer",
+    tts: "Text-to-Speech",
+    author: "Capstone Project - La Cite Collegiale, 2026",
+  },
+};
+
+export default en;

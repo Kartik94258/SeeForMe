@@ -1,0 +1,23 @@
+# Datasets
+data/raw/
+
+# Outputs
+outputs/
+
+# Python
+__pycache__/
+*.pyc
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Model artifacts
+models/weights/
+
+# mlflow setup
+configs/mlflow.env
+
+
+# node modules
+app/frontend/node_modules/

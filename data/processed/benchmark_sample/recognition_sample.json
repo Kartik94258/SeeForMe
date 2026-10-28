@@ -1,0 +1,8002 @@
+[
+  {
+    "crop_id": 0,
+    "crop_file": "260035_201_36_84_19.jpg",
+    "image_id": 260035,
+    "file_name": "COCO_train2014_000000260035.jpg",
+    "bbox": [
+      201.6,
+      36.0,
+      84.6,
+      19.9
+    ],
+    "gt_text": "Edmonton",
+    "text_len": 8,
+    "crop_w": 93,
+    "crop_h": 27
+  },
+  {
+    "crop_id": 1,
+    "crop_file": "367477_269_295_26_13.jpg",
+    "image_id": 367477,
+    "file_name": "COCO_train2014_000000367477.jpg",
+    "bbox": [
+      269.2,
+      295.2,
+      26.69999999999999,
+      13.600000000000023
+    ],
+    "gt_text": "WAY",
+    "text_len": 3,
+    "crop_w": 34,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 2,
+    "crop_file": "343849_116_421_58_23.jpg",
+    "image_id": 343849,
+    "file_name": "COCO_train2014_000000343849.jpg",
+    "bbox": [
+      116.2,
+      421.9,
+      58.2,
+      23.19999999999999
+    ],
+    "gt_text": "Project",
+    "text_len": 7,
+    "crop_w": 66,
+    "crop_h": 32
+  },
+  {
+    "crop_id": 3,
+    "crop_file": "475129_303_443_178_66.jpg",
+    "image_id": 475129,
+    "file_name": "COCO_train2014_000000475129.jpg",
+    "bbox": [
+      303.9,
+      443.2,
+      178.2,
+      66.19999999999999
+    ],
+    "gt_text": "Photography",
+    "text_len": 11,
+    "crop_w": 187,
+    "crop_h": 73
+  },
+  {
+    "crop_id": 4,
+    "crop_file": "566737_242_10_36_25.jpg",
+    "image_id": 566737,
+    "file_name": "COCO_train2014_000000566737.jpg",
+    "bbox": [
+      242.7,
+      10.7,
+      36.69999999999999,
+      25.7
+    ],
+    "gt_text": "PASIAS",
+    "text_len": 6,
+    "crop_w": 45,
+    "crop_h": 34
+  },
+  {
+    "crop_id": 5,
+    "crop_file": "188352_71_99_52_15.jpg",
+    "image_id": 188352,
+    "file_name": "COCO_train2014_000000188352.jpg",
+    "bbox": [
+      71.2,
+      99.6,
+      52.8,
+      15.700000000000003
+    ],
+    "gt_text": "Sainbury's",
+    "text_len": 10,
+    "crop_w": 61,
+    "crop_h": 24
+  },
+  {
+    "crop_id": 6,
+    "crop_file": "208075_147_280_32_24.jpg",
+    "image_id": 208075,
+    "file_name": "COCO_train2014_000000208075.jpg",
+    "bbox": [
+      147.0,
+      280.5,
+      32.69999999999999,
+      24.899999999999977
+    ],
+    "gt_text": "CUP",
+    "text_len": 3,
+    "crop_w": 40,
+    "crop_h": 33
+  },
+  {
+    "crop_id": 7,
+    "crop_file": "333687_193_6_57_43.jpg",
+    "image_id": 333687,
+    "file_name": "COCO_train2014_000000333687.jpg",
+    "bbox": [
+      193.6,
+      6.5,
+      57.5,
+      43.9
+    ],
+    "gt_text": "Crown",
+    "text_len": 5,
+    "crop_w": 66,
+    "crop_h": 52
+  },
+  {
+    "crop_id": 8,
+    "crop_file": "22145_426_458_30_19.jpg",
+    "image_id": 22145,
+    "file_name": "COCO_train2014_000000022145.jpg",
+    "bbox": [
+      426.1,
+      458.4,
+      30.0,
+      19.19999999999999
+    ],
+    "gt_text": "HYDE",
+    "text_len": 4,
+    "crop_w": 38,
+    "crop_h": 26
+  },
+  {
+    "crop_id": 9,
+    "crop_file": "562664_599_123_40_42.jpg",
+    "image_id": 562664,
+    "file_name": "COCO_train2014_000000562664.jpg",
+    "bbox": [
+      599.8,
+      123.4,
+      40.200000000000045,
+      42.599999999999994
+    ],
+    "gt_text": "BIG",
+    "text_len": 3,
+    "crop_w": 45,
+    "crop_h": 51
+  },
+  {
+    "crop_id": 10,
+    "crop_file": "458189_169_298_18_14.jpg",
+    "image_id": 458189,
+    "file_name": "COCO_train2014_000000458189.jpg",
+    "bbox": [
+      169.8,
+      298.6,
+      18.599999999999994,
+      14.5
+    ],
+    "gt_text": "npo",
+    "text_len": 3,
+    "crop_w": 27,
+    "crop_h": 23
+  },
+  {
+    "crop_id": 11,
+    "crop_file": "352886_339_225_25_16.jpg",
+    "image_id": 352886,
+    "file_name": "COCO_train2014_000000352886.jpg",
+    "bbox": [
+      339.0,
+      225.8,
+      25.600000000000023,
+      16.80000000000001
+    ],
+    "gt_text": "102",
+    "text_len": 3,
+    "crop_w": 33,
+    "crop_h": 25
+  },
+  {
+    "crop_id": 12,
+    "crop_file": "485955_226_166_30_20.jpg",
+    "image_id": 485955,
+    "file_name": "COCO_train2014_000000485955.jpg",
+    "bbox": [
+      226.3,
+      166.4,
+      30.100000000000023,
+      20.5
+    ],
+    "gt_text": "THE",
+    "text_len": 3,
+    "crop_w": 38,
+    "crop_h": 28
+  },
+  {
+    "crop_id": 13,
+    "crop_file": "235809_47_228_97_28.jpg",
+    "image_id": 235809,
+    "file_name": "COCO_train2014_000000235809.jpg",
+    "bbox": [
+      47.2,
+      228.4,
+      97.8,
+      28.400000000000006
+    ],
+    "gt_text": "Mercedes-",
+    "text_len": 9,
+    "crop_w": 106,
+    "crop_h": 36
+  },
+  {
+    "crop_id": 14,
+    "crop_file": "482127_602_332_29_17.jpg",
+    "image_id": 482127,
+    "file_name": "COCO_train2014_000000482127.jpg",
+    "bbox": [
+      602.2,
+      332.6,
+      29.0,
+      17.0
+    ],
+    "gt_text": "outline",
+    "text_len": 7,
+    "crop_w": 37,
+    "crop_h": 25
+  },
+  {
+    "crop_id": 15,
+    "crop_file": "195316_417_149_28_10.jpg",
+    "image_id": 195316,
+    "file_name": "COCO_train2014_000000195316.jpg",
+    "bbox": [
+      417.2,
+      149.1,
+      28.5,
+      10.300000000000011
+    ],
+    "gt_text": "HUNTER",
+    "text_len": 6,
+    "crop_w": 36,
+    "crop_h": 18
+  },
+  {
+    "crop_id": 16,
+    "crop_file": "132883_219_266_58_29.jpg",
+    "image_id": 132883,
+    "file_name": "COCO_train2014_000000132883.jpg",
+    "bbox": [
+      219.0,
+      266.5,
+      58.5,
+      29.600000000000023
+    ],
+    "gt_text": "Osim",
+    "text_len": 4,
+    "crop_w": 66,
+    "crop_h": 38
+  },
+  {
+    "crop_id": 17,
+    "crop_file": "451300_235_297_21_13.jpg",
+    "image_id": 451300,
+    "file_name": "COCO_train2014_000000451300.jpg",
+    "bbox": [
+      235.5,
+      297.6,
+      21.100000000000023,
+      13.399999999999977
+    ],
+    "gt_text": "the",
+    "text_len": 3,
+    "crop_w": 29,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 18,
+    "crop_file": "455010_289_138_30_16.jpg",
+    "image_id": 455010,
+    "file_name": "COCO_train2014_000000455010.jpg",
+    "bbox": [
+      289.6,
+      138.0,
+      30.600000000000023,
+      16.900000000000006
+    ],
+    "gt_text": "View",
+    "text_len": 4,
+    "crop_w": 39,
+    "crop_h": 24
+  },
+  {
+    "crop_id": 19,
+    "crop_file": "332684_582_91_37_22.jpg",
+    "image_id": 332684,
+    "file_name": "COCO_train2014_000000332684.jpg",
+    "bbox": [
+      582.0,
+      91.8,
+      37.0,
+      22.200000000000003
+    ],
+    "gt_text": "Eidsvall",
+    "text_len": 8,
+    "crop_w": 45,
+    "crop_h": 31
+  },
+  {
+    "crop_id": 20,
+    "crop_file": "27015_44_0_62_15.jpg",
+    "image_id": 27015,
+    "file_name": "COCO_train2014_000000027015.jpg",
+    "bbox": [
+      44.9,
+      0.8,
+      62.4,
+      15.5
+    ],
+    "gt_text": "TO LET",
+    "text_len": 6,
+    "crop_w": 71,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 21,
+    "crop_file": "8095_274_201_39_13.jpg",
+    "image_id": 8095,
+    "file_name": "COCO_train2014_000000008095.jpg",
+    "bbox": [
+      274.8,
+      201.8,
+      39.0,
+      13.5
+    ],
+    "gt_text": "Saartans",
+    "text_len": 8,
+    "crop_w": 47,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 22,
+    "crop_file": "475960_431_104_42_19.jpg",
+    "image_id": 475960,
+    "file_name": "COCO_train2014_000000475960.jpg",
+    "bbox": [
+      431.6,
+      104.2,
+      42.5,
+      19.299999999999997
+    ],
+    "gt_text": "KIA",
+    "text_len": 3,
+    "crop_w": 51,
+    "crop_h": 27
+  },
+  {
+    "crop_id": 23,
+    "crop_file": "258073_285_86_40_18.jpg",
+    "image_id": 258073,
+    "file_name": "COCO_train2014_000000258073.jpg",
+    "bbox": [
+      285.3,
+      86.4,
+      40.10000000000002,
+      18.5
+    ],
+    "gt_text": "LIMONES",
+    "text_len": 7,
+    "crop_w": 48,
+    "crop_h": 26
+  },
+  {
+    "crop_id": 24,
+    "crop_file": "160614_403_161_21_12.jpg",
+    "image_id": 160614,
+    "file_name": "COCO_train2014_000000160614.jpg",
+    "bbox": [
+      403.6,
+      161.4,
+      21.100000000000023,
+      12.800000000000011
+    ],
+    "gt_text": "SPOOK",
+    "text_len": 5,
+    "crop_w": 29,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 25,
+    "crop_file": "421193_173_151_32_12.jpg",
+    "image_id": 421193,
+    "file_name": "COCO_train2014_000000421193.jpg",
+    "bbox": [
+      173.7,
+      151.9,
+      32.099999999999994,
+      12.099999999999994
+    ],
+    "gt_text": "205",
+    "text_len": 3,
+    "crop_w": 40,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 26,
+    "crop_file": "336021_440_138_38_10.jpg",
+    "image_id": 336021,
+    "file_name": "COCO_train2014_000000336021.jpg",
+    "bbox": [
+      440.1,
+      138.9,
+      38.60000000000002,
+      10.300000000000011
+    ],
+    "gt_text": "pause",
+    "text_len": 5,
+    "crop_w": 46,
+    "crop_h": 19
+  },
+  {
+    "crop_id": 27,
+    "crop_file": "401780_0_234_21_10.jpg",
+    "image_id": 401780,
+    "file_name": "COCO_train2014_000000401780.jpg",
+    "bbox": [
+      0,
+      234.1,
+      21.9,
+      10.300000000000011
+    ],
+    "gt_text": "9155",
+    "text_len": 4,
+    "crop_w": 25,
+    "crop_h": 18
+  },
+  {
+    "crop_id": 28,
+    "crop_file": "42516_533_30_57_12.jpg",
+    "image_id": 42516,
+    "file_name": "COCO_train2014_000000042516.jpg",
+    "bbox": [
+      533.9,
+      30.5,
+      57.39999999999998,
+      12.299999999999997
+    ],
+    "gt_text": "JONES",
+    "text_len": 5,
+    "crop_w": 66,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 29,
+    "crop_file": "202490_90_271_50_17.jpg",
+    "image_id": 202490,
+    "file_name": "COCO_train2014_000000202490.jpg",
+    "bbox": [
+      90.9,
+      271.6,
+      50.70000000000002,
+      17.30000000000001
+    ],
+    "gt_text": "LAURA",
+    "text_len": 5,
+    "crop_w": 59,
+    "crop_h": 25
+  },
+  {
+    "crop_id": 30,
+    "crop_file": "201324_282_47_37_12.jpg",
+    "image_id": 201324,
+    "file_name": "COCO_train2014_000000201324.jpg",
+    "bbox": [
+      282.9,
+      47.8,
+      37.80000000000001,
+      12.100000000000001
+    ],
+    "gt_text": "Klippel",
+    "text_len": 7,
+    "crop_w": 46,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 31,
+    "crop_file": "541094_374_171_58_25.jpg",
+    "image_id": 541094,
+    "file_name": "COCO_train2014_000000541094.jpg",
+    "bbox": [
+      374.2,
+      171.4,
+      58.19999999999999,
+      25.19999999999999
+    ],
+    "gt_text": "ejandro",
+    "text_len": 7,
+    "crop_w": 66,
+    "crop_h": 33
+  },
+  {
+    "crop_id": 32,
+    "crop_file": "433122_232_17_48_30.jpg",
+    "image_id": 433122,
+    "file_name": "COCO_train2014_000000433122.jpg",
+    "bbox": [
+      232.8,
+      17.2,
+      48.0,
+      30.8
+    ],
+    "gt_text": "every",
+    "text_len": 5,
+    "crop_w": 56,
+    "crop_h": 39
+  },
+  {
+    "crop_id": 33,
+    "crop_file": "524897_322_483_13_56.jpg",
+    "image_id": 524897,
+    "file_name": "COCO_train2014_000000524897.jpg",
+    "bbox": [
+      322.9,
+      483.6,
+      13.899999999999977,
+      56.700000000000045
+    ],
+    "gt_text": "HALL",
+    "text_len": 4,
+    "crop_w": 22,
+    "crop_h": 65
+  },
+  {
+    "crop_id": 34,
+    "crop_file": "521712_393_123_35_17.jpg",
+    "image_id": 521712,
+    "file_name": "COCO_train2014_000000521712.jpg",
+    "bbox": [
+      393.3,
+      123.4,
+      35.39999999999998,
+      17.900000000000006
+    ],
+    "gt_text": "would",
+    "text_len": 5,
+    "crop_w": 43,
+    "crop_h": 26
+  },
+  {
+    "crop_id": 35,
+    "crop_file": "496065_271_126_43_14.jpg",
+    "image_id": 496065,
+    "file_name": "COCO_train2014_000000496065.jpg",
+    "bbox": [
+      271.1,
+      126.1,
+      43.39999999999998,
+      14.0
+    ],
+    "gt_text": "$1.00",
+    "text_len": 5,
+    "crop_w": 51,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 36,
+    "crop_file": "365301_313_134_79_24.jpg",
+    "image_id": 365301,
+    "file_name": "COCO_train2014_000000365301.jpg",
+    "bbox": [
+      313.1,
+      134.8,
+      79.10000000000002,
+      24.5
+    ],
+    "gt_text": "POR",
+    "text_len": 3,
+    "crop_w": 87,
+    "crop_h": 33
+  },
+  {
+    "crop_id": 37,
+    "crop_file": "299433_379_154_85_14.jpg",
+    "image_id": 299433,
+    "file_name": "COCO_train2014_000000299433.jpg",
+    "bbox": [
+      379.8,
+      154.4,
+      85.40000000000003,
+      14.800000000000011
+    ],
+    "gt_text": "CANADA",
+    "text_len": 6,
+    "crop_w": 94,
+    "crop_h": 23
+  },
+  {
+    "crop_id": 38,
+    "crop_file": "173032_361_110_37_21.jpg",
+    "image_id": 173032,
+    "file_name": "COCO_train2014_000000173032.jpg",
+    "bbox": [
+      361.6,
+      110.3,
+      37.30000000000001,
+      21.500000000000014
+    ],
+    "gt_text": "one",
+    "text_len": 3,
+    "crop_w": 45,
+    "crop_h": 29
+  },
+  {
+    "crop_id": 39,
+    "crop_file": "183068_424_228_41_16.jpg",
+    "image_id": 183068,
+    "file_name": "COCO_train2014_000000183068.jpg",
+    "bbox": [
+      424.2,
+      228.4,
+      41.19999999999999,
+      16.0
+    ],
+    "gt_text": "RACING",
+    "text_len": 6,
+    "crop_w": 49,
+    "crop_h": 24
+  },
+  {
+    "crop_id": 40,
+    "crop_file": "432218_451_402_31_10.jpg",
+    "image_id": 432218,
+    "file_name": "COCO_train2014_000000432218.jpg",
+    "bbox": [
+      451.7,
+      402.5,
+      31.19999999999999,
+      10.899999999999977
+    ],
+    "gt_text": "DroIts",
+    "text_len": 6,
+    "crop_w": 39,
+    "crop_h": 19
+  },
+  {
+    "crop_id": 41,
+    "crop_file": "105733_140_124_41_20.jpg",
+    "image_id": 105733,
+    "file_name": "COCO_train2014_000000105733.jpg",
+    "bbox": [
+      140.5,
+      124.1,
+      41.099999999999994,
+      20.0
+    ],
+    "gt_text": "mister",
+    "text_len": 6,
+    "crop_w": 49,
+    "crop_h": 28
+  },
+  {
+    "crop_id": 42,
+    "crop_file": "228678_275_429_18_11.jpg",
+    "image_id": 228678,
+    "file_name": "COCO_train2014_000000228678.jpg",
+    "bbox": [
+      275.7,
+      429.9,
+      18.100000000000023,
+      11.399999999999977
+    ],
+    "gt_text": "TEMP",
+    "text_len": 4,
+    "crop_w": 26,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 43,
+    "crop_file": "331549_419_6_27_10.jpg",
+    "image_id": 331549,
+    "file_name": "COCO_train2014_000000331549.jpg",
+    "bbox": [
+      419.5,
+      6.5,
+      27.100000000000023,
+      10.0
+    ],
+    "gt_text": "SERTES",
+    "text_len": 6,
+    "crop_w": 35,
+    "crop_h": 18
+  },
+  {
+    "crop_id": 44,
+    "crop_file": "545128_211_151_89_22.jpg",
+    "image_id": 545128,
+    "file_name": "COCO_train2014_000000545128.jpg",
+    "bbox": [
+      211.8,
+      151.2,
+      89.5,
+      22.400000000000006
+    ],
+    "gt_text": "LAYORO",
+    "text_len": 6,
+    "crop_w": 98,
+    "crop_h": 30
+  },
+  {
+    "crop_id": 45,
+    "crop_file": "357568_542_193_35_11.jpg",
+    "image_id": 357568,
+    "file_name": "COCO_train2014_000000357568.jpg",
+    "bbox": [
+      542.5,
+      193.2,
+      35.10000000000002,
+      11.300000000000011
+    ],
+    "gt_text": "clothing",
+    "text_len": 8,
+    "crop_w": 43,
+    "crop_h": 19
+  },
+  {
+    "crop_id": 46,
+    "crop_file": "127603_166_399_46_31.jpg",
+    "image_id": 127603,
+    "file_name": "COCO_train2014_000000127603.jpg",
+    "bbox": [
+      166.1,
+      399.1,
+      46.79999999999998,
+      31.0
+    ],
+    "gt_text": "AMERICAN",
+    "text_len": 8,
+    "crop_w": 54,
+    "crop_h": 39
+  },
+  {
+    "crop_id": 47,
+    "crop_file": "445775_246_137_46_39.jpg",
+    "image_id": 445775,
+    "file_name": "COCO_train2014_000000445775.jpg",
+    "bbox": [
+      246.8,
+      137.1,
+      46.30000000000001,
+      39.0
+    ],
+    "gt_text": "Henr Ford",
+    "text_len": 9,
+    "crop_w": 55,
+    "crop_h": 47
+  },
+  {
+    "crop_id": 48,
+    "crop_file": "26263_383_181_62_27.jpg",
+    "image_id": 26263,
+    "file_name": "COCO_train2014_000000026263.jpg",
+    "bbox": [
+      383.6,
+      181.8,
+      62.5,
+      27.599999999999994
+    ],
+    "gt_text": "green",
+    "text_len": 5,
+    "crop_w": 71,
+    "crop_h": 36
+  },
+  {
+    "crop_id": 49,
+    "crop_file": "444397_257_86_22_13.jpg",
+    "image_id": 444397,
+    "file_name": "COCO_train2014_000000444397.jpg",
+    "bbox": [
+      257.8,
+      86.2,
+      22.600000000000023,
+      13.900000000000006
+    ],
+    "gt_text": "One",
+    "text_len": 3,
+    "crop_w": 31,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 50,
+    "crop_file": "423988_326_284_115_23.jpg",
+    "image_id": 423988,
+    "file_name": "COCO_train2014_000000423988.jpg",
+    "bbox": [
+      326.6,
+      284.4,
+      115.19999999999999,
+      23.30000000000001
+    ],
+    "gt_text": "Amsterd",
+    "text_len": 7,
+    "crop_w": 120,
+    "crop_h": 31
+  },
+  {
+    "crop_id": 51,
+    "crop_file": "326891_2_458_79_16.jpg",
+    "image_id": 326891,
+    "file_name": "COCO_train2014_000000326891.jpg",
+    "bbox": [
+      2.7,
+      458.8,
+      79.3,
+      16.80000000000001
+    ],
+    "gt_text": "1stPIX",
+    "text_len": 6,
+    "crop_w": 86,
+    "crop_h": 25
+  },
+  {
+    "crop_id": 52,
+    "crop_file": "297417_352_75_34_15.jpg",
+    "image_id": 297417,
+    "file_name": "COCO_train2014_000000297417.jpg",
+    "bbox": [
+      352.2,
+      75.1,
+      34.80000000000001,
+      15.200000000000003
+    ],
+    "gt_text": "ATP",
+    "text_len": 3,
+    "crop_w": 43,
+    "crop_h": 23
+  },
+  {
+    "crop_id": 53,
+    "crop_file": "575227_20_64_33_13.jpg",
+    "image_id": 575227,
+    "file_name": "COCO_train2014_000000575227.jpg",
+    "bbox": [
+      20.9,
+      64.5,
+      33.6,
+      13.299999999999997
+    ],
+    "gt_text": "CAMPER",
+    "text_len": 6,
+    "crop_w": 42,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 54,
+    "crop_file": "263576_327_293_29_25.jpg",
+    "image_id": 263576,
+    "file_name": "COCO_train2014_000000263576.jpg",
+    "bbox": [
+      327.1,
+      293.4,
+      29.80000000000001,
+      25.899999999999977
+    ],
+    "gt_text": "MOAAR",
+    "text_len": 5,
+    "crop_w": 37,
+    "crop_h": 34
+  },
+  {
+    "crop_id": 55,
+    "crop_file": "458248_409_45_26_19.jpg",
+    "image_id": 458248,
+    "file_name": "COCO_train2014_000000458248.jpg",
+    "bbox": [
+      409.2,
+      45.8,
+      26.5,
+      19.89999999999999
+    ],
+    "gt_text": "COM",
+    "text_len": 3,
+    "crop_w": 34,
+    "crop_h": 28
+  },
+  {
+    "crop_id": 56,
+    "crop_file": "196748_553_420_46_17.jpg",
+    "image_id": 196748,
+    "file_name": "COCO_train2014_000000196748.jpg",
+    "bbox": [
+      553.7,
+      420.9,
+      46.89999999999998,
+      17.899999999999977
+    ],
+    "gt_text": "17:38",
+    "text_len": 5,
+    "crop_w": 55,
+    "crop_h": 26
+  },
+  {
+    "crop_id": 57,
+    "crop_file": "289204_360_88_27_14.jpg",
+    "image_id": 289204,
+    "file_name": "COCO_train2014_000000289204.jpg",
+    "bbox": [
+      360.7,
+      88.3,
+      27.600000000000023,
+      14.200000000000003
+    ],
+    "gt_text": "NALLI",
+    "text_len": 5,
+    "crop_w": 36,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 58,
+    "crop_file": "254176_275_202_34_11.jpg",
+    "image_id": 254176,
+    "file_name": "COCO_train2014_000000254176.jpg",
+    "bbox": [
+      275.0,
+      202.2,
+      34.0,
+      11.900000000000006
+    ],
+    "gt_text": "PARKING",
+    "text_len": 7,
+    "crop_w": 42,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 59,
+    "crop_file": "15794_243_229_32_19.jpg",
+    "image_id": 15794,
+    "file_name": "COCO_train2014_000000015794.jpg",
+    "bbox": [
+      243.3,
+      229.0,
+      32.80000000000001,
+      19.0
+    ],
+    "gt_text": "KREM",
+    "text_len": 4,
+    "crop_w": 41,
+    "crop_h": 27
+  },
+  {
+    "crop_id": 60,
+    "crop_file": "116941_363_175_13_10.jpg",
+    "image_id": 116941,
+    "file_name": "COCO_train2014_000000116941.jpg",
+    "bbox": [
+      363.4,
+      175.0,
+      13.399999999999977,
+      10.300000000000011
+    ],
+    "gt_text": "AEE",
+    "text_len": 3,
+    "crop_w": 21,
+    "crop_h": 18
+  },
+  {
+    "crop_id": 61,
+    "crop_file": "321711_376_267_21_11.jpg",
+    "image_id": 321711,
+    "file_name": "COCO_train2014_000000321711.jpg",
+    "bbox": [
+      376.0,
+      267.7,
+      21.30000000000001,
+      11.800000000000011
+    ],
+    "gt_text": "CROSS",
+    "text_len": 5,
+    "crop_w": 29,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 62,
+    "crop_file": "434966_385_277_57_33.jpg",
+    "image_id": 434966,
+    "file_name": "COCO_train2014_000000434966.jpg",
+    "bbox": [
+      385.0,
+      277.6,
+      57.60000000000002,
+      33.30000000000001
+    ],
+    "gt_text": "fan",
+    "text_len": 3,
+    "crop_w": 65,
+    "crop_h": 41
+  },
+  {
+    "crop_id": 63,
+    "crop_file": "12146_565_403_32_18.jpg",
+    "image_id": 12146,
+    "file_name": "COCO_train2014_000000012146.jpg",
+    "bbox": [
+      565.3,
+      403.3,
+      32.5,
+      18.600000000000023
+    ],
+    "gt_text": "City",
+    "text_len": 4,
+    "crop_w": 40,
+    "crop_h": 26
+  },
+  {
+    "crop_id": 64,
+    "crop_file": "176765_606_390_31_17.jpg",
+    "image_id": 176765,
+    "file_name": "COCO_train2014_000000176765.jpg",
+    "bbox": [
+      606.3,
+      390.4,
+      31.5,
+      17.80000000000001
+    ],
+    "gt_text": "CLOSE",
+    "text_len": 5,
+    "crop_w": 38,
+    "crop_h": 26
+  },
+  {
+    "crop_id": 65,
+    "crop_file": "143439_426_249_29_10.jpg",
+    "image_id": 143439,
+    "file_name": "COCO_train2014_000000143439.jpg",
+    "bbox": [
+      426.7,
+      249.4,
+      29.69999999999999,
+      10.299999999999983
+    ],
+    "gt_text": "FORCE",
+    "text_len": 5,
+    "crop_w": 38,
+    "crop_h": 18
+  },
+  {
+    "crop_id": 66,
+    "crop_file": "489279_247_31_44_14.jpg",
+    "image_id": 489279,
+    "file_name": "COCO_train2014_000000489279.jpg",
+    "bbox": [
+      247.9,
+      31.1,
+      44.20000000000002,
+      14.100000000000001
+    ],
+    "gt_text": "SPECIALITY",
+    "text_len": 10,
+    "crop_w": 53,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 67,
+    "crop_file": "466967_546_171_22_16.jpg",
+    "image_id": 466967,
+    "file_name": "COCO_train2014_000000466967.jpg",
+    "bbox": [
+      546.9,
+      171.8,
+      22.399999999999977,
+      16.0
+    ],
+    "gt_text": "Alt",
+    "text_len": 3,
+    "crop_w": 31,
+    "crop_h": 24
+  },
+  {
+    "crop_id": 68,
+    "crop_file": "275348_242_285_56_12.jpg",
+    "image_id": 275348,
+    "file_name": "COCO_train2014_000000275348.jpg",
+    "bbox": [
+      242.2,
+      285.9,
+      56.30000000000001,
+      12.100000000000023
+    ],
+    "gt_text": "BET365COM",
+    "text_len": 9,
+    "crop_w": 64,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 69,
+    "crop_file": "360066_305_37_41_25.jpg",
+    "image_id": 360066,
+    "file_name": "COCO_train2014_000000360066.jpg",
+    "bbox": [
+      305.4,
+      37.7,
+      41.60000000000002,
+      25.6
+    ],
+    "gt_text": "BAY",
+    "text_len": 3,
+    "crop_w": 50,
+    "crop_h": 34
+  },
+  {
+    "crop_id": 70,
+    "crop_file": "348116_317_195_25_19.jpg",
+    "image_id": 348116,
+    "file_name": "COCO_train2014_000000348116.jpg",
+    "bbox": [
+      317.9,
+      195.2,
+      25.69999999999999,
+      19.19999999999999
+    ],
+    "gt_text": "Teck",
+    "text_len": 4,
+    "crop_w": 34,
+    "crop_h": 27
+  },
+  {
+    "crop_id": 71,
+    "crop_file": "385701_307_346_85_14.jpg",
+    "image_id": 385701,
+    "file_name": "COCO_train2014_000000385701.jpg",
+    "bbox": [
+      307.1,
+      346.1,
+      85.0,
+      14.0
+    ],
+    "gt_text": "SIEMENS",
+    "text_len": 7,
+    "crop_w": 93,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 72,
+    "crop_file": "221223_228_242_30_12.jpg",
+    "image_id": 221223,
+    "file_name": "COCO_train2014_000000221223.jpg",
+    "bbox": [
+      228.5,
+      242.0,
+      30.899999999999977,
+      12.0
+    ],
+    "gt_text": "Rick",
+    "text_len": 4,
+    "crop_w": 39,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 73,
+    "crop_file": "253049_145_260_117_31.jpg",
+    "image_id": 253049,
+    "file_name": "COCO_train2014_000000253049.jpg",
+    "bbox": [
+      145.3,
+      260.9,
+      117.09999999999997,
+      31.30000000000001
+    ],
+    "gt_text": "DONUTS",
+    "text_len": 6,
+    "crop_w": 125,
+    "crop_h": 40
+  },
+  {
+    "crop_id": 74,
+    "crop_file": "143358_98_52_11_56.jpg",
+    "image_id": 143358,
+    "file_name": "COCO_train2014_000000143358.jpg",
+    "bbox": [
+      98.0,
+      52.2,
+      11.200000000000003,
+      56.8
+    ],
+    "gt_text": "400",
+    "text_len": 3,
+    "crop_w": 19,
+    "crop_h": 65
+  },
+  {
+    "crop_id": 75,
+    "crop_file": "11707_266_53_31_16.jpg",
+    "image_id": 11707,
+    "file_name": "COCO_train2014_000000011707.jpg",
+    "bbox": [
+      266.3,
+      53.3,
+      31.100000000000023,
+      16.700000000000003
+    ],
+    "gt_text": "19903",
+    "text_len": 5,
+    "crop_w": 39,
+    "crop_h": 25
+  },
+  {
+    "crop_id": 76,
+    "crop_file": "365030_390_397_21_17.jpg",
+    "image_id": 365030,
+    "file_name": "COCO_train2014_000000365030.jpg",
+    "bbox": [
+      390.3,
+      397.8,
+      21.100000000000023,
+      17.80000000000001
+    ],
+    "gt_text": "71515",
+    "text_len": 5,
+    "crop_w": 29,
+    "crop_h": 26
+  },
+  {
+    "crop_id": 77,
+    "crop_file": "319043_378_417_124_14.jpg",
+    "image_id": 319043,
+    "file_name": "COCO_train2014_000000319043.jpg",
+    "bbox": [
+      378.0,
+      417.0,
+      124.0,
+      14.5
+    ],
+    "gt_text": "08/04/2012",
+    "text_len": 10,
+    "crop_w": 132,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 78,
+    "crop_file": "313069_391_147_16_15.jpg",
+    "image_id": 313069,
+    "file_name": "COCO_train2014_000000313069.jpg",
+    "bbox": [
+      391.9,
+      147.1,
+      16.69999999999999,
+      15.199999999999989
+    ],
+    "gt_text": "1 0",
+    "text_len": 3,
+    "crop_w": 25,
+    "crop_h": 23
+  },
+  {
+    "crop_id": 79,
+    "crop_file": "508913_332_276_69_12.jpg",
+    "image_id": 508913,
+    "file_name": "COCO_train2014_000000508913.jpg",
+    "bbox": [
+      332.2,
+      276.8,
+      69.09999999999997,
+      12.100000000000023
+    ],
+    "gt_text": "SCANIA",
+    "text_len": 6,
+    "crop_w": 77,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 80,
+    "crop_file": "226075_161_471_10_20.jpg",
+    "image_id": 226075,
+    "file_name": "COCO_train2014_000000226075.jpg",
+    "bbox": [
+      161.5,
+      471.1,
+      10.300000000000011,
+      20.899999999999977
+    ],
+    "gt_text": "for",
+    "text_len": 3,
+    "crop_w": 18,
+    "crop_h": 29
+  },
+  {
+    "crop_id": 81,
+    "crop_file": "298004_419_177_37_10.jpg",
+    "image_id": 298004,
+    "file_name": "COCO_train2014_000000298004.jpg",
+    "bbox": [
+      419.2,
+      177.7,
+      37.30000000000001,
+      10.699999999999989
+    ],
+    "gt_text": "FELISMAN",
+    "text_len": 8,
+    "crop_w": 45,
+    "crop_h": 19
+  },
+  {
+    "crop_id": 82,
+    "crop_file": "330573_178_596_115_20.jpg",
+    "image_id": 330573,
+    "file_name": "COCO_train2014_000000330573.jpg",
+    "bbox": [
+      178.7,
+      596.3,
+      115.30000000000001,
+      20.100000000000023
+    ],
+    "gt_text": "accenture",
+    "text_len": 9,
+    "crop_w": 124,
+    "crop_h": 28
+  },
+  {
+    "crop_id": 83,
+    "crop_file": "439373_54_22_29_37.jpg",
+    "image_id": 439373,
+    "file_name": "COCO_train2014_000000439373.jpg",
+    "bbox": [
+      54.1,
+      22.7,
+      29.300000000000004,
+      37.7
+    ],
+    "gt_text": "FAGS",
+    "text_len": 4,
+    "crop_w": 37,
+    "crop_h": 46
+  },
+  {
+    "crop_id": 84,
+    "crop_file": "132193_147_296_25_19.jpg",
+    "image_id": 132193,
+    "file_name": "COCO_train2014_000000132193.jpg",
+    "bbox": [
+      147.7,
+      296.3,
+      25.900000000000006,
+      19.30000000000001
+    ],
+    "gt_text": "Gats",
+    "text_len": 4,
+    "crop_w": 34,
+    "crop_h": 27
+  },
+  {
+    "crop_id": 85,
+    "crop_file": "478067_166_113_98_13.jpg",
+    "image_id": 478067,
+    "file_name": "COCO_train2014_000000478067.jpg",
+    "bbox": [
+      166.5,
+      113.2,
+      98.80000000000001,
+      13.5
+    ],
+    "gt_text": "MUNDOORA",
+    "text_len": 8,
+    "crop_w": 107,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 86,
+    "crop_file": "58929_334_297_55_58.jpg",
+    "image_id": 58929,
+    "file_name": "COCO_train2014_000000058929.jpg",
+    "bbox": [
+      334.4,
+      297.4,
+      55.19999999999999,
+      58.60000000000002
+    ],
+    "gt_text": "Boats",
+    "text_len": 5,
+    "crop_w": 63,
+    "crop_h": 67
+  },
+  {
+    "crop_id": 87,
+    "crop_file": "5755_148_248_47_26.jpg",
+    "image_id": 5755,
+    "file_name": "COCO_train2014_000000005755.jpg",
+    "bbox": [
+      148.5,
+      248.6,
+      47.5,
+      26.00000000000003
+    ],
+    "gt_text": "MUEL",
+    "text_len": 4,
+    "crop_w": 56,
+    "crop_h": 34
+  },
+  {
+    "crop_id": 88,
+    "crop_file": "128264_216_219_20_13.jpg",
+    "image_id": 128264,
+    "file_name": "COCO_train2014_000000128264.jpg",
+    "bbox": [
+      216.0,
+      219.6,
+      20.0,
+      13.0
+    ],
+    "gt_text": "Thornhill",
+    "text_len": 9,
+    "crop_w": 28,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 89,
+    "crop_file": "145757_133_175_116_33.jpg",
+    "image_id": 145757,
+    "file_name": "COCO_train2014_000000145757.jpg",
+    "bbox": [
+      133.2,
+      175.7,
+      116.5,
+      33.400000000000006
+    ],
+    "gt_text": "GEI",
+    "text_len": 3,
+    "crop_w": 124,
+    "crop_h": 42
+  },
+  {
+    "crop_id": 90,
+    "crop_file": "451793_319_168_61_30.jpg",
+    "image_id": 451793,
+    "file_name": "COCO_train2014_000000451793.jpg",
+    "bbox": [
+      319.0,
+      168.3,
+      61.19999999999999,
+      30.599999999999994
+    ],
+    "gt_text": "Husum",
+    "text_len": 5,
+    "crop_w": 69,
+    "crop_h": 38
+  },
+  {
+    "crop_id": 91,
+    "crop_file": "419879_179_102_26_32.jpg",
+    "image_id": 419879,
+    "file_name": "COCO_train2014_000000419879.jpg",
+    "bbox": [
+      179.5,
+      102.0,
+      26.5,
+      32.80000000000001
+    ],
+    "gt_text": "100",
+    "text_len": 3,
+    "crop_w": 35,
+    "crop_h": 40
+  },
+  {
+    "crop_id": 92,
+    "crop_file": "76159_327_150_44_17.jpg",
+    "image_id": 76159,
+    "file_name": "COCO_train2014_000000076159.jpg",
+    "bbox": [
+      327.6,
+      150.7,
+      44.39999999999998,
+      17.69999999999999
+    ],
+    "gt_text": "CALL",
+    "text_len": 4,
+    "crop_w": 53,
+    "crop_h": 26
+  },
+  {
+    "crop_id": 93,
+    "crop_file": "22291_399_192_56_16.jpg",
+    "image_id": 22291,
+    "file_name": "COCO_train2014_000000022291.jpg",
+    "bbox": [
+      399.1,
+      192.7,
+      56.80000000000001,
+      16.900000000000006
+    ],
+    "gt_text": "MAKE",
+    "text_len": 4,
+    "crop_w": 64,
+    "crop_h": 25
+  },
+  {
+    "crop_id": 94,
+    "crop_file": "387595_456_220_17_15.jpg",
+    "image_id": 387595,
+    "file_name": "COCO_train2014_000000387595.jpg",
+    "bbox": [
+      456.2,
+      220.7,
+      17.5,
+      15.699999999999989
+    ],
+    "gt_text": "2752",
+    "text_len": 4,
+    "crop_w": 25,
+    "crop_h": 24
+  },
+  {
+    "crop_id": 95,
+    "crop_file": "575260_250_140_22_16.jpg",
+    "image_id": 575260,
+    "file_name": "COCO_train2014_000000575260.jpg",
+    "bbox": [
+      250.4,
+      140.4,
+      22.799999999999983,
+      16.0
+    ],
+    "gt_text": "2566",
+    "text_len": 4,
+    "crop_w": 31,
+    "crop_h": 24
+  },
+  {
+    "crop_id": 96,
+    "crop_file": "283961_578_363_27_13.jpg",
+    "image_id": 283961,
+    "file_name": "COCO_train2014_000000283961.jpg",
+    "bbox": [
+      578.3,
+      363.3,
+      27.399999999999977,
+      13.5
+    ],
+    "gt_text": "MARK",
+    "text_len": 4,
+    "crop_w": 35,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 97,
+    "crop_file": "102765_229_28_52_20.jpg",
+    "image_id": 102765,
+    "file_name": "COCO_train2014_000000102765.jpg",
+    "bbox": [
+      229.5,
+      28.0,
+      52.10000000000002,
+      20.0
+    ],
+    "gt_text": "Alspough!",
+    "text_len": 9,
+    "crop_w": 60,
+    "crop_h": 28
+  },
+  {
+    "crop_id": 98,
+    "crop_file": "128320_98_335_95_23.jpg",
+    "image_id": 128320,
+    "file_name": "COCO_train2014_000000128320.jpg",
+    "bbox": [
+      98.0,
+      335.2,
+      95.5,
+      23.30000000000001
+    ],
+    "gt_text": "Chappell",
+    "text_len": 8,
+    "crop_w": 103,
+    "crop_h": 28
+  },
+  {
+    "crop_id": 99,
+    "crop_file": "204384_118_133_20_12.jpg",
+    "image_id": 204384,
+    "file_name": "COCO_train2014_000000204384.jpg",
+    "bbox": [
+      118.9,
+      133.3,
+      20.599999999999994,
+      12.0
+    ],
+    "gt_text": "0:29",
+    "text_len": 4,
+    "crop_w": 29,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 100,
+    "crop_file": "345391_247_191_108_46.jpg",
+    "image_id": 345391,
+    "file_name": "COCO_train2014_000000345391.jpg",
+    "bbox": [
+      247.8,
+      191.6,
+      108.80000000000001,
+      46.400000000000006
+    ],
+    "gt_text": "BERRIES",
+    "text_len": 7,
+    "crop_w": 117,
+    "crop_h": 55
+  },
+  {
+    "crop_id": 101,
+    "crop_file": "310341_20_331_50_18.jpg",
+    "image_id": 310341,
+    "file_name": "COCO_train2014_000000310341.jpg",
+    "bbox": [
+      20.8,
+      331.2,
+      50.2,
+      18.5
+    ],
+    "gt_text": "COUNTRY",
+    "text_len": 7,
+    "crop_w": 59,
+    "crop_h": 26
+  },
+  {
+    "crop_id": 102,
+    "crop_file": "295540_406_253_100_32.jpg",
+    "image_id": 295540,
+    "file_name": "COCO_train2014_000000295540.jpg",
+    "bbox": [
+      406.3,
+      253.6,
+      100.80000000000001,
+      32.50000000000003
+    ],
+    "gt_text": "POLICE",
+    "text_len": 6,
+    "crop_w": 109,
+    "crop_h": 41
+  },
+  {
+    "crop_id": 103,
+    "crop_file": "104325_126_213_54_24.jpg",
+    "image_id": 104325,
+    "file_name": "COCO_train2014_000000104325.jpg",
+    "bbox": [
+      126.6,
+      213.7,
+      54.099999999999994,
+      24.30000000000001
+    ],
+    "gt_text": "NATURAL",
+    "text_len": 7,
+    "crop_w": 62,
+    "crop_h": 33
+  },
+  {
+    "crop_id": 104,
+    "crop_file": "220770_447_176_30_33.jpg",
+    "image_id": 220770,
+    "file_name": "COCO_train2014_000000220770.jpg",
+    "bbox": [
+      447.1,
+      176.4,
+      30.80000000000001,
+      33.70000000000002
+    ],
+    "gt_text": "3010",
+    "text_len": 4,
+    "crop_w": 38,
+    "crop_h": 42
+  },
+  {
+    "crop_id": 105,
+    "crop_file": "444769_253_401_69_26.jpg",
+    "image_id": 444769,
+    "file_name": "COCO_train2014_000000444769.jpg",
+    "bbox": [
+      253.6,
+      401.6,
+      69.70000000000002,
+      26.69999999999999
+    ],
+    "gt_text": "Menu",
+    "text_len": 4,
+    "crop_w": 78,
+    "crop_h": 35
+  },
+  {
+    "crop_id": 106,
+    "crop_file": "18816_82_168_148_28.jpg",
+    "image_id": 18816,
+    "file_name": "COCO_train2014_000000018816.jpg",
+    "bbox": [
+      82.3,
+      168.9,
+      148.0,
+      28.5
+    ],
+    "gt_text": "gadzoom",
+    "text_len": 7,
+    "crop_w": 156,
+    "crop_h": 37
+  },
+  {
+    "crop_id": 107,
+    "crop_file": "444448_33_27_41_14.jpg",
+    "image_id": 444448,
+    "file_name": "COCO_train2014_000000444448.jpg",
+    "bbox": [
+      33.4,
+      27.6,
+      41.1,
+      14.800000000000004
+    ],
+    "gt_text": "ASHLET'S",
+    "text_len": 8,
+    "crop_w": 49,
+    "crop_h": 23
+  },
+  {
+    "crop_id": 108,
+    "crop_file": "298913_431_624_35_12.jpg",
+    "image_id": 298913,
+    "file_name": "COCO_train2014_000000298913.jpg",
+    "bbox": [
+      431.2,
+      624.9,
+      35.80000000000001,
+      12.700000000000045
+    ],
+    "gt_text": "2010",
+    "text_len": 4,
+    "crop_w": 44,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 109,
+    "crop_file": "573700_203_230_39_14.jpg",
+    "image_id": 573700,
+    "file_name": "COCO_train2014_000000573700.jpg",
+    "bbox": [
+      203.3,
+      230.9,
+      39.80000000000001,
+      14.599999999999994
+    ],
+    "gt_text": "HAM",
+    "text_len": 3,
+    "crop_w": 48,
+    "crop_h": 23
+  },
+  {
+    "crop_id": 110,
+    "crop_file": "364369_511_128_84_56.jpg",
+    "image_id": 364369,
+    "file_name": "COCO_train2014_000000364369.jpg",
+    "bbox": [
+      511.3,
+      128.5,
+      84.19999999999999,
+      56.80000000000001
+    ],
+    "gt_text": "Ave",
+    "text_len": 3,
+    "crop_w": 92,
+    "crop_h": 65
+  },
+  {
+    "crop_id": 111,
+    "crop_file": "465468_100_290_16_41.jpg",
+    "image_id": 465468,
+    "file_name": "COCO_train2014_000000465468.jpg",
+    "bbox": [
+      100.1,
+      290.0,
+      16.5,
+      41.60000000000002
+    ],
+    "gt_text": "RLOO",
+    "text_len": 4,
+    "crop_w": 24,
+    "crop_h": 49
+  },
+  {
+    "crop_id": 112,
+    "crop_file": "37396_530_17_94_29.jpg",
+    "image_id": 37396,
+    "file_name": "COCO_train2014_000000037396.jpg",
+    "bbox": [
+      530.4,
+      17.3,
+      94.29999999999995,
+      29.8
+    ],
+    "gt_text": "VEGETABLES",
+    "text_len": 10,
+    "crop_w": 102,
+    "crop_h": 38
+  },
+  {
+    "crop_id": 113,
+    "crop_file": "356767_262_219_24_11.jpg",
+    "image_id": 356767,
+    "file_name": "COCO_train2014_000000356767.jpg",
+    "bbox": [
+      262.1,
+      219.6,
+      24.100000000000023,
+      11.300000000000011
+    ],
+    "gt_text": "J858",
+    "text_len": 4,
+    "crop_w": 32,
+    "crop_h": 19
+  },
+  {
+    "crop_id": 114,
+    "crop_file": "32286_530_391_35_14.jpg",
+    "image_id": 32286,
+    "file_name": "COCO_train2014_000000032286.jpg",
+    "bbox": [
+      530.6,
+      391.4,
+      35.10000000000002,
+      14.199999999999989
+    ],
+    "gt_text": "2003",
+    "text_len": 4,
+    "crop_w": 43,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 115,
+    "crop_file": "561151_200_300_82_68.jpg",
+    "image_id": 561151,
+    "file_name": "COCO_train2014_000000561151.jpg",
+    "bbox": [
+      200.6,
+      300.9,
+      82.79999999999998,
+      68.19999999999999
+    ],
+    "gt_text": "Vinago",
+    "text_len": 6,
+    "crop_w": 91,
+    "crop_h": 77
+  },
+  {
+    "crop_id": 116,
+    "crop_file": "239518_270_82_115_34.jpg",
+    "image_id": 239518,
+    "file_name": "COCO_train2014_000000239518.jpg",
+    "bbox": [
+      270.6,
+      82.2,
+      115.5,
+      34.60000000000001
+    ],
+    "gt_text": "COLMAR",
+    "text_len": 6,
+    "crop_w": 124,
+    "crop_h": 42
+  },
+  {
+    "crop_id": 117,
+    "crop_file": "292498_91_14_15_53.jpg",
+    "image_id": 292498,
+    "file_name": "COCO_train2014_000000292498.jpg",
+    "bbox": [
+      91.2,
+      14.1,
+      15.400000000000006,
+      53.1
+    ],
+    "gt_text": "Eireann",
+    "text_len": 7,
+    "crop_w": 23,
+    "crop_h": 61
+  },
+  {
+    "crop_id": 118,
+    "crop_file": "144079_75_252_24_14.jpg",
+    "image_id": 144079,
+    "file_name": "COCO_train2014_000000144079.jpg",
+    "bbox": [
+      75.3,
+      252.0,
+      24.700000000000003,
+      14.5
+    ],
+    "gt_text": "SCARLETT",
+    "text_len": 8,
+    "crop_w": 33,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 119,
+    "crop_file": "10579_154_26_49_15.jpg",
+    "image_id": 10579,
+    "file_name": "COCO_train2014_000000010579.jpg",
+    "bbox": [
+      154.2,
+      26.9,
+      49.80000000000001,
+      15.0
+    ],
+    "gt_text": "HOME",
+    "text_len": 4,
+    "crop_w": 58,
+    "crop_h": 23
+  },
+  {
+    "crop_id": 120,
+    "crop_file": "263462_119_344_57_12.jpg",
+    "image_id": 263462,
+    "file_name": "COCO_train2014_000000263462.jpg",
+    "bbox": [
+      119.7,
+      344.3,
+      57.7,
+      12.600000000000023
+    ],
+    "gt_text": "GATORADE",
+    "text_len": 8,
+    "crop_w": 66,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 121,
+    "crop_file": "437138_157_183_51_21.jpg",
+    "image_id": 437138,
+    "file_name": "COCO_train2014_000000437138.jpg",
+    "bbox": [
+      157.4,
+      183.4,
+      51.20000000000002,
+      21.099999999999994
+    ],
+    "gt_text": "QUARTEIS",
+    "text_len": 8,
+    "crop_w": 59,
+    "crop_h": 29
+  },
+  {
+    "crop_id": 122,
+    "crop_file": "114403_230_471_71_16.jpg",
+    "image_id": 114403,
+    "file_name": "COCO_train2014_000000114403.jpg",
+    "bbox": [
+      230.6,
+      471.0,
+      71.70000000000002,
+      16.69999999999999
+    ],
+    "gt_text": "snowbird",
+    "text_len": 8,
+    "crop_w": 80,
+    "crop_h": 24
+  },
+  {
+    "crop_id": 123,
+    "crop_file": "330701_569_397_69_21.jpg",
+    "image_id": 330701,
+    "file_name": "COCO_train2014_000000330701.jpg",
+    "bbox": [
+      569.1,
+      397.5,
+      69.89999999999998,
+      21.399999999999977
+    ],
+    "gt_text": "GREGP",
+    "text_len": 5,
+    "crop_w": 75,
+    "crop_h": 29
+  },
+  {
+    "crop_id": 124,
+    "crop_file": "365301_202_134_108_37.jpg",
+    "image_id": 365301,
+    "file_name": "COCO_train2014_000000365301.jpg",
+    "bbox": [
+      202.5,
+      134.8,
+      108.89999999999998,
+      37.80000000000001
+    ],
+    "gt_text": "RIMN",
+    "text_len": 4,
+    "crop_w": 117,
+    "crop_h": 46
+  },
+  {
+    "crop_id": 125,
+    "crop_file": "388935_216_117_45_18.jpg",
+    "image_id": 388935,
+    "file_name": "COCO_train2014_000000388935.jpg",
+    "bbox": [
+      216.7,
+      117.8,
+      45.60000000000002,
+      18.299999999999997
+    ],
+    "gt_text": "BIG",
+    "text_len": 3,
+    "crop_w": 54,
+    "crop_h": 27
+  },
+  {
+    "crop_id": 126,
+    "crop_file": "360869_208_127_68_13.jpg",
+    "image_id": 360869,
+    "file_name": "COCO_train2014_000000360869.jpg",
+    "bbox": [
+      208.0,
+      127.5,
+      68.0,
+      13.5
+    ],
+    "gt_text": "OVERNITE",
+    "text_len": 8,
+    "crop_w": 76,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 127,
+    "crop_file": "433910_40_44_46_17.jpg",
+    "image_id": 433910,
+    "file_name": "COCO_train2014_000000433910.jpg",
+    "bbox": [
+      40.3,
+      44.7,
+      46.3,
+      17.0
+    ],
+    "gt_text": "Colum",
+    "text_len": 5,
+    "crop_w": 54,
+    "crop_h": 25
+  },
+  {
+    "crop_id": 128,
+    "crop_file": "551418_35_118_17_11.jpg",
+    "image_id": 551418,
+    "file_name": "COCO_train2014_000000551418.jpg",
+    "bbox": [
+      35.8,
+      118.6,
+      17.799999999999997,
+      11.099999999999994
+    ],
+    "gt_text": "OUR",
+    "text_len": 3,
+    "crop_w": 26,
+    "crop_h": 19
+  },
+  {
+    "crop_id": 129,
+    "crop_file": "520278_41_170_30_13.jpg",
+    "image_id": 520278,
+    "file_name": "COCO_train2014_000000520278.jpg",
+    "bbox": [
+      41.2,
+      170.7,
+      30.39999999999999,
+      13.400000000000006
+    ],
+    "gt_text": "LIVNF",
+    "text_len": 5,
+    "crop_w": 38,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 130,
+    "crop_file": "114204_477_238_19_10.jpg",
+    "image_id": 114204,
+    "file_name": "COCO_train2014_000000114204.jpg",
+    "bbox": [
+      477.3,
+      238.5,
+      19.5,
+      10.5
+    ],
+    "gt_text": "First",
+    "text_len": 5,
+    "crop_w": 27,
+    "crop_h": 19
+  },
+  {
+    "crop_id": 131,
+    "crop_file": "436048_466_278_76_33.jpg",
+    "image_id": 436048,
+    "file_name": "COCO_train2014_000000436048.jpg",
+    "bbox": [
+      466.2,
+      278.9,
+      76.80000000000001,
+      33.30000000000001
+    ],
+    "gt_text": "YARD",
+    "text_len": 4,
+    "crop_w": 85,
+    "crop_h": 42
+  },
+  {
+    "crop_id": 132,
+    "crop_file": "350086_201_112_21_13.jpg",
+    "image_id": 350086,
+    "file_name": "COCO_train2014_000000350086.jpg",
+    "bbox": [
+      201.4,
+      112.3,
+      21.0,
+      13.299999999999997
+    ],
+    "gt_text": "special",
+    "text_len": 7,
+    "crop_w": 29,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 133,
+    "crop_file": "477440_521_58_37_11.jpg",
+    "image_id": 477440,
+    "file_name": "COCO_train2014_000000477440.jpg",
+    "bbox": [
+      521.6,
+      58.3,
+      37.200000000000045,
+      11.900000000000006
+    ],
+    "gt_text": "BOXES",
+    "text_len": 5,
+    "crop_w": 45,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 134,
+    "crop_file": "379211_330_286_36_20.jpg",
+    "image_id": 379211,
+    "file_name": "COCO_train2014_000000379211.jpg",
+    "bbox": [
+      330.9,
+      286.2,
+      36.0,
+      20.100000000000023
+    ],
+    "gt_text": "PEI",
+    "text_len": 3,
+    "crop_w": 44,
+    "crop_h": 28
+  },
+  {
+    "crop_id": 135,
+    "crop_file": "301615_208_266_64_21.jpg",
+    "image_id": 301615,
+    "file_name": "COCO_train2014_000000301615.jpg",
+    "bbox": [
+      208.3,
+      266.5,
+      64.30000000000001,
+      21.0
+    ],
+    "gt_text": "MOVING",
+    "text_len": 6,
+    "crop_w": 72,
+    "crop_h": 29
+  },
+  {
+    "crop_id": 136,
+    "crop_file": "71440_425_136_103_18.jpg",
+    "image_id": 71440,
+    "file_name": "COCO_train2014_000000071440.jpg",
+    "bbox": [
+      425.1,
+      136.9,
+      103.89999999999998,
+      18.80000000000001
+    ],
+    "gt_text": "JUAREZ",
+    "text_len": 6,
+    "crop_w": 112,
+    "crop_h": 27
+  },
+  {
+    "crop_id": 137,
+    "crop_file": "509023_251_335_69_34.jpg",
+    "image_id": 509023,
+    "file_name": "COCO_train2014_000000509023.jpg",
+    "bbox": [
+      251.0,
+      335.1,
+      69.80000000000001,
+      34.60000000000002
+    ],
+    "gt_text": "Pizza",
+    "text_len": 5,
+    "crop_w": 77,
+    "crop_h": 42
+  },
+  {
+    "crop_id": 138,
+    "crop_file": "449066_191_375_63_36.jpg",
+    "image_id": 449066,
+    "file_name": "COCO_train2014_000000449066.jpg",
+    "bbox": [
+      191.2,
+      375.2,
+      63.19999999999999,
+      36.0
+    ],
+    "gt_text": "WATERS",
+    "text_len": 6,
+    "crop_w": 71,
+    "crop_h": 44
+  },
+  {
+    "crop_id": 139,
+    "crop_file": "54541_295_170_27_12.jpg",
+    "image_id": 54541,
+    "file_name": "COCO_train2014_000000054541.jpg",
+    "bbox": [
+      295.8,
+      170.9,
+      27.80000000000001,
+      12.599999999999994
+    ],
+    "gt_text": "TOWNSHIP",
+    "text_len": 8,
+    "crop_w": 36,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 140,
+    "crop_file": "271791_597_132_42_10.jpg",
+    "image_id": 271791,
+    "file_name": "COCO_train2014_000000271791.jpg",
+    "bbox": [
+      597.3,
+      132.2,
+      42.0,
+      10.400000000000006
+    ],
+    "gt_text": "DRIVEN",
+    "text_len": 6,
+    "crop_w": 47,
+    "crop_h": 18
+  },
+  {
+    "crop_id": 141,
+    "crop_file": "181149_445_273_59_31.jpg",
+    "image_id": 181149,
+    "file_name": "COCO_train2014_000000181149.jpg",
+    "bbox": [
+      445.0,
+      273.9,
+      59.0,
+      31.399999999999977
+    ],
+    "gt_text": "MAYO",
+    "text_len": 4,
+    "crop_w": 67,
+    "crop_h": 40
+  },
+  {
+    "crop_id": 142,
+    "crop_file": "360066_76_64_103_50.jpg",
+    "image_id": 360066,
+    "file_name": "COCO_train2014_000000360066.jpg",
+    "bbox": [
+      76.9,
+      64.0,
+      103.70000000000002,
+      50.5
+    ],
+    "gt_text": "FISH",
+    "text_len": 4,
+    "crop_w": 112,
+    "crop_h": 58
+  },
+  {
+    "crop_id": 143,
+    "crop_file": "126590_238_336_35_10.jpg",
+    "image_id": 126590,
+    "file_name": "COCO_train2014_000000126590.jpg",
+    "bbox": [
+      238.8,
+      336.7,
+      35.30000000000001,
+      10.899999999999977
+    ],
+    "gt_text": "PLEASE",
+    "text_len": 6,
+    "crop_w": 44,
+    "crop_h": 19
+  },
+  {
+    "crop_id": 144,
+    "crop_file": "159729_175_563_153_54.jpg",
+    "image_id": 159729,
+    "file_name": "COCO_train2014_000000159729.jpg",
+    "bbox": [
+      175.2,
+      563.0,
+      153.7,
+      54.60000000000002
+    ],
+    "gt_text": "melo",
+    "text_len": 4,
+    "crop_w": 161,
+    "crop_h": 62
+  },
+  {
+    "crop_id": 145,
+    "crop_file": "539376_528_363_93_24.jpg",
+    "image_id": 539376,
+    "file_name": "COCO_train2014_000000539376.jpg",
+    "bbox": [
+      528.7,
+      363.7,
+      93.60000000000002,
+      24.69999999999999
+    ],
+    "gt_text": "District",
+    "text_len": 8,
+    "crop_w": 102,
+    "crop_h": 33
+  },
+  {
+    "crop_id": 146,
+    "crop_file": "44240_160_330_38_17.jpg",
+    "image_id": 44240,
+    "file_name": "COCO_train2014_000000044240.jpg",
+    "bbox": [
+      160.3,
+      330.9,
+      38.19999999999999,
+      17.100000000000023
+    ],
+    "gt_text": "HONDA",
+    "text_len": 5,
+    "crop_w": 46,
+    "crop_h": 26
+  },
+  {
+    "crop_id": 147,
+    "crop_file": "204556_210_319_34_17.jpg",
+    "image_id": 204556,
+    "file_name": "COCO_train2014_000000204556.jpg",
+    "bbox": [
+      210.8,
+      319.2,
+      34.0,
+      17.899999999999977
+    ],
+    "gt_text": "Mayor",
+    "text_len": 5,
+    "crop_w": 42,
+    "crop_h": 26
+  },
+  {
+    "crop_id": 148,
+    "crop_file": "115645_0_0_167_90.jpg",
+    "image_id": 115645,
+    "file_name": "COCO_train2014_000000115645.jpg",
+    "bbox": [
+      0.6,
+      0,
+      167.1,
+      90.6
+    ],
+    "gt_text": "ZEL",
+    "text_len": 3,
+    "crop_w": 171,
+    "crop_h": 94
+  },
+  {
+    "crop_id": 149,
+    "crop_file": "172806_217_614_29_12.jpg",
+    "image_id": 172806,
+    "file_name": "COCO_train2014_000000172806.jpg",
+    "bbox": [
+      217.0,
+      614.9,
+      29.80000000000001,
+      12.0
+    ],
+    "gt_text": "phot",
+    "text_len": 4,
+    "crop_w": 37,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 150,
+    "crop_file": "22291_378_173_74_16.jpg",
+    "image_id": 22291,
+    "file_name": "COCO_train2014_000000022291.jpg",
+    "bbox": [
+      378.2,
+      173.1,
+      74.90000000000003,
+      16.5
+    ],
+    "gt_text": "PRINCE",
+    "text_len": 6,
+    "crop_w": 83,
+    "crop_h": 24
+  },
+  {
+    "crop_id": 151,
+    "crop_file": "505104_252_39_31_11.jpg",
+    "image_id": 505104,
+    "file_name": "COCO_train2014_000000505104.jpg",
+    "bbox": [
+      252.6,
+      39.7,
+      31.799999999999983,
+      11.100000000000001
+    ],
+    "gt_text": "universal",
+    "text_len": 9,
+    "crop_w": 40,
+    "crop_h": 19
+  },
+  {
+    "crop_id": 152,
+    "crop_file": "472495_230_82_42_14.jpg",
+    "image_id": 472495,
+    "file_name": "COCO_train2014_000000472495.jpg",
+    "bbox": [
+      230.0,
+      82.8,
+      42.19999999999999,
+      14.299999999999997
+    ],
+    "gt_text": "SCHOOL",
+    "text_len": 6,
+    "crop_w": 50,
+    "crop_h": 23
+  },
+  {
+    "crop_id": 153,
+    "crop_file": "354429_354_261_36_16.jpg",
+    "image_id": 354429,
+    "file_name": "COCO_train2014_000000354429.jpg",
+    "bbox": [
+      354.2,
+      261.4,
+      36.5,
+      16.0
+    ],
+    "gt_text": "BV57",
+    "text_len": 4,
+    "crop_w": 44,
+    "crop_h": 24
+  },
+  {
+    "crop_id": 154,
+    "crop_file": "443752_236_232_15_11.jpg",
+    "image_id": 443752,
+    "file_name": "COCO_train2014_000000443752.jpg",
+    "bbox": [
+      236.2,
+      232.9,
+      15.199999999999989,
+      11.300000000000011
+    ],
+    "gt_text": "the",
+    "text_len": 3,
+    "crop_w": 23,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 155,
+    "crop_file": "543038_35_498_49_20.jpg",
+    "image_id": 543038,
+    "file_name": "COCO_train2014_000000543038.jpg",
+    "bbox": [
+      35.7,
+      498.5,
+      49.10000000000001,
+      20.700000000000045
+    ],
+    "gt_text": "1975",
+    "text_len": 4,
+    "crop_w": 57,
+    "crop_h": 29
+  },
+  {
+    "crop_id": 156,
+    "crop_file": "186196_377_201_141_83.jpg",
+    "image_id": 186196,
+    "file_name": "COCO_train2014_000000186196.jpg",
+    "bbox": [
+      377.0,
+      201.9,
+      141.60000000000002,
+      83.20000000000002
+    ],
+    "gt_text": "NTE",
+    "text_len": 3,
+    "crop_w": 149,
+    "crop_h": 92
+  },
+  {
+    "crop_id": 157,
+    "crop_file": "225755_161_187_57_40.jpg",
+    "image_id": 225755,
+    "file_name": "COCO_train2014_000000225755.jpg",
+    "bbox": [
+      161.2,
+      187.3,
+      57.80000000000001,
+      40.19999999999999
+    ],
+    "gt_text": "TTLE",
+    "text_len": 4,
+    "crop_w": 66,
+    "crop_h": 48
+  },
+  {
+    "crop_id": 158,
+    "crop_file": "171262_37_322_28_43.jpg",
+    "image_id": 171262,
+    "file_name": "COCO_train2014_000000171262.jpg",
+    "bbox": [
+      37.4,
+      322.9,
+      28.000000000000007,
+      43.19999999999999
+    ],
+    "gt_text": "GLE",
+    "text_len": 3,
+    "crop_w": 36,
+    "crop_h": 52
+  },
+  {
+    "crop_id": 159,
+    "crop_file": "114945_0_149_104_15.jpg",
+    "image_id": 114945,
+    "file_name": "COCO_train2014_000000114945.jpg",
+    "bbox": [
+      0,
+      149.2,
+      104.7,
+      15.5
+    ],
+    "gt_text": "REAMINING",
+    "text_len": 9,
+    "crop_w": 108,
+    "crop_h": 23
+  },
+  {
+    "crop_id": 160,
+    "crop_file": "154898_313_11_21_75.jpg",
+    "image_id": 154898,
+    "file_name": "COCO_train2014_000000154898.jpg",
+    "bbox": [
+      313.1,
+      11.8,
+      21.399999999999977,
+      75.7
+    ],
+    "gt_text": "BOGGS",
+    "text_len": 5,
+    "crop_w": 29,
+    "crop_h": 84
+  },
+  {
+    "crop_id": 161,
+    "crop_file": "136154_243_464_40_10.jpg",
+    "image_id": 136154,
+    "file_name": "COCO_train2014_000000136154.jpg",
+    "bbox": [
+      243.0,
+      464.4,
+      40.69999999999999,
+      10.5
+    ],
+    "gt_text": "reserved",
+    "text_len": 8,
+    "crop_w": 48,
+    "crop_h": 18
+  },
+  {
+    "crop_id": 162,
+    "crop_file": "226294_163_224_134_44.jpg",
+    "image_id": 226294,
+    "file_name": "COCO_train2014_000000226294.jpg",
+    "bbox": [
+      163.2,
+      224.3,
+      134.90000000000003,
+      44.89999999999998
+    ],
+    "gt_text": "Freestuce",
+    "text_len": 9,
+    "crop_w": 143,
+    "crop_h": 53
+  },
+  {
+    "crop_id": 163,
+    "crop_file": "180696_264_627_61_11.jpg",
+    "image_id": 180696,
+    "file_name": "COCO_train2014_000000180696.jpg",
+    "bbox": [
+      264.5,
+      627.9,
+      61.39999999999998,
+      11.100000000000023
+    ],
+    "gt_text": "DioBurto",
+    "text_len": 8,
+    "crop_w": 69,
+    "crop_h": 17
+  },
+  {
+    "crop_id": 164,
+    "crop_file": "11075_296_260_29_11.jpg",
+    "image_id": 11075,
+    "file_name": "COCO_train2014_000000011075.jpg",
+    "bbox": [
+      296.2,
+      260.4,
+      29.0,
+      11.800000000000011
+    ],
+    "gt_text": "KNOWS",
+    "text_len": 5,
+    "crop_w": 37,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 165,
+    "crop_file": "180281_107_153_138_11.jpg",
+    "image_id": 180281,
+    "file_name": "COCO_train2014_000000180281.jpg",
+    "bbox": [
+      107.3,
+      153.8,
+      138.5,
+      11.800000000000011
+    ],
+    "gt_text": "TER",
+    "text_len": 3,
+    "crop_w": 146,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 166,
+    "crop_file": "269355_354_7_54_10.jpg",
+    "image_id": 269355,
+    "file_name": "COCO_train2014_000000269355.jpg",
+    "bbox": [
+      354.1,
+      7.1,
+      54.80000000000001,
+      10.699999999999998
+    ],
+    "gt_text": "SAFETY",
+    "text_len": 6,
+    "crop_w": 62,
+    "crop_h": 18
+  },
+  {
+    "crop_id": 167,
+    "crop_file": "330573_274_396_15_12.jpg",
+    "image_id": 330573,
+    "file_name": "COCO_train2014_000000330573.jpg",
+    "bbox": [
+      274.5,
+      396.1,
+      15.300000000000011,
+      12.0
+    ],
+    "gt_text": "day",
+    "text_len": 3,
+    "crop_w": 23,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 168,
+    "crop_file": "418372_465_362_48_12.jpg",
+    "image_id": 418372,
+    "file_name": "COCO_train2014_000000418372.jpg",
+    "bbox": [
+      465.2,
+      362.0,
+      48.19999999999999,
+      12.399999999999977
+    ],
+    "gt_text": "Cucumber",
+    "text_len": 8,
+    "crop_w": 56,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 169,
+    "crop_file": "452831_254_31_50_33.jpg",
+    "image_id": 452831,
+    "file_name": "COCO_train2014_000000452831.jpg",
+    "bbox": [
+      254.1,
+      31.4,
+      50.50000000000003,
+      33.29999999999999
+    ],
+    "gt_text": "73A",
+    "text_len": 3,
+    "crop_w": 58,
+    "crop_h": 41
+  },
+  {
+    "crop_id": 170,
+    "crop_file": "253217_421_226_26_10.jpg",
+    "image_id": 253217,
+    "file_name": "COCO_train2014_000000253217.jpg",
+    "bbox": [
+      421.9,
+      226.1,
+      26.100000000000023,
+      10.0
+    ],
+    "gt_text": "METER",
+    "text_len": 5,
+    "crop_w": 35,
+    "crop_h": 18
+  },
+  {
+    "crop_id": 171,
+    "crop_file": "491172_246_140_34_17.jpg",
+    "image_id": 491172,
+    "file_name": "COCO_train2014_000000491172.jpg",
+    "bbox": [
+      246.0,
+      140.4,
+      34.69999999999999,
+      17.0
+    ],
+    "gt_text": "FITCH",
+    "text_len": 5,
+    "crop_w": 42,
+    "crop_h": 25
+  },
+  {
+    "crop_id": 172,
+    "crop_file": "251016_243_373_50_12.jpg",
+    "image_id": 251016,
+    "file_name": "COCO_train2014_000000251016.jpg",
+    "bbox": [
+      243.8,
+      373.0,
+      50.60000000000002,
+      12.199999999999989
+    ],
+    "gt_text": "SPEARMINT",
+    "text_len": 9,
+    "crop_w": 59,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 173,
+    "crop_file": "375096_83_289_23_10.jpg",
+    "image_id": 375096,
+    "file_name": "COCO_train2014_000000375096.jpg",
+    "bbox": [
+      83.3,
+      289.6,
+      23.5,
+      10.800000000000011
+    ],
+    "gt_text": "M A Y",
+    "text_len": 5,
+    "crop_w": 31,
+    "crop_h": 19
+  },
+  {
+    "crop_id": 174,
+    "crop_file": "283697_554_116_34_10.jpg",
+    "image_id": 283697,
+    "file_name": "COCO_train2014_000000283697.jpg",
+    "bbox": [
+      554.0,
+      116.0,
+      34.5,
+      10.900000000000006
+    ],
+    "gt_text": "Macworld",
+    "text_len": 8,
+    "crop_w": 42,
+    "crop_h": 18
+  },
+  {
+    "crop_id": 175,
+    "crop_file": "13188_37_410_76_12.jpg",
+    "image_id": 13188,
+    "file_name": "COCO_train2014_000000013188.jpg",
+    "bbox": [
+      37.4,
+      410.5,
+      76.6,
+      12.0
+    ],
+    "gt_text": "ryansttcphotos.ca",
+    "text_len": 17,
+    "crop_w": 85,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 176,
+    "crop_file": "480676_142_363_44_15.jpg",
+    "image_id": 480676,
+    "file_name": "COCO_train2014_000000480676.jpg",
+    "bbox": [
+      142.9,
+      363.8,
+      44.29999999999998,
+      15.0
+    ],
+    "gt_text": "MOTEL",
+    "text_len": 5,
+    "crop_w": 53,
+    "crop_h": 23
+  },
+  {
+    "crop_id": 177,
+    "crop_file": "104631_341_235_97_30.jpg",
+    "image_id": 104631,
+    "file_name": "COCO_train2014_000000104631.jpg",
+    "bbox": [
+      341.1,
+      235.9,
+      97.60000000000002,
+      30.400000000000006
+    ],
+    "gt_text": "CASH",
+    "text_len": 4,
+    "crop_w": 105,
+    "crop_h": 39
+  },
+  {
+    "crop_id": 178,
+    "crop_file": "321679_225_295_34_14.jpg",
+    "image_id": 321679,
+    "file_name": "COCO_train2014_000000321679.jpg",
+    "bbox": [
+      225.1,
+      295.3,
+      34.00000000000003,
+      14.300000000000011
+    ],
+    "gt_text": "LR52",
+    "text_len": 4,
+    "crop_w": 42,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 179,
+    "crop_file": "554841_198_324_38_19.jpg",
+    "image_id": 554841,
+    "file_name": "COCO_train2014_000000554841.jpg",
+    "bbox": [
+      198.1,
+      324.1,
+      38.599999999999994,
+      19.5
+    ],
+    "gt_text": "EXCEPT",
+    "text_len": 6,
+    "crop_w": 46,
+    "crop_h": 27
+  },
+  {
+    "crop_id": 180,
+    "crop_file": "439991_0_114_33_10.jpg",
+    "image_id": 439991,
+    "file_name": "COCO_train2014_000000439991.jpg",
+    "bbox": [
+      0,
+      114.8,
+      33.199999999999996,
+      10.200000000000003
+    ],
+    "gt_text": "mited",
+    "text_len": 5,
+    "crop_w": 37,
+    "crop_h": 19
+  },
+  {
+    "crop_id": 181,
+    "crop_file": "484758_257_391_154_33.jpg",
+    "image_id": 484758,
+    "file_name": "COCO_train2014_000000484758.jpg",
+    "bbox": [
+      257.6,
+      391.0,
+      154.0,
+      33.39999999999998
+    ],
+    "gt_text": "VOODOO",
+    "text_len": 6,
+    "crop_w": 162,
+    "crop_h": 41
+  },
+  {
+    "crop_id": 182,
+    "crop_file": "517579_32_288_45_10.jpg",
+    "image_id": 517579,
+    "file_name": "COCO_train2014_000000517579.jpg",
+    "bbox": [
+      32.9,
+      288.4,
+      45.1,
+      10.0
+    ],
+    "gt_text": "UHAUL",
+    "text_len": 5,
+    "crop_w": 54,
+    "crop_h": 18
+  },
+  {
+    "crop_id": 183,
+    "crop_file": "392523_168_167_30_14.jpg",
+    "image_id": 392523,
+    "file_name": "COCO_train2014_000000392523.jpg",
+    "bbox": [
+      168.5,
+      167.2,
+      30.0,
+      14.800000000000011
+    ],
+    "gt_text": "Zone",
+    "text_len": 4,
+    "crop_w": 38,
+    "crop_h": 23
+  },
+  {
+    "crop_id": 184,
+    "crop_file": "373316_0_35_28_54.jpg",
+    "image_id": 373316,
+    "file_name": "COCO_train2014_000000373316.jpg",
+    "bbox": [
+      0.2,
+      35.8,
+      28.5,
+      54.60000000000001
+    ],
+    "gt_text": "BOARD",
+    "text_len": 5,
+    "crop_w": 32,
+    "crop_h": 63
+  },
+  {
+    "crop_id": 185,
+    "crop_file": "551842_217_212_23_16.jpg",
+    "image_id": 551842,
+    "file_name": "COCO_train2014_000000551842.jpg",
+    "bbox": [
+      217.3,
+      212.6,
+      23.099999999999994,
+      16.099999999999994
+    ],
+    "gt_text": "253",
+    "text_len": 3,
+    "crop_w": 31,
+    "crop_h": 24
+  },
+  {
+    "crop_id": 186,
+    "crop_file": "560270_267_182_35_20.jpg",
+    "image_id": 560270,
+    "file_name": "COCO_train2014_000000560270.jpg",
+    "bbox": [
+      267.0,
+      182.9,
+      35.89999999999998,
+      20.5
+    ],
+    "gt_text": "WDD964",
+    "text_len": 6,
+    "crop_w": 43,
+    "crop_h": 29
+  },
+  {
+    "crop_id": 187,
+    "crop_file": "178207_453_108_22_10.jpg",
+    "image_id": 178207,
+    "file_name": "COCO_train2014_000000178207.jpg",
+    "bbox": [
+      453.9,
+      108.8,
+      22.30000000000001,
+      10.0
+    ],
+    "gt_text": "Vinci",
+    "text_len": 5,
+    "crop_w": 31,
+    "crop_h": 18
+  },
+  {
+    "crop_id": 188,
+    "crop_file": "389884_65_187_49_20.jpg",
+    "image_id": 389884,
+    "file_name": "COCO_train2014_000000389884.jpg",
+    "bbox": [
+      65.3,
+      187.7,
+      49.8,
+      20.69999999999999
+    ],
+    "gt_text": "6050",
+    "text_len": 4,
+    "crop_w": 58,
+    "crop_h": 29
+  },
+  {
+    "crop_id": 189,
+    "crop_file": "403404_386_79_37_15.jpg",
+    "image_id": 403404,
+    "file_name": "COCO_train2014_000000403404.jpg",
+    "bbox": [
+      386.9,
+      79.8,
+      37.80000000000001,
+      15.5
+    ],
+    "gt_text": "STEAKS",
+    "text_len": 6,
+    "crop_w": 46,
+    "crop_h": 24
+  },
+  {
+    "crop_id": 190,
+    "crop_file": "42867_164_184_30_10.jpg",
+    "image_id": 42867,
+    "file_name": "COCO_train2014_000000042867.jpg",
+    "bbox": [
+      164.8,
+      184.2,
+      30.19999999999999,
+      10.0
+    ],
+    "gt_text": "Camera",
+    "text_len": 6,
+    "crop_w": 39,
+    "crop_h": 18
+  },
+  {
+    "crop_id": 191,
+    "crop_file": "578793_371_76_32_12.jpg",
+    "image_id": 578793,
+    "file_name": "COCO_train2014_000000578793.jpg",
+    "bbox": [
+      371.0,
+      76.9,
+      32.5,
+      12.900000000000006
+    ],
+    "gt_text": "uses",
+    "text_len": 4,
+    "crop_w": 40,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 192,
+    "crop_file": "75621_24_287_29_16.jpg",
+    "image_id": 75621,
+    "file_name": "COCO_train2014_000000075621.jpg",
+    "bbox": [
+      24.0,
+      287.8,
+      29.0,
+      16.69999999999999
+    ],
+    "gt_text": "BUS",
+    "text_len": 3,
+    "crop_w": 37,
+    "crop_h": 25
+  },
+  {
+    "crop_id": 193,
+    "crop_file": "279632_362_248_29_29.jpg",
+    "image_id": 279632,
+    "file_name": "COCO_train2014_000000279632.jpg",
+    "bbox": [
+      362.7,
+      248.8,
+      29.80000000000001,
+      29.80000000000001
+    ],
+    "gt_text": "LTR",
+    "text_len": 3,
+    "crop_w": 38,
+    "crop_h": 38
+  },
+  {
+    "crop_id": 194,
+    "crop_file": "358033_293_250_41_15.jpg",
+    "image_id": 358033,
+    "file_name": "COCO_train2014_000000358033.jpg",
+    "bbox": [
+      293.8,
+      250.5,
+      41.80000000000001,
+      15.800000000000011
+    ],
+    "gt_text": "CASTELLA",
+    "text_len": 8,
+    "crop_w": 50,
+    "crop_h": 24
+  },
+  {
+    "crop_id": 195,
+    "crop_file": "334431_172_147_37_13.jpg",
+    "image_id": 334431,
+    "file_name": "COCO_train2014_000000334431.jpg",
+    "bbox": [
+      172.5,
+      147.6,
+      37.30000000000001,
+      13.900000000000006
+    ],
+    "gt_text": "ious",
+    "text_len": 4,
+    "crop_w": 45,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 196,
+    "crop_file": "119141_397_42_78_52.jpg",
+    "image_id": 119141,
+    "file_name": "COCO_train2014_000000119141.jpg",
+    "bbox": [
+      397.3,
+      42.7,
+      78.19999999999999,
+      52.3
+    ],
+    "gt_text": "Andrews",
+    "text_len": 7,
+    "crop_w": 86,
+    "crop_h": 61
+  },
+  {
+    "crop_id": 197,
+    "crop_file": "93519_508_230_20_19.jpg",
+    "image_id": 93519,
+    "file_name": "COCO_train2014_000000093519.jpg",
+    "bbox": [
+      508.0,
+      230.7,
+      20.600000000000023,
+      19.30000000000001
+    ],
+    "gt_text": "More",
+    "text_len": 4,
+    "crop_w": 28,
+    "crop_h": 28
+  },
+  {
+    "crop_id": 198,
+    "crop_file": "26263_301_238_65_26.jpg",
+    "image_id": 26263,
+    "file_name": "COCO_train2014_000000026263.jpg",
+    "bbox": [
+      301.6,
+      238.6,
+      65.10000000000002,
+      26.900000000000006
+    ],
+    "gt_text": "always",
+    "text_len": 6,
+    "crop_w": 73,
+    "crop_h": 35
+  },
+  {
+    "crop_id": 199,
+    "crop_file": "577586_447_305_32_12.jpg",
+    "image_id": 577586,
+    "file_name": "COCO_train2014_000000577586.jpg",
+    "bbox": [
+      447.5,
+      305.0,
+      32.39999999999998,
+      12.399999999999977
+    ],
+    "gt_text": "CAR2",
+    "text_len": 4,
+    "crop_w": 40,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 200,
+    "crop_file": "302940_548_305_64_30.jpg",
+    "image_id": 302940,
+    "file_name": "COCO_train2014_000000302940.jpg",
+    "bbox": [
+      548.6,
+      305.7,
+      64.60000000000002,
+      30.0
+    ],
+    "gt_text": "QUiKSILVER",
+    "text_len": 10,
+    "crop_w": 73,
+    "crop_h": 38
+  },
+  {
+    "crop_id": 201,
+    "crop_file": "397664_174_55_34_13.jpg",
+    "image_id": 397664,
+    "file_name": "COCO_train2014_000000397664.jpg",
+    "bbox": [
+      174.5,
+      55.8,
+      34.69999999999999,
+      13.599999999999994
+    ],
+    "gt_text": "swatch",
+    "text_len": 6,
+    "crop_w": 43,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 202,
+    "crop_file": "308527_50_393_49_12.jpg",
+    "image_id": 308527,
+    "file_name": "COCO_train2014_000000308527.jpg",
+    "bbox": [
+      50.7,
+      393.3,
+      49.2,
+      12.199999999999989
+    ],
+    "gt_text": "Guarika",
+    "text_len": 7,
+    "crop_w": 57,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 203,
+    "crop_file": "223146_229_203_52_50.jpg",
+    "image_id": 223146,
+    "file_name": "COCO_train2014_000000223146.jpg",
+    "bbox": [
+      229.7,
+      203.1,
+      52.19999999999999,
+      50.29999999999998
+    ],
+    "gt_text": "Ravi",
+    "text_len": 4,
+    "crop_w": 60,
+    "crop_h": 58
+  },
+  {
+    "crop_id": 204,
+    "crop_file": "69971_84_196_97_47.jpg",
+    "image_id": 69971,
+    "file_name": "COCO_train2014_000000069971.jpg",
+    "bbox": [
+      84.8,
+      196.2,
+      97.59999999999998,
+      47.19999999999999
+    ],
+    "gt_text": "WIETERS",
+    "text_len": 7,
+    "crop_w": 106,
+    "crop_h": 55
+  },
+  {
+    "crop_id": 205,
+    "crop_file": "109506_112_310_46_19.jpg",
+    "image_id": 109506,
+    "file_name": "COCO_train2014_000000109506.jpg",
+    "bbox": [
+      112.2,
+      310.7,
+      46.3,
+      19.899999999999977
+    ],
+    "gt_text": "HERE",
+    "text_len": 4,
+    "crop_w": 54,
+    "crop_h": 28
+  },
+  {
+    "crop_id": 206,
+    "crop_file": "34097_536_138_44_20.jpg",
+    "image_id": 34097,
+    "file_name": "COCO_train2014_000000034097.jpg",
+    "bbox": [
+      536.3,
+      138.7,
+      44.10000000000002,
+      20.69999999999999
+    ],
+    "gt_text": "THE BIG SHOE",
+    "text_len": 12,
+    "crop_w": 52,
+    "crop_h": 29
+  },
+  {
+    "crop_id": 207,
+    "crop_file": "560152_162_38_49_15.jpg",
+    "image_id": 560152,
+    "file_name": "COCO_train2014_000000560152.jpg",
+    "bbox": [
+      162.9,
+      38.6,
+      49.79999999999998,
+      15.199999999999996
+    ],
+    "gt_text": "BIBLE",
+    "text_len": 5,
+    "crop_w": 58,
+    "crop_h": 23
+  },
+  {
+    "crop_id": 208,
+    "crop_file": "389617_194_311_49_10.jpg",
+    "image_id": 389617,
+    "file_name": "COCO_train2014_000000389617.jpg",
+    "bbox": [
+      194.8,
+      311.1,
+      49.69999999999999,
+      10.300000000000011
+    ],
+    "gt_text": "PANIC",
+    "text_len": 5,
+    "crop_w": 58,
+    "crop_h": 18
+  },
+  {
+    "crop_id": 209,
+    "crop_file": "424429_175_193_11_13.jpg",
+    "image_id": 424429,
+    "file_name": "COCO_train2014_000000424429.jpg",
+    "bbox": [
+      175.4,
+      193.3,
+      11.5,
+      13.400000000000006
+    ],
+    "gt_text": "THE",
+    "text_len": 3,
+    "crop_w": 19,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 210,
+    "crop_file": "216042_0_205_55_32.jpg",
+    "image_id": 216042,
+    "file_name": "COCO_train2014_000000216042.jpg",
+    "bbox": [
+      0,
+      205.4,
+      55.7,
+      32.70000000000002
+    ],
+    "gt_text": "Tacos,",
+    "text_len": 6,
+    "crop_w": 59,
+    "crop_h": 41
+  },
+  {
+    "crop_id": 211,
+    "crop_file": "297802_22_623_49_13.jpg",
+    "image_id": 297802,
+    "file_name": "COCO_train2014_000000297802.jpg",
+    "bbox": [
+      22.3,
+      623.2,
+      49.400000000000006,
+      13.600000000000023
+    ],
+    "gt_text": "Braden",
+    "text_len": 6,
+    "crop_w": 57,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 212,
+    "crop_file": "151211_133_119_44_15.jpg",
+    "image_id": 151211,
+    "file_name": "COCO_train2014_000000151211.jpg",
+    "bbox": [
+      133.4,
+      119.8,
+      44.5,
+      15.700000000000003
+    ],
+    "gt_text": "Shelley",
+    "text_len": 7,
+    "crop_w": 52,
+    "crop_h": 24
+  },
+  {
+    "crop_id": 213,
+    "crop_file": "172947_114_234_23_22.jpg",
+    "image_id": 172947,
+    "file_name": "COCO_train2014_000000172947.jpg",
+    "bbox": [
+      114.6,
+      234.4,
+      23.5,
+      22.700000000000017
+    ],
+    "gt_text": "VIII",
+    "text_len": 4,
+    "crop_w": 32,
+    "crop_h": 31
+  },
+  {
+    "crop_id": 214,
+    "crop_file": "499958_581_175_23_14.jpg",
+    "image_id": 499958,
+    "file_name": "COCO_train2014_000000499958.jpg",
+    "bbox": [
+      581.4,
+      175.9,
+      23.0,
+      14.800000000000011
+    ],
+    "gt_text": "Apple",
+    "text_len": 5,
+    "crop_w": 31,
+    "crop_h": 23
+  },
+  {
+    "crop_id": 215,
+    "crop_file": "516782_123_86_22_10.jpg",
+    "image_id": 516782,
+    "file_name": "COCO_train2014_000000516782.jpg",
+    "bbox": [
+      123.6,
+      86.4,
+      22.900000000000006,
+      10.299999999999997
+    ],
+    "gt_text": "IBM",
+    "text_len": 3,
+    "crop_w": 31,
+    "crop_h": 18
+  },
+  {
+    "crop_id": 216,
+    "crop_file": "379941_453_156_45_28.jpg",
+    "image_id": 379941,
+    "file_name": "COCO_train2014_000000379941.jpg",
+    "bbox": [
+      453.5,
+      156.7,
+      45.30000000000001,
+      28.400000000000006
+    ],
+    "gt_text": "Kreme",
+    "text_len": 5,
+    "crop_w": 53,
+    "crop_h": 37
+  },
+  {
+    "crop_id": 217,
+    "crop_file": "201278_319_6_41_18.jpg",
+    "image_id": 201278,
+    "file_name": "COCO_train2014_000000201278.jpg",
+    "bbox": [
+      319.9,
+      6.6,
+      41.69999999999999,
+      18.1
+    ],
+    "gt_text": "Harry",
+    "text_len": 5,
+    "crop_w": 50,
+    "crop_h": 26
+  },
+  {
+    "crop_id": 218,
+    "crop_file": "504298_502_95_32_13.jpg",
+    "image_id": 504298,
+    "file_name": "COCO_train2014_000000504298.jpg",
+    "bbox": [
+      502.3,
+      95.9,
+      32.69999999999999,
+      13.400000000000006
+    ],
+    "gt_text": "EARTH",
+    "text_len": 5,
+    "crop_w": 41,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 219,
+    "crop_file": "154898_286_59_10_32.jpg",
+    "image_id": 154898,
+    "file_name": "COCO_train2014_000000154898.jpg",
+    "bbox": [
+      286.3,
+      59.3,
+      10.699999999999989,
+      32.5
+    ],
+    "gt_text": "CAR",
+    "text_len": 3,
+    "crop_w": 19,
+    "crop_h": 40
+  },
+  {
+    "crop_id": 220,
+    "crop_file": "269174_316_16_62_23.jpg",
+    "image_id": 269174,
+    "file_name": "COCO_train2014_000000269174.jpg",
+    "bbox": [
+      316.8,
+      16.5,
+      62.39999999999998,
+      23.200000000000003
+    ],
+    "gt_text": "stoRRAS",
+    "text_len": 7,
+    "crop_w": 71,
+    "crop_h": 31
+  },
+  {
+    "crop_id": 221,
+    "crop_file": "163645_306_63_159_56.jpg",
+    "image_id": 163645,
+    "file_name": "COCO_train2014_000000163645.jpg",
+    "bbox": [
+      306.0,
+      63.0,
+      159.0,
+      56.8
+    ],
+    "gt_text": "Agency",
+    "text_len": 6,
+    "crop_w": 167,
+    "crop_h": 64
+  },
+  {
+    "crop_id": 222,
+    "crop_file": "164572_166_87_27_12.jpg",
+    "image_id": 164572,
+    "file_name": "COCO_train2014_000000164572.jpg",
+    "bbox": [
+      166.4,
+      87.6,
+      27.5,
+      12.599999999999994
+    ],
+    "gt_text": "DENTAL",
+    "text_len": 6,
+    "crop_w": 35,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 223,
+    "crop_file": "398407_338_141_162_140.jpg",
+    "image_id": 398407,
+    "file_name": "COCO_train2014_000000398407.jpg",
+    "bbox": [
+      338.2,
+      141.8,
+      162.90000000000003,
+      140.8
+    ],
+    "gt_text": "STOP",
+    "text_len": 4,
+    "crop_w": 171,
+    "crop_h": 149
+  },
+  {
+    "crop_id": 224,
+    "crop_file": "538640_221_220_45_26.jpg",
+    "image_id": 538640,
+    "file_name": "COCO_train2014_000000538640.jpg",
+    "bbox": [
+      221.8,
+      220.0,
+      45.5,
+      26.30000000000001
+    ],
+    "gt_text": "flushed",
+    "text_len": 7,
+    "crop_w": 54,
+    "crop_h": 34
+  },
+  {
+    "crop_id": 225,
+    "crop_file": "402224_366_152_30_12.jpg",
+    "image_id": 402224,
+    "file_name": "COCO_train2014_000000402224.jpg",
+    "bbox": [
+      366.7,
+      152.2,
+      30.0,
+      12.0
+    ],
+    "gt_text": "118",
+    "text_len": 3,
+    "crop_w": 38,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 226,
+    "crop_file": "547703_5_449_71_36.jpg",
+    "image_id": 547703,
+    "file_name": "COCO_train2014_000000547703.jpg",
+    "bbox": [
+      5.3,
+      449.1,
+      71.9,
+      36.30000000000001
+    ],
+    "gt_text": "YOU",
+    "text_len": 3,
+    "crop_w": 80,
+    "crop_h": 44
+  },
+  {
+    "crop_id": 227,
+    "crop_file": "4741_86_225_56_54.jpg",
+    "image_id": 4741,
+    "file_name": "COCO_train2014_000000004741.jpg",
+    "bbox": [
+      86.5,
+      225.1,
+      56.69999999999999,
+      54.599999999999994
+    ],
+    "gt_text": "IRISH",
+    "text_len": 5,
+    "crop_w": 65,
+    "crop_h": 62
+  },
+  {
+    "crop_id": 228,
+    "crop_file": "312355_582_163_17_64.jpg",
+    "image_id": 312355,
+    "file_name": "COCO_train2014_000000312355.jpg",
+    "bbox": [
+      582.7,
+      163.2,
+      17.299999999999955,
+      64.69999999999999
+    ],
+    "gt_text": "BIERCE",
+    "text_len": 6,
+    "crop_w": 26,
+    "crop_h": 72
+  },
+  {
+    "crop_id": 229,
+    "crop_file": "521101_584_73_55_28.jpg",
+    "image_id": 521101,
+    "file_name": "COCO_train2014_000000521101.jpg",
+    "bbox": [
+      584.5,
+      73.4,
+      55.5,
+      28.0
+    ],
+    "gt_text": "Vier",
+    "text_len": 4,
+    "crop_w": 60,
+    "crop_h": 36
+  },
+  {
+    "crop_id": 230,
+    "crop_file": "229301_266_237_17_16.jpg",
+    "image_id": 229301,
+    "file_name": "COCO_train2014_000000229301.jpg",
+    "bbox": [
+      266.0,
+      237.8,
+      17.19999999999999,
+      16.69999999999999
+    ],
+    "gt_text": "Lote",
+    "text_len": 4,
+    "crop_w": 25,
+    "crop_h": 25
+  },
+  {
+    "crop_id": 231,
+    "crop_file": "355697_473_317_70_33.jpg",
+    "image_id": 355697,
+    "file_name": "COCO_train2014_000000355697.jpg",
+    "bbox": [
+      473.8,
+      317.2,
+      70.40000000000003,
+      33.89999999999998
+    ],
+    "gt_text": "3DY",
+    "text_len": 3,
+    "crop_w": 79,
+    "crop_h": 42
+  },
+  {
+    "crop_id": 232,
+    "crop_file": "462472_288_55_46_12.jpg",
+    "image_id": 462472,
+    "file_name": "COCO_train2014_000000462472.jpg",
+    "bbox": [
+      288.6,
+      55.8,
+      46.69999999999999,
+      12.700000000000003
+    ],
+    "gt_text": "PRODUCE",
+    "text_len": 7,
+    "crop_w": 55,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 233,
+    "crop_file": "59385_6_313_44_12.jpg",
+    "image_id": 59385,
+    "file_name": "COCO_train2014_000000059385.jpg",
+    "bbox": [
+      6.9,
+      313.5,
+      44.6,
+      12.800000000000011
+    ],
+    "gt_text": "Teegan",
+    "text_len": 6,
+    "crop_w": 53,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 234,
+    "crop_file": "106364_355_132_112_31.jpg",
+    "image_id": 106364,
+    "file_name": "COCO_train2014_000000106364.jpg",
+    "bbox": [
+      355.4,
+      132.2,
+      112.0,
+      31.19999999999999
+    ],
+    "gt_text": "pabolinho",
+    "text_len": 9,
+    "crop_w": 120,
+    "crop_h": 39
+  },
+  {
+    "crop_id": 235,
+    "crop_file": "129032_171_196_26_13.jpg",
+    "image_id": 129032,
+    "file_name": "COCO_train2014_000000129032.jpg",
+    "bbox": [
+      171.2,
+      196.0,
+      26.5,
+      13.400000000000006
+    ],
+    "gt_text": "Fed",
+    "text_len": 3,
+    "crop_w": 34,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 236,
+    "crop_file": "460458_36_169_48_26.jpg",
+    "image_id": 460458,
+    "file_name": "COCO_train2014_000000460458.jpg",
+    "bbox": [
+      36.4,
+      169.1,
+      48.29999999999999,
+      26.30000000000001
+    ],
+    "gt_text": "CorrupT",
+    "text_len": 7,
+    "crop_w": 56,
+    "crop_h": 34
+  },
+  {
+    "crop_id": 237,
+    "crop_file": "488844_265_184_31_12.jpg",
+    "image_id": 488844,
+    "file_name": "COCO_train2014_000000488844.jpg",
+    "bbox": [
+      265.2,
+      184.8,
+      31.30000000000001,
+      12.599999999999994
+    ],
+    "gt_text": "BIKES",
+    "text_len": 5,
+    "crop_w": 39,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 238,
+    "crop_file": "369207_28_136_59_33.jpg",
+    "image_id": 369207,
+    "file_name": "COCO_train2014_000000369207.jpg",
+    "bbox": [
+      28.2,
+      136.5,
+      59.89999999999999,
+      33.69999999999999
+    ],
+    "gt_text": "Secret",
+    "text_len": 6,
+    "crop_w": 68,
+    "crop_h": 42
+  },
+  {
+    "crop_id": 239,
+    "crop_file": "296901_547_459_90_12.jpg",
+    "image_id": 296901,
+    "file_name": "COCO_train2014_000000296901.jpg",
+    "bbox": [
+      547.8,
+      459.9,
+      90.39999999999998,
+      12.0
+    ],
+    "gt_text": "LOOK",
+    "text_len": 4,
+    "crop_w": 97,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 240,
+    "crop_file": "38022_458_336_49_16.jpg",
+    "image_id": 38022,
+    "file_name": "COCO_train2014_000000038022.jpg",
+    "bbox": [
+      458.8,
+      336.9,
+      49.39999999999998,
+      16.5
+    ],
+    "gt_text": "TRANSPORT",
+    "text_len": 9,
+    "crop_w": 58,
+    "crop_h": 25
+  },
+  {
+    "crop_id": 241,
+    "crop_file": "282440_206_364_63_30.jpg",
+    "image_id": 282440,
+    "file_name": "COCO_train2014_000000282440.jpg",
+    "bbox": [
+      206.4,
+      364.9,
+      63.99999999999997,
+      30.80000000000001
+    ],
+    "gt_text": "ost",
+    "text_len": 3,
+    "crop_w": 72,
+    "crop_h": 39
+  },
+  {
+    "crop_id": 242,
+    "crop_file": "509914_105_231_23_10.jpg",
+    "image_id": 509914,
+    "file_name": "COCO_train2014_000000509914.jpg",
+    "bbox": [
+      105.9,
+      231.1,
+      23.5,
+      10.0
+    ],
+    "gt_text": "2616",
+    "text_len": 4,
+    "crop_w": 32,
+    "crop_h": 18
+  },
+  {
+    "crop_id": 243,
+    "crop_file": "275348_47_315_73_16.jpg",
+    "image_id": 275348,
+    "file_name": "COCO_train2014_000000275348.jpg",
+    "bbox": [
+      47.6,
+      315.3,
+      73.6,
+      16.600000000000023
+    ],
+    "gt_text": "bet365.com",
+    "text_len": 10,
+    "crop_w": 82,
+    "crop_h": 24
+  },
+  {
+    "crop_id": 244,
+    "crop_file": "184866_161_172_52_12.jpg",
+    "image_id": 184866,
+    "file_name": "COCO_train2014_000000184866.jpg",
+    "bbox": [
+      161.7,
+      172.3,
+      52.19999999999999,
+      12.0
+    ],
+    "gt_text": "cnance",
+    "text_len": 6,
+    "crop_w": 60,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 245,
+    "crop_file": "375473_119_57_29_15.jpg",
+    "image_id": 375473,
+    "file_name": "COCO_train2014_000000375473.jpg",
+    "bbox": [
+      119.5,
+      57.8,
+      29.80000000000001,
+      15.400000000000006
+    ],
+    "gt_text": "CHILD",
+    "text_len": 5,
+    "crop_w": 38,
+    "crop_h": 24
+  },
+  {
+    "crop_id": 246,
+    "crop_file": "172371_404_407_23_10.jpg",
+    "image_id": 172371,
+    "file_name": "COCO_train2014_000000172371.jpg",
+    "bbox": [
+      404.9,
+      407.9,
+      23.399999999999977,
+      10.5
+    ],
+    "gt_text": "salle",
+    "text_len": 5,
+    "crop_w": 32,
+    "crop_h": 19
+  },
+  {
+    "crop_id": 247,
+    "crop_file": "119849_169_95_52_18.jpg",
+    "image_id": 119849,
+    "file_name": "COCO_train2014_000000119849.jpg",
+    "bbox": [
+      169.3,
+      95.1,
+      52.599999999999994,
+      18.700000000000003
+    ],
+    "gt_text": "debian",
+    "text_len": 6,
+    "crop_w": 60,
+    "crop_h": 26
+  },
+  {
+    "crop_id": 248,
+    "crop_file": "258950_526_359_46_32.jpg",
+    "image_id": 258950,
+    "file_name": "COCO_train2014_000000258950.jpg",
+    "bbox": [
+      526.1,
+      359.4,
+      46.799999999999955,
+      32.10000000000002
+    ],
+    "gt_text": "MIX",
+    "text_len": 3,
+    "crop_w": 54,
+    "crop_h": 40
+  },
+  {
+    "crop_id": 249,
+    "crop_file": "517881_298_166_35_26.jpg",
+    "image_id": 517881,
+    "file_name": "COCO_train2014_000000517881.jpg",
+    "bbox": [
+      298.8,
+      166.9,
+      35.60000000000002,
+      26.80000000000001
+    ],
+    "gt_text": "AHENP",
+    "text_len": 5,
+    "crop_w": 44,
+    "crop_h": 35
+  },
+  {
+    "crop_id": 250,
+    "crop_file": "169878_184_370_16_17.jpg",
+    "image_id": 169878,
+    "file_name": "COCO_train2014_000000169878.jpg",
+    "bbox": [
+      184.3,
+      370.6,
+      16.099999999999994,
+      17.80000000000001
+    ],
+    "gt_text": "gers",
+    "text_len": 4,
+    "crop_w": 24,
+    "crop_h": 26
+  },
+  {
+    "crop_id": 251,
+    "crop_file": "417153_225_288_22_13.jpg",
+    "image_id": 417153,
+    "file_name": "COCO_train2014_000000417153.jpg",
+    "bbox": [
+      225.0,
+      288.4,
+      22.099999999999994,
+      13.300000000000011
+    ],
+    "gt_text": "KILT",
+    "text_len": 4,
+    "crop_w": 30,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 252,
+    "crop_file": "281939_332_125_59_30.jpg",
+    "image_id": 281939,
+    "file_name": "COCO_train2014_000000281939.jpg",
+    "bbox": [
+      332.6,
+      125.1,
+      59.69999999999999,
+      30.5
+    ],
+    "gt_text": "MUST",
+    "text_len": 4,
+    "crop_w": 68,
+    "crop_h": 38
+  },
+  {
+    "crop_id": 253,
+    "crop_file": "126733_462_309_31_40.jpg",
+    "image_id": 126733,
+    "file_name": "COCO_train2014_000000126733.jpg",
+    "bbox": [
+      462.7,
+      309.3,
+      31.19999999999999,
+      40.10000000000002
+    ],
+    "gt_text": "Bay",
+    "text_len": 3,
+    "crop_w": 39,
+    "crop_h": 48
+  },
+  {
+    "crop_id": 254,
+    "crop_file": "101572_14_0_62_30.jpg",
+    "image_id": 101572,
+    "file_name": "COCO_train2014_000000101572.jpg",
+    "bbox": [
+      14.4,
+      0.6,
+      62.800000000000004,
+      30.1
+    ],
+    "gt_text": "89.1",
+    "text_len": 4,
+    "crop_w": 71,
+    "crop_h": 34
+  },
+  {
+    "crop_id": 255,
+    "crop_file": "534513_525_8_28_124.jpg",
+    "image_id": 534513,
+    "file_name": "COCO_train2014_000000534513.jpg",
+    "bbox": [
+      525.1,
+      8.6,
+      28.600000000000023,
+      124.1
+    ],
+    "gt_text": "COH",
+    "text_len": 3,
+    "crop_w": 36,
+    "crop_h": 132
+  },
+  {
+    "crop_id": 256,
+    "crop_file": "552004_86_359_135_48.jpg",
+    "image_id": 552004,
+    "file_name": "COCO_train2014_000000552004.jpg",
+    "bbox": [
+      86.8,
+      359.1,
+      135.5,
+      48.19999999999999
+    ],
+    "gt_text": "Thank",
+    "text_len": 5,
+    "crop_w": 144,
+    "crop_h": 56
+  },
+  {
+    "crop_id": 257,
+    "crop_file": "190723_238_311_72_17.jpg",
+    "image_id": 190723,
+    "file_name": "COCO_train2014_000000190723.jpg",
+    "bbox": [
+      238.7,
+      311.5,
+      72.90000000000003,
+      17.600000000000023
+    ],
+    "gt_text": "168106",
+    "text_len": 6,
+    "crop_w": 81,
+    "crop_h": 26
+  },
+  {
+    "crop_id": 258,
+    "crop_file": "511580_114_493_34_12.jpg",
+    "image_id": 511580,
+    "file_name": "COCO_train2014_000000511580.jpg",
+    "bbox": [
+      114.3,
+      493.0,
+      34.39999999999999,
+      12.300000000000011
+    ],
+    "gt_text": "HIGH",
+    "text_len": 4,
+    "crop_w": 42,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 259,
+    "crop_file": "295049_531_172_57_14.jpg",
+    "image_id": 295049,
+    "file_name": "COCO_train2014_000000295049.jpg",
+    "bbox": [
+      531.8,
+      172.0,
+      57.10000000000002,
+      14.900000000000006
+    ],
+    "gt_text": "Envelpoes",
+    "text_len": 9,
+    "crop_w": 65,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 260,
+    "crop_file": "278256_51_348_66_25.jpg",
+    "image_id": 278256,
+    "file_name": "COCO_train2014_000000278256.jpg",
+    "bbox": [
+      51.1,
+      348.4,
+      66.20000000000002,
+      25.399999999999977
+    ],
+    "gt_text": "DANCE",
+    "text_len": 5,
+    "crop_w": 74,
+    "crop_h": 33
+  },
+  {
+    "crop_id": 261,
+    "crop_file": "209859_569_354_44_19.jpg",
+    "image_id": 209859,
+    "file_name": "COCO_train2014_000000209859.jpg",
+    "bbox": [
+      569.6,
+      354.3,
+      44.200000000000045,
+      19.80000000000001
+    ],
+    "gt_text": "FRET",
+    "text_len": 4,
+    "crop_w": 52,
+    "crop_h": 28
+  },
+  {
+    "crop_id": 262,
+    "crop_file": "576026_471_107_29_14.jpg",
+    "image_id": 576026,
+    "file_name": "COCO_train2014_000000576026.jpg",
+    "bbox": [
+      471.0,
+      107.5,
+      29.0,
+      14.599999999999994
+    ],
+    "gt_text": "CON",
+    "text_len": 3,
+    "crop_w": 37,
+    "crop_h": 23
+  },
+  {
+    "crop_id": 263,
+    "crop_file": "442988_438_120_102_36.jpg",
+    "image_id": 442988,
+    "file_name": "COCO_train2014_000000442988.jpg",
+    "bbox": [
+      438.4,
+      120.2,
+      102.10000000000002,
+      36.7
+    ],
+    "gt_text": "Cake",
+    "text_len": 4,
+    "crop_w": 110,
+    "crop_h": 44
+  },
+  {
+    "crop_id": 264,
+    "crop_file": "79671_168_207_57_42.jpg",
+    "image_id": 79671,
+    "file_name": "COCO_train2014_000000079671.jpg",
+    "bbox": [
+      168.0,
+      207.5,
+      57.0,
+      42.0
+    ],
+    "gt_text": "CORNER",
+    "text_len": 6,
+    "crop_w": 65,
+    "crop_h": 50
+  },
+  {
+    "crop_id": 265,
+    "crop_file": "559657_228_424_19_11.jpg",
+    "image_id": 559657,
+    "file_name": "COCO_train2014_000000559657.jpg",
+    "bbox": [
+      228.9,
+      424.3,
+      19.80000000000001,
+      11.5
+    ],
+    "gt_text": "and",
+    "text_len": 3,
+    "crop_w": 28,
+    "crop_h": 19
+  },
+  {
+    "crop_id": 266,
+    "crop_file": "277319_63_221_48_35.jpg",
+    "image_id": 277319,
+    "file_name": "COCO_train2014_000000277319.jpg",
+    "bbox": [
+      63.5,
+      221.9,
+      48.5,
+      35.20000000000002
+    ],
+    "gt_text": "City,",
+    "text_len": 5,
+    "crop_w": 57,
+    "crop_h": 44
+  },
+  {
+    "crop_id": 267,
+    "crop_file": "247348_81_110_32_27.jpg",
+    "image_id": 247348,
+    "file_name": "COCO_train2014_000000247348.jpg",
+    "bbox": [
+      81.3,
+      110.8,
+      32.0,
+      27.700000000000003
+    ],
+    "gt_text": "SWOOD",
+    "text_len": 5,
+    "crop_w": 40,
+    "crop_h": 36
+  },
+  {
+    "crop_id": 268,
+    "crop_file": "57977_39_88_28_13.jpg",
+    "image_id": 57977,
+    "file_name": "COCO_train2014_000000057977.jpg",
+    "bbox": [
+      39.0,
+      88.7,
+      28.0,
+      13.900000000000006
+    ],
+    "gt_text": "DEVON",
+    "text_len": 5,
+    "crop_w": 36,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 269,
+    "crop_file": "476430_36_410_77_11.jpg",
+    "image_id": 476430,
+    "file_name": "COCO_train2014_000000476430.jpg",
+    "bbox": [
+      36.7,
+      410.7,
+      77.4,
+      11.5
+    ],
+    "gt_text": "ryansttcphotos.ca",
+    "text_len": 17,
+    "crop_w": 86,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 270,
+    "crop_file": "227732_19_307_60_30.jpg",
+    "image_id": 227732,
+    "file_name": "COCO_train2014_000000227732.jpg",
+    "bbox": [
+      19.7,
+      307.8,
+      60.8,
+      30.30000000000001
+    ],
+    "gt_text": "59 F",
+    "text_len": 4,
+    "crop_w": 69,
+    "crop_h": 39
+  },
+  {
+    "crop_id": 271,
+    "crop_file": "460115_477_57_59_41.jpg",
+    "image_id": 460115,
+    "file_name": "COCO_train2014_000000460115.jpg",
+    "bbox": [
+      477.3,
+      57.5,
+      59.400000000000034,
+      41.599999999999994
+    ],
+    "gt_text": "VENEIIAN",
+    "text_len": 8,
+    "crop_w": 67,
+    "crop_h": 50
+  },
+  {
+    "crop_id": 272,
+    "crop_file": "129568_157_128_211_65.jpg",
+    "image_id": 129568,
+    "file_name": "COCO_train2014_000000129568.jpg",
+    "bbox": [
+      157.8,
+      128.7,
+      211.09999999999997,
+      65.6
+    ],
+    "gt_text": "Morgan",
+    "text_len": 6,
+    "crop_w": 219,
+    "crop_h": 74
+  },
+  {
+    "crop_id": 273,
+    "crop_file": "316640_338_202_91_34.jpg",
+    "image_id": 316640,
+    "file_name": "COCO_train2014_000000316640.jpg",
+    "bbox": [
+      338.7,
+      202.7,
+      91.59999999999997,
+      34.400000000000006
+    ],
+    "gt_text": "VROA",
+    "text_len": 4,
+    "crop_w": 100,
+    "crop_h": 43
+  },
+  {
+    "crop_id": 274,
+    "crop_file": "455311_308_185_51_13.jpg",
+    "image_id": 455311,
+    "file_name": "COCO_train2014_000000455311.jpg",
+    "bbox": [
+      308.1,
+      185.6,
+      51.30000000000001,
+      13.699999999999989
+    ],
+    "gt_text": "BEFORE",
+    "text_len": 6,
+    "crop_w": 59,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 275,
+    "crop_file": "6270_332_176_108_26.jpg",
+    "image_id": 6270,
+    "file_name": "COCO_train2014_000000006270.jpg",
+    "bbox": [
+      332.2,
+      176.0,
+      108.80000000000001,
+      26.900000000000006
+    ],
+    "gt_text": "REPORT",
+    "text_len": 6,
+    "crop_w": 117,
+    "crop_h": 34
+  },
+  {
+    "crop_id": 276,
+    "crop_file": "456886_246_327_24_15.jpg",
+    "image_id": 456886,
+    "file_name": "COCO_train2014_000000456886.jpg",
+    "bbox": [
+      246.6,
+      327.4,
+      24.00000000000003,
+      15.199999999999989
+    ],
+    "gt_text": "ARE",
+    "text_len": 3,
+    "crop_w": 32,
+    "crop_h": 23
+  },
+  {
+    "crop_id": 277,
+    "crop_file": "361480_249_215_46_14.jpg",
+    "image_id": 361480,
+    "file_name": "COCO_train2014_000000361480.jpg",
+    "bbox": [
+      249.0,
+      215.8,
+      46.80000000000001,
+      14.400000000000006
+    ],
+    "gt_text": "Burberrys",
+    "text_len": 9,
+    "crop_w": 54,
+    "crop_h": 23
+  },
+  {
+    "crop_id": 278,
+    "crop_file": "11422_214_224_139_70.jpg",
+    "image_id": 11422,
+    "file_name": "COCO_train2014_000000011422.jpg",
+    "bbox": [
+      214.5,
+      224.4,
+      139.89999999999998,
+      70.9
+    ],
+    "gt_text": "DANCIN'",
+    "text_len": 7,
+    "crop_w": 148,
+    "crop_h": 79
+  },
+  {
+    "crop_id": 279,
+    "crop_file": "283650_207_254_18_16.jpg",
+    "image_id": 283650,
+    "file_name": "COCO_train2014_000000283650.jpg",
+    "bbox": [
+      207.5,
+      254.8,
+      18.19999999999999,
+      16.100000000000023
+    ],
+    "gt_text": "gad",
+    "text_len": 3,
+    "crop_w": 26,
+    "crop_h": 24
+  },
+  {
+    "crop_id": 280,
+    "crop_file": "496065_215_85_11_39.jpg",
+    "image_id": 496065,
+    "file_name": "COCO_train2014_000000496065.jpg",
+    "bbox": [
+      215.4,
+      85.5,
+      11.800000000000011,
+      39.599999999999994
+    ],
+    "gt_text": "$10",
+    "text_len": 3,
+    "crop_w": 20,
+    "crop_h": 48
+  },
+  {
+    "crop_id": 281,
+    "crop_file": "402174_205_211_35_12.jpg",
+    "image_id": 402174,
+    "file_name": "COCO_train2014_000000402174.jpg",
+    "bbox": [
+      205.0,
+      211.7,
+      35.19999999999999,
+      12.099999999999994
+    ],
+    "gt_text": "Parcel",
+    "text_len": 6,
+    "crop_w": 43,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 282,
+    "crop_file": "159175_414_168_83_21.jpg",
+    "image_id": 159175,
+    "file_name": "COCO_train2014_000000159175.jpg",
+    "bbox": [
+      414.2,
+      168.2,
+      83.19999999999999,
+      21.69999999999999
+    ],
+    "gt_text": "WALKING",
+    "text_len": 7,
+    "crop_w": 91,
+    "crop_h": 29
+  },
+  {
+    "crop_id": 283,
+    "crop_file": "565979_182_501_57_32.jpg",
+    "image_id": 565979,
+    "file_name": "COCO_train2014_000000565979.jpg",
+    "bbox": [
+      182.3,
+      501.9,
+      57.80000000000001,
+      32.200000000000045
+    ],
+    "gt_text": "Who's",
+    "text_len": 5,
+    "crop_w": 66,
+    "crop_h": 41
+  },
+  {
+    "crop_id": 284,
+    "crop_file": "127823_451_291_29_16.jpg",
+    "image_id": 127823,
+    "file_name": "COCO_train2014_000000127823.jpg",
+    "bbox": [
+      451.9,
+      291.2,
+      29.30000000000001,
+      16.5
+    ],
+    "gt_text": "JPA",
+    "text_len": 3,
+    "crop_w": 38,
+    "crop_h": 24
+  },
+  {
+    "crop_id": 285,
+    "crop_file": "68688_24_95_15_22.jpg",
+    "image_id": 68688,
+    "file_name": "COCO_train2014_000000068688.jpg",
+    "bbox": [
+      24.2,
+      95.7,
+      15.8,
+      22.700000000000003
+    ],
+    "gt_text": "C.J.",
+    "text_len": 4,
+    "crop_w": 24,
+    "crop_h": 31
+  },
+  {
+    "crop_id": 286,
+    "crop_file": "105257_515_560_36_34.jpg",
+    "image_id": 105257,
+    "file_name": "COCO_train2014_000000105257.jpg",
+    "bbox": [
+      515.1,
+      560.2,
+      36.39999999999998,
+      34.700000000000045
+    ],
+    "gt_text": "CHARAF",
+    "text_len": 6,
+    "crop_w": 44,
+    "crop_h": 42
+  },
+  {
+    "crop_id": 287,
+    "crop_file": "182860_263_267_41_21.jpg",
+    "image_id": 182860,
+    "file_name": "COCO_train2014_000000182860.jpg",
+    "bbox": [
+      263.8,
+      267.2,
+      41.5,
+      21.5
+    ],
+    "gt_text": "the",
+    "text_len": 3,
+    "crop_w": 50,
+    "crop_h": 29
+  },
+  {
+    "crop_id": 288,
+    "crop_file": "52484_185_117_41_21.jpg",
+    "image_id": 52484,
+    "file_name": "COCO_train2014_000000052484.jpg",
+    "bbox": [
+      185.7,
+      117.9,
+      41.69999999999999,
+      21.80000000000001
+    ],
+    "gt_text": "ISLAND",
+    "text_len": 6,
+    "crop_w": 50,
+    "crop_h": 30
+  },
+  {
+    "crop_id": 289,
+    "crop_file": "292346_119_276_96_11.jpg",
+    "image_id": 292346,
+    "file_name": "COCO_train2014_000000292346.jpg",
+    "bbox": [
+      119.7,
+      276.4,
+      96.8,
+      11.300000000000011
+    ],
+    "gt_text": "THOROUGHFARE",
+    "text_len": 12,
+    "crop_w": 105,
+    "crop_h": 19
+  },
+  {
+    "crop_id": 290,
+    "crop_file": "156624_478_67_16_33.jpg",
+    "image_id": 156624,
+    "file_name": "COCO_train2014_000000156624.jpg",
+    "bbox": [
+      478.6,
+      67.8,
+      16.100000000000023,
+      33.39999999999999
+    ],
+    "gt_text": "HSBC",
+    "text_len": 4,
+    "crop_w": 24,
+    "crop_h": 42
+  },
+  {
+    "crop_id": 291,
+    "crop_file": "225508_95_75_36_14.jpg",
+    "image_id": 225508,
+    "file_name": "COCO_train2014_000000225508.jpg",
+    "bbox": [
+      95.0,
+      75.1,
+      36.400000000000006,
+      14.200000000000003
+    ],
+    "gt_text": "RETURN",
+    "text_len": 6,
+    "crop_w": 44,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 292,
+    "crop_file": "325012_133_288_41_18.jpg",
+    "image_id": 325012,
+    "file_name": "COCO_train2014_000000325012.jpg",
+    "bbox": [
+      133.1,
+      288.0,
+      41.0,
+      18.600000000000023
+    ],
+    "gt_text": "MARSALA",
+    "text_len": 7,
+    "crop_w": 49,
+    "crop_h": 26
+  },
+  {
+    "crop_id": 293,
+    "crop_file": "376283_2_460_72_16.jpg",
+    "image_id": 376283,
+    "file_name": "COCO_train2014_000000376283.jpg",
+    "bbox": [
+      2.1,
+      460.2,
+      72.2,
+      16.19999999999999
+    ],
+    "gt_text": "1stPIX",
+    "text_len": 6,
+    "crop_w": 78,
+    "crop_h": 24
+  },
+  {
+    "crop_id": 294,
+    "crop_file": "285138_137_278_60_32.jpg",
+    "image_id": 285138,
+    "file_name": "COCO_train2014_000000285138.jpg",
+    "bbox": [
+      137.9,
+      278.4,
+      60.79999999999998,
+      32.80000000000001
+    ],
+    "gt_text": "PARTy",
+    "text_len": 5,
+    "crop_w": 69,
+    "crop_h": 41
+  },
+  {
+    "crop_id": 295,
+    "crop_file": "474656_431_132_207_118.jpg",
+    "image_id": 474656,
+    "file_name": "COCO_train2014_000000474656.jpg",
+    "bbox": [
+      431.1,
+      132.1,
+      207.39999999999998,
+      118.4
+    ],
+    "gt_text": "Philippe",
+    "text_len": 8,
+    "crop_w": 213,
+    "crop_h": 126
+  },
+  {
+    "crop_id": 296,
+    "crop_file": "173001_564_268_23_12.jpg",
+    "image_id": 173001,
+    "file_name": "COCO_train2014_000000173001.jpg",
+    "bbox": [
+      564.9,
+      268.2,
+      23.899999999999977,
+      12.399999999999977
+    ],
+    "gt_text": "01932",
+    "text_len": 5,
+    "crop_w": 32,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 297,
+    "crop_file": "538809_555_153_25_19.jpg",
+    "image_id": 538809,
+    "file_name": "COCO_train2014_000000538809.jpg",
+    "bbox": [
+      555.8,
+      153.6,
+      25.0,
+      19.80000000000001
+    ],
+    "gt_text": "BUS",
+    "text_len": 3,
+    "crop_w": 33,
+    "crop_h": 28
+  },
+  {
+    "crop_id": 298,
+    "crop_file": "284468_96_143_18_71.jpg",
+    "image_id": 284468,
+    "file_name": "COCO_train2014_000000284468.jpg",
+    "bbox": [
+      96.4,
+      143.1,
+      18.599999999999994,
+      71.79999999999998
+    ],
+    "gt_text": "350",
+    "text_len": 3,
+    "crop_w": 27,
+    "crop_h": 79
+  },
+  {
+    "crop_id": 299,
+    "crop_file": "352088_402_77_112_37.jpg",
+    "image_id": 352088,
+    "file_name": "COCO_train2014_000000352088.jpg",
+    "bbox": [
+      402.6,
+      77.2,
+      112.0,
+      37.10000000000001
+    ],
+    "gt_text": "American",
+    "text_len": 8,
+    "crop_w": 120,
+    "crop_h": 45
+  },
+  {
+    "crop_id": 300,
+    "crop_file": "370124_27_458_34_10.jpg",
+    "image_id": 370124,
+    "file_name": "COCO_train2014_000000370124.jpg",
+    "bbox": [
+      27.8,
+      458.6,
+      34.8,
+      10.699999999999989
+    ],
+    "gt_text": "2011",
+    "text_len": 4,
+    "crop_w": 43,
+    "crop_h": 19
+  },
+  {
+    "crop_id": 301,
+    "crop_file": "421648_74_310_36_17.jpg",
+    "image_id": 421648,
+    "file_name": "COCO_train2014_000000421648.jpg",
+    "bbox": [
+      74.9,
+      310.1,
+      36.2,
+      17.600000000000023
+    ],
+    "gt_text": "Coffee",
+    "text_len": 6,
+    "crop_w": 45,
+    "crop_h": 25
+  },
+  {
+    "crop_id": 302,
+    "crop_file": "165373_239_29_25_15.jpg",
+    "image_id": 165373,
+    "file_name": "COCO_train2014_000000165373.jpg",
+    "bbox": [
+      239.7,
+      29.2,
+      25.399999999999977,
+      15.099999999999998
+    ],
+    "gt_text": "GOYA",
+    "text_len": 4,
+    "crop_w": 34,
+    "crop_h": 23
+  },
+  {
+    "crop_id": 303,
+    "crop_file": "185888_37_391_25_12.jpg",
+    "image_id": 185888,
+    "file_name": "COCO_train2014_000000185888.jpg",
+    "bbox": [
+      37.9,
+      391.9,
+      25.5,
+      12.600000000000023
+    ],
+    "gt_text": "Photo",
+    "text_len": 5,
+    "crop_w": 34,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 304,
+    "crop_file": "37857_212_159_41_15.jpg",
+    "image_id": 37857,
+    "file_name": "COCO_train2014_000000037857.jpg",
+    "bbox": [
+      212.3,
+      159.1,
+      41.900000000000006,
+      15.0
+    ],
+    "gt_text": "Grand",
+    "text_len": 5,
+    "crop_w": 50,
+    "crop_h": 23
+  },
+  {
+    "crop_id": 305,
+    "crop_file": "379349_567_40_44_10.jpg",
+    "image_id": 379349,
+    "file_name": "COCO_train2014_000000379349.jpg",
+    "bbox": [
+      567.0,
+      40.1,
+      44.0,
+      10.0
+    ],
+    "gt_text": "EMERGENCY",
+    "text_len": 9,
+    "crop_w": 52,
+    "crop_h": 18
+  },
+  {
+    "crop_id": 306,
+    "crop_file": "395216_551_382_73_27.jpg",
+    "image_id": 395216,
+    "file_name": "COCO_train2014_000000395216.jpg",
+    "bbox": [
+      551.5,
+      382.9,
+      73.60000000000002,
+      27.19999999999999
+    ],
+    "gt_text": "JSD",
+    "text_len": 3,
+    "crop_w": 82,
+    "crop_h": 36
+  },
+  {
+    "crop_id": 307,
+    "crop_file": "159582_172_230_31_11.jpg",
+    "image_id": 159582,
+    "file_name": "COCO_train2014_000000159582.jpg",
+    "bbox": [
+      172.1,
+      230.9,
+      31.30000000000001,
+      11.900000000000006
+    ],
+    "gt_text": "IRELAND",
+    "text_len": 7,
+    "crop_w": 39,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 308,
+    "crop_file": "337087_76_252_35_21.jpg",
+    "image_id": 337087,
+    "file_name": "COCO_train2014_000000337087.jpg",
+    "bbox": [
+      76.8,
+      252.4,
+      35.8,
+      21.099999999999994
+    ],
+    "gt_text": "BU07",
+    "text_len": 4,
+    "crop_w": 44,
+    "crop_h": 29
+  },
+  {
+    "crop_id": 309,
+    "crop_file": "11842_160_532_44_10.jpg",
+    "image_id": 11842,
+    "file_name": "COCO_train2014_000000011842.jpg",
+    "bbox": [
+      160.5,
+      532.4,
+      44.5,
+      10.700000000000045
+    ],
+    "gt_text": "someone",
+    "text_len": 7,
+    "crop_w": 53,
+    "crop_h": 19
+  },
+  {
+    "crop_id": 310,
+    "crop_file": "312355_321_199_13_39.jpg",
+    "image_id": 312355,
+    "file_name": "COCO_train2014_000000312355.jpg",
+    "bbox": [
+      321.9,
+      199.3,
+      13.899999999999977,
+      39.19999999999999
+    ],
+    "gt_text": "FOR",
+    "text_len": 3,
+    "crop_w": 22,
+    "crop_h": 47
+  },
+  {
+    "crop_id": 311,
+    "crop_file": "76923_495_0_52_94.jpg",
+    "image_id": 76923,
+    "file_name": "COCO_train2014_000000076923.jpg",
+    "bbox": [
+      495.1,
+      0.2,
+      52.5,
+      94.4
+    ],
+    "gt_text": "EKEA",
+    "text_len": 4,
+    "crop_w": 60,
+    "crop_h": 98
+  },
+  {
+    "crop_id": 312,
+    "crop_file": "323203_276_342_62_71.jpg",
+    "image_id": 323203,
+    "file_name": "COCO_train2014_000000323203.jpg",
+    "bbox": [
+      276.6,
+      342.5,
+      62.89999999999998,
+      71.69999999999999
+    ],
+    "gt_text": "KINGS",
+    "text_len": 5,
+    "crop_w": 71,
+    "crop_h": 80
+  },
+  {
+    "crop_id": 313,
+    "crop_file": "576431_531_403_94_20.jpg",
+    "image_id": 576431,
+    "file_name": "COCO_train2014_000000576431.jpg",
+    "bbox": [
+      531.8,
+      403.5,
+      94.10000000000002,
+      20.80000000000001
+    ],
+    "gt_text": "Photography",
+    "text_len": 11,
+    "crop_w": 102,
+    "crop_h": 29
+  },
+  {
+    "crop_id": 314,
+    "crop_file": "558876_171_276_92_20.jpg",
+    "image_id": 558876,
+    "file_name": "COCO_train2014_000000558876.jpg",
+    "bbox": [
+      171.6,
+      276.1,
+      92.6,
+      20.100000000000023
+    ],
+    "gt_text": "TYPHOOOOOOOOO",
+    "text_len": 13,
+    "crop_w": 101,
+    "crop_h": 28
+  },
+  {
+    "crop_id": 315,
+    "crop_file": "30944_284_469_42_14.jpg",
+    "image_id": 30944,
+    "file_name": "COCO_train2014_000000030944.jpg",
+    "bbox": [
+      284.5,
+      469.5,
+      42.30000000000001,
+      14.899999999999977
+    ],
+    "gt_text": "Microsoft",
+    "text_len": 9,
+    "crop_w": 50,
+    "crop_h": 23
+  },
+  {
+    "crop_id": 316,
+    "crop_file": "317474_228_328_34_91.jpg",
+    "image_id": 317474,
+    "file_name": "COCO_train2014_000000317474.jpg",
+    "bbox": [
+      228.1,
+      328.3,
+      34.29999999999998,
+      91.5
+    ],
+    "gt_text": "Jumb",
+    "text_len": 4,
+    "crop_w": 42,
+    "crop_h": 99
+  },
+  {
+    "crop_id": 317,
+    "crop_file": "102288_73_48_41_21.jpg",
+    "image_id": 102288,
+    "file_name": "COCO_train2014_000000102288.jpg",
+    "bbox": [
+      73.5,
+      48.1,
+      41.2,
+      21.4
+    ],
+    "gt_text": "2009",
+    "text_len": 4,
+    "crop_w": 49,
+    "crop_h": 29
+  },
+  {
+    "crop_id": 318,
+    "crop_file": "133885_164_297_43_11.jpg",
+    "image_id": 133885,
+    "file_name": "COCO_train2014_000000133885.jpg",
+    "bbox": [
+      164.6,
+      297.2,
+      43.20000000000002,
+      11.600000000000023
+    ],
+    "gt_text": "141870",
+    "text_len": 6,
+    "crop_w": 51,
+    "crop_h": 19
+  },
+  {
+    "crop_id": 319,
+    "crop_file": "157933_490_157_42_13.jpg",
+    "image_id": 157933,
+    "file_name": "COCO_train2014_000000157933.jpg",
+    "bbox": [
+      490.1,
+      157.4,
+      42.89999999999998,
+      13.900000000000006
+    ],
+    "gt_text": "TDW",
+    "text_len": 3,
+    "crop_w": 51,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 320,
+    "crop_file": "186035_336_277_16_33.jpg",
+    "image_id": 186035,
+    "file_name": "COCO_train2014_000000186035.jpg",
+    "bbox": [
+      336.4,
+      277.3,
+      16.0,
+      33.19999999999999
+    ],
+    "gt_text": "Autodesk",
+    "text_len": 8,
+    "crop_w": 24,
+    "crop_h": 41
+  },
+  {
+    "crop_id": 321,
+    "crop_file": "196663_489_167_13_12.jpg",
+    "image_id": 196663,
+    "file_name": "COCO_train2014_000000196663.jpg",
+    "bbox": [
+      489.1,
+      167.5,
+      13.5,
+      12.199999999999989
+    ],
+    "gt_text": "TEAM",
+    "text_len": 4,
+    "crop_w": 21,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 322,
+    "crop_file": "338693_154_23_47_23.jpg",
+    "image_id": 338693,
+    "file_name": "COCO_train2014_000000338693.jpg",
+    "bbox": [
+      154.7,
+      23.8,
+      47.900000000000006,
+      23.400000000000002
+    ],
+    "gt_text": "VIAJES",
+    "text_len": 6,
+    "crop_w": 56,
+    "crop_h": 32
+  },
+  {
+    "crop_id": 323,
+    "crop_file": "285477_600_261_39_25.jpg",
+    "image_id": 285477,
+    "file_name": "COCO_train2014_000000285477.jpg",
+    "bbox": [
+      600.6,
+      261.9,
+      39.200000000000045,
+      25.19999999999999
+    ],
+    "gt_text": "Eller",
+    "text_len": 5,
+    "crop_w": 44,
+    "crop_h": 34
+  },
+  {
+    "crop_id": 324,
+    "crop_file": "339074_448_6_45_17.jpg",
+    "image_id": 339074,
+    "file_name": "COCO_train2014_000000339074.jpg",
+    "bbox": [
+      448.9,
+      6.6,
+      45.30000000000001,
+      17.9
+    ],
+    "gt_text": "LONDON",
+    "text_len": 6,
+    "crop_w": 54,
+    "crop_h": 26
+  },
+  {
+    "crop_id": 325,
+    "crop_file": "150385_210_295_35_16.jpg",
+    "image_id": 150385,
+    "file_name": "COCO_train2014_000000150385.jpg",
+    "bbox": [
+      210.3,
+      295.7,
+      35.099999999999994,
+      16.19999999999999
+    ],
+    "gt_text": "ONE",
+    "text_len": 3,
+    "crop_w": 43,
+    "crop_h": 24
+  },
+  {
+    "crop_id": 326,
+    "crop_file": "244885_281_258_67_58.jpg",
+    "image_id": 244885,
+    "file_name": "COCO_train2014_000000244885.jpg",
+    "bbox": [
+      281.1,
+      258.3,
+      67.10000000000002,
+      58.80000000000001
+    ],
+    "gt_text": "WAY",
+    "text_len": 3,
+    "crop_w": 75,
+    "crop_h": 67
+  },
+  {
+    "crop_id": 327,
+    "crop_file": "199678_338_277_98_13.jpg",
+    "image_id": 199678,
+    "file_name": "COCO_train2014_000000199678.jpg",
+    "bbox": [
+      338.0,
+      277.6,
+      98.10000000000002,
+      13.699999999999989
+    ],
+    "gt_text": "0041609870",
+    "text_len": 10,
+    "crop_w": 106,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 328,
+    "crop_file": "489967_233_244_23_15.jpg",
+    "image_id": 489967,
+    "file_name": "COCO_train2014_000000489967.jpg",
+    "bbox": [
+      233.3,
+      244.7,
+      23.80000000000001,
+      15.199999999999989
+    ],
+    "gt_text": "CFI",
+    "text_len": 3,
+    "crop_w": 32,
+    "crop_h": 23
+  },
+  {
+    "crop_id": 329,
+    "crop_file": "524946_104_289_30_12.jpg",
+    "image_id": 524946,
+    "file_name": "COCO_train2014_000000524946.jpg",
+    "bbox": [
+      104.3,
+      289.5,
+      30.299999999999997,
+      12.0
+    ],
+    "gt_text": "Airport",
+    "text_len": 7,
+    "crop_w": 38,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 330,
+    "crop_file": "183890_512_401_31_12.jpg",
+    "image_id": 183890,
+    "file_name": "COCO_train2014_000000183890.jpg",
+    "bbox": [
+      512.3,
+      401.8,
+      31.399999999999977,
+      12.199999999999989
+    ],
+    "gt_text": "Gomez",
+    "text_len": 5,
+    "crop_w": 39,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 331,
+    "crop_file": "69486_603_170_36_48.jpg",
+    "image_id": 69486,
+    "file_name": "COCO_train2014_000000069486.jpg",
+    "bbox": [
+      603.3,
+      170.3,
+      36.700000000000045,
+      48.400000000000006
+    ],
+    "gt_text": "FALOO",
+    "text_len": 5,
+    "crop_w": 41,
+    "crop_h": 56
+  },
+  {
+    "crop_id": 332,
+    "crop_file": "187785_6_14_64_21.jpg",
+    "image_id": 187785,
+    "file_name": "COCO_train2014_000000187785.jpg",
+    "bbox": [
+      6.8,
+      14.4,
+      64.7,
+      21.0
+    ],
+    "gt_text": "MyProfe",
+    "text_len": 7,
+    "crop_w": 73,
+    "crop_h": 29
+  },
+  {
+    "crop_id": 333,
+    "crop_file": "160229_238_154_14_13.jpg",
+    "image_id": 160229,
+    "file_name": "COCO_train2014_000000160229.jpg",
+    "bbox": [
+      238.6,
+      154.7,
+      14.900000000000006,
+      13.900000000000006
+    ],
+    "gt_text": "THER",
+    "text_len": 4,
+    "crop_w": 23,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 334,
+    "crop_file": "132000_572_223_67_23.jpg",
+    "image_id": 132000,
+    "file_name": "COCO_train2014_000000132000.jpg",
+    "bbox": [
+      572.1,
+      223.5,
+      67.89999999999998,
+      23.400000000000006
+    ],
+    "gt_text": "CREAA",
+    "text_len": 5,
+    "crop_w": 72,
+    "crop_h": 31
+  },
+  {
+    "crop_id": 335,
+    "crop_file": "267416_168_463_70_60.jpg",
+    "image_id": 267416,
+    "file_name": "COCO_train2014_000000267416.jpg",
+    "bbox": [
+      168.0,
+      463.2,
+      70.4,
+      60.00000000000006
+    ],
+    "gt_text": "ALL",
+    "text_len": 3,
+    "crop_w": 78,
+    "crop_h": 68
+  },
+  {
+    "crop_id": 336,
+    "crop_file": "526987_395_494_22_61.jpg",
+    "image_id": 526987,
+    "file_name": "COCO_train2014_000000526987.jpg",
+    "bbox": [
+      395.6,
+      494.6,
+      22.600000000000023,
+      61.0
+    ],
+    "gt_text": "DALLAS,",
+    "text_len": 7,
+    "crop_w": 31,
+    "crop_h": 69
+  },
+  {
+    "crop_id": 337,
+    "crop_file": "436023_441_111_34_11.jpg",
+    "image_id": 436023,
+    "file_name": "COCO_train2014_000000436023.jpg",
+    "bbox": [
+      441.5,
+      111.6,
+      34.5,
+      11.400000000000006
+    ],
+    "gt_text": "TRESPASSING",
+    "text_len": 11,
+    "crop_w": 43,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 338,
+    "crop_file": "338642_307_287_55_57.jpg",
+    "image_id": 338642,
+    "file_name": "COCO_train2014_000000338642.jpg",
+    "bbox": [
+      307.0,
+      287.3,
+      55.0,
+      57.80000000000001
+    ],
+    "gt_text": "Jung",
+    "text_len": 4,
+    "crop_w": 63,
+    "crop_h": 66
+  },
+  {
+    "crop_id": 339,
+    "crop_file": "459082_365_302_44_13.jpg",
+    "image_id": 459082,
+    "file_name": "COCO_train2014_000000459082.jpg",
+    "bbox": [
+      365.7,
+      302.0,
+      44.39999999999998,
+      13.399999999999977
+    ],
+    "gt_text": "RELIEVES",
+    "text_len": 8,
+    "crop_w": 53,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 340,
+    "crop_file": "68821_584_358_29_31.jpg",
+    "image_id": 68821,
+    "file_name": "COCO_train2014_000000068821.jpg",
+    "bbox": [
+      584.9,
+      358.7,
+      29.600000000000023,
+      31.30000000000001
+    ],
+    "gt_text": "TURN",
+    "text_len": 4,
+    "crop_w": 38,
+    "crop_h": 40
+  },
+  {
+    "crop_id": 341,
+    "crop_file": "416247_210_297_72_127.jpg",
+    "image_id": 416247,
+    "file_name": "COCO_train2014_000000416247.jpg",
+    "bbox": [
+      210.7,
+      297.7,
+      72.19999999999999,
+      127.30000000000001
+    ],
+    "gt_text": "AKEFRONT",
+    "text_len": 8,
+    "crop_w": 80,
+    "crop_h": 132
+  },
+  {
+    "crop_id": 342,
+    "crop_file": "487392_197_0_28_42.jpg",
+    "image_id": 487392,
+    "file_name": "COCO_train2014_000000487392.jpg",
+    "bbox": [
+      197.2,
+      0,
+      28.19999999999999,
+      42.0
+    ],
+    "gt_text": "Coca",
+    "text_len": 4,
+    "crop_w": 36,
+    "crop_h": 46
+  },
+  {
+    "crop_id": 343,
+    "crop_file": "251835_310_308_12_20.jpg",
+    "image_id": 251835,
+    "file_name": "COCO_train2014_000000251835.jpg",
+    "bbox": [
+      310.1,
+      308.3,
+      12.899999999999977,
+      20.69999999999999
+    ],
+    "gt_text": "funny",
+    "text_len": 5,
+    "crop_w": 21,
+    "crop_h": 29
+  },
+  {
+    "crop_id": 344,
+    "crop_file": "378821_22_117_17_20.jpg",
+    "image_id": 378821,
+    "file_name": "COCO_train2014_000000378821.jpg",
+    "bbox": [
+      22.7,
+      117.1,
+      17.7,
+      20.900000000000006
+    ],
+    "gt_text": "THE",
+    "text_len": 3,
+    "crop_w": 26,
+    "crop_h": 29
+  },
+  {
+    "crop_id": 345,
+    "crop_file": "113328_211_145_64_32.jpg",
+    "image_id": 113328,
+    "file_name": "COCO_train2014_000000113328.jpg",
+    "bbox": [
+      211.5,
+      145.6,
+      64.69999999999999,
+      32.900000000000006
+    ],
+    "gt_text": "WIGS",
+    "text_len": 4,
+    "crop_w": 73,
+    "crop_h": 41
+  },
+  {
+    "crop_id": 346,
+    "crop_file": "39078_302_231_27_12.jpg",
+    "image_id": 39078,
+    "file_name": "COCO_train2014_000000039078.jpg",
+    "bbox": [
+      302.3,
+      231.6,
+      27.399999999999977,
+      12.599999999999994
+    ],
+    "gt_text": "KEVINS",
+    "text_len": 6,
+    "crop_w": 35,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 347,
+    "crop_file": "462472_359_44_69_47.jpg",
+    "image_id": 462472,
+    "file_name": "COCO_train2014_000000462472.jpg",
+    "bbox": [
+      359.2,
+      44.8,
+      69.09999999999997,
+      47.8
+    ],
+    "gt_text": "WQDR",
+    "text_len": 4,
+    "crop_w": 77,
+    "crop_h": 56
+  },
+  {
+    "crop_id": 348,
+    "crop_file": "419632_178_365_100_27.jpg",
+    "image_id": 419632,
+    "file_name": "COCO_train2014_000000419632.jpg",
+    "bbox": [
+      178.1,
+      365.4,
+      100.50000000000003,
+      27.80000000000001
+    ],
+    "gt_text": "WHEN",
+    "text_len": 4,
+    "crop_w": 108,
+    "crop_h": 36
+  },
+  {
+    "crop_id": 349,
+    "crop_file": "209768_370_223_44_11.jpg",
+    "image_id": 209768,
+    "file_name": "COCO_train2014_000000209768.jpg",
+    "bbox": [
+      370.6,
+      223.6,
+      44.19999999999999,
+      11.5
+    ],
+    "gt_text": "COCKERS",
+    "text_len": 7,
+    "crop_w": 52,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 350,
+    "crop_file": "116956_75_516_57_13.jpg",
+    "image_id": 116956,
+    "file_name": "COCO_train2014_000000116956.jpg",
+    "bbox": [
+      75.7,
+      516.5,
+      57.7,
+      13.600000000000023
+    ],
+    "gt_text": "Maxwell",
+    "text_len": 7,
+    "crop_w": 66,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 351,
+    "crop_file": "244416_141_475_40_16.jpg",
+    "image_id": 244416,
+    "file_name": "COCO_train2014_000000244416.jpg",
+    "bbox": [
+      141.5,
+      475.2,
+      40.0,
+      16.80000000000001
+    ],
+    "gt_text": "MATIX",
+    "text_len": 5,
+    "crop_w": 48,
+    "crop_h": 25
+  },
+  {
+    "crop_id": 352,
+    "crop_file": "434966_182_288_401_183.jpg",
+    "image_id": 434966,
+    "file_name": "COCO_train2014_000000434966.jpg",
+    "bbox": [
+      182.6,
+      288.4,
+      401.9,
+      183.0
+    ],
+    "gt_text": "upper",
+    "text_len": 5,
+    "crop_w": 410,
+    "crop_h": 191
+  },
+  {
+    "crop_id": 353,
+    "crop_file": "552392_387_47_51_44.jpg",
+    "image_id": 552392,
+    "file_name": "COCO_train2014_000000552392.jpg",
+    "bbox": [
+      387.6,
+      47.3,
+      51.19999999999999,
+      44.5
+    ],
+    "gt_text": "BUS",
+    "text_len": 3,
+    "crop_w": 59,
+    "crop_h": 52
+  },
+  {
+    "crop_id": 354,
+    "crop_file": "393176_358_241_12_33.jpg",
+    "image_id": 393176,
+    "file_name": "COCO_train2014_000000393176.jpg",
+    "bbox": [
+      358.5,
+      241.7,
+      12.899999999999977,
+      33.19999999999999
+    ],
+    "gt_text": "Ronald",
+    "text_len": 6,
+    "crop_w": 21,
+    "crop_h": 41
+  },
+  {
+    "crop_id": 355,
+    "crop_file": "355789_250_99_62_27.jpg",
+    "image_id": 355789,
+    "file_name": "COCO_train2014_000000355789.jpg",
+    "bbox": [
+      250.8,
+      99.5,
+      62.19999999999999,
+      27.400000000000006
+    ],
+    "gt_text": "WASHING",
+    "text_len": 7,
+    "crop_w": 71,
+    "crop_h": 35
+  },
+  {
+    "crop_id": 356,
+    "crop_file": "554943_174_211_42_20.jpg",
+    "image_id": 554943,
+    "file_name": "COCO_train2014_000000554943.jpg",
+    "bbox": [
+      174.9,
+      211.4,
+      42.5,
+      20.400000000000006
+    ],
+    "gt_text": "WASA",
+    "text_len": 4,
+    "crop_w": 51,
+    "crop_h": 28
+  },
+  {
+    "crop_id": 357,
+    "crop_file": "354569_441_110_26_10.jpg",
+    "image_id": 354569,
+    "file_name": "COCO_train2014_000000354569.jpg",
+    "bbox": [
+      441.7,
+      110.0,
+      26.19999999999999,
+      10.700000000000003
+    ],
+    "gt_text": "4949",
+    "text_len": 4,
+    "crop_w": 34,
+    "crop_h": 18
+  },
+  {
+    "crop_id": 358,
+    "crop_file": "129246_54_382_72_70.jpg",
+    "image_id": 129246,
+    "file_name": "COCO_train2014_000000129246.jpg",
+    "bbox": [
+      54.4,
+      382.7,
+      72.69999999999999,
+      70.09999999999997
+    ],
+    "gt_text": "SESTT",
+    "text_len": 5,
+    "crop_w": 81,
+    "crop_h": 78
+  },
+  {
+    "crop_id": 359,
+    "crop_file": "362713_238_345_28_140.jpg",
+    "image_id": 362713,
+    "file_name": "COCO_train2014_000000362713.jpg",
+    "bbox": [
+      238.8,
+      345.6,
+      28.0,
+      140.8
+    ],
+    "gt_text": "STATE",
+    "text_len": 5,
+    "crop_w": 36,
+    "crop_h": 149
+  },
+  {
+    "crop_id": 360,
+    "crop_file": "144345_79_464_51_36.jpg",
+    "image_id": 144345,
+    "file_name": "COCO_train2014_000000144345.jpg",
+    "bbox": [
+      79.4,
+      464.3,
+      51.400000000000006,
+      36.60000000000002
+    ],
+    "gt_text": "n&m",
+    "text_len": 3,
+    "crop_w": 59,
+    "crop_h": 44
+  },
+  {
+    "crop_id": 361,
+    "crop_file": "364369_149_136_79_66.jpg",
+    "image_id": 364369,
+    "file_name": "COCO_train2014_000000364369.jpg",
+    "bbox": [
+      149.3,
+      136.8,
+      79.4,
+      66.0
+    ],
+    "gt_text": "33rd",
+    "text_len": 4,
+    "crop_w": 87,
+    "crop_h": 74
+  },
+  {
+    "crop_id": 362,
+    "crop_file": "370722_263_621_148_18.jpg",
+    "image_id": 370722,
+    "file_name": "COCO_train2014_000000370722.jpg",
+    "bbox": [
+      263.8,
+      621.0,
+      148.09999999999997,
+      18.5
+    ],
+    "gt_text": "Photography",
+    "text_len": 11,
+    "crop_w": 156,
+    "crop_h": 23
+  },
+  {
+    "crop_id": 363,
+    "crop_file": "486789_247_6_31_88.jpg",
+    "image_id": 486789,
+    "file_name": "COCO_train2014_000000486789.jpg",
+    "bbox": [
+      247.8,
+      6.5,
+      31.899999999999977,
+      88.5
+    ],
+    "gt_text": "MAX",
+    "text_len": 3,
+    "crop_w": 40,
+    "crop_h": 97
+  },
+  {
+    "crop_id": 364,
+    "crop_file": "317997_47_4_130_56.jpg",
+    "image_id": 317997,
+    "file_name": "COCO_train2014_000000317997.jpg",
+    "bbox": [
+      47.7,
+      4.7,
+      130.0,
+      56.3
+    ],
+    "gt_text": "KIA",
+    "text_len": 3,
+    "crop_w": 138,
+    "crop_h": 65
+  },
+  {
+    "crop_id": 365,
+    "crop_file": "443165_418_282_36_13.jpg",
+    "image_id": 443165,
+    "file_name": "COCO_train2014_000000443165.jpg",
+    "bbox": [
+      418.1,
+      282.6,
+      36.0,
+      13.600000000000023
+    ],
+    "gt_text": "Peres",
+    "text_len": 5,
+    "crop_w": 44,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 366,
+    "crop_file": "420446_153_181_182_101.jpg",
+    "image_id": 420446,
+    "file_name": "COCO_train2014_000000420446.jpg",
+    "bbox": [
+      153.0,
+      181.7,
+      182.10000000000002,
+      101.30000000000001
+    ],
+    "gt_text": "STOP",
+    "text_len": 4,
+    "crop_w": 190,
+    "crop_h": 110
+  },
+  {
+    "crop_id": 367,
+    "crop_file": "38614_517_372_88_35.jpg",
+    "image_id": 38614,
+    "file_name": "COCO_train2014_000000038614.jpg",
+    "bbox": [
+      517.3,
+      372.5,
+      88.89999999999998,
+      35.5
+    ],
+    "gt_text": "verdugo",
+    "text_len": 7,
+    "crop_w": 97,
+    "crop_h": 44
+  },
+  {
+    "crop_id": 368,
+    "crop_file": "198404_110_102_33_35.jpg",
+    "image_id": 198404,
+    "file_name": "COCO_train2014_000000198404.jpg",
+    "bbox": [
+      110.2,
+      102.4,
+      33.89999999999999,
+      35.20000000000002
+    ],
+    "gt_text": "JET",
+    "text_len": 3,
+    "crop_w": 42,
+    "crop_h": 43
+  },
+  {
+    "crop_id": 369,
+    "crop_file": "77973_471_383_64_13.jpg",
+    "image_id": 77973,
+    "file_name": "COCO_train2014_000000077973.jpg",
+    "bbox": [
+      471.5,
+      383.1,
+      64.5,
+      13.899999999999977
+    ],
+    "gt_text": "MARKET",
+    "text_len": 6,
+    "crop_w": 69,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 370,
+    "crop_file": "423052_87_103_57_21.jpg",
+    "image_id": 423052,
+    "file_name": "COCO_train2014_000000423052.jpg",
+    "bbox": [
+      87.2,
+      103.9,
+      57.2,
+      21.099999999999994
+    ],
+    "gt_text": "Free",
+    "text_len": 4,
+    "crop_w": 65,
+    "crop_h": 30
+  },
+  {
+    "crop_id": 371,
+    "crop_file": "379936_219_265_74_27.jpg",
+    "image_id": 379936,
+    "file_name": "COCO_train2014_000000379936.jpg",
+    "bbox": [
+      219.3,
+      265.8,
+      74.69999999999999,
+      27.30000000000001
+    ],
+    "gt_text": "RANCH",
+    "text_len": 5,
+    "crop_w": 83,
+    "crop_h": 36
+  },
+  {
+    "crop_id": 372,
+    "crop_file": "273653_438_361_21_10.jpg",
+    "image_id": 273653,
+    "file_name": "COCO_train2014_000000273653.jpg",
+    "bbox": [
+      438.9,
+      361.1,
+      21.30000000000001,
+      10.800000000000011
+    ],
+    "gt_text": "TOYOTA",
+    "text_len": 6,
+    "crop_w": 30,
+    "crop_h": 18
+  },
+  {
+    "crop_id": 373,
+    "crop_file": "451793_355_475_61_19.jpg",
+    "image_id": 451793,
+    "file_name": "COCO_train2014_000000451793.jpg",
+    "bbox": [
+      355.0,
+      475.8,
+      61.89999999999998,
+      19.899999999999977
+    ],
+    "gt_text": "VP 90 492",
+    "text_len": 9,
+    "crop_w": 69,
+    "crop_h": 28
+  },
+  {
+    "crop_id": 374,
+    "crop_file": "390310_370_109_31_12.jpg",
+    "image_id": 390310,
+    "file_name": "COCO_train2014_000000390310.jpg",
+    "bbox": [
+      370.8,
+      109.0,
+      31.30000000000001,
+      12.099999999999994
+    ],
+    "gt_text": "PRIDE",
+    "text_len": 5,
+    "crop_w": 40,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 375,
+    "crop_file": "361291_62_91_38_10.jpg",
+    "image_id": 361291,
+    "file_name": "COCO_train2014_000000361291.jpg",
+    "bbox": [
+      62.2,
+      91.5,
+      38.5,
+      10.5
+    ],
+    "gt_text": "JACOB\"S",
+    "text_len": 7,
+    "crop_w": 46,
+    "crop_h": 19
+  },
+  {
+    "crop_id": 376,
+    "crop_file": "354626_264_74_29_17.jpg",
+    "image_id": 354626,
+    "file_name": "COCO_train2014_000000354626.jpg",
+    "bbox": [
+      264.0,
+      74.4,
+      29.399999999999977,
+      17.700000000000003
+    ],
+    "gt_text": "Central",
+    "text_len": 7,
+    "crop_w": 37,
+    "crop_h": 26
+  },
+  {
+    "crop_id": 377,
+    "crop_file": "77973_436_223_28_21.jpg",
+    "image_id": 77973,
+    "file_name": "COCO_train2014_000000077973.jpg",
+    "bbox": [
+      436.1,
+      223.6,
+      28.600000000000023,
+      21.19999999999999
+    ],
+    "gt_text": "ERN",
+    "text_len": 3,
+    "crop_w": 36,
+    "crop_h": 29
+  },
+  {
+    "crop_id": 378,
+    "crop_file": "533603_259_10_35_22.jpg",
+    "image_id": 533603,
+    "file_name": "COCO_train2014_000000533603.jpg",
+    "bbox": [
+      259.9,
+      10.5,
+      35.5,
+      22.1
+    ],
+    "gt_text": "FRUITS",
+    "text_len": 6,
+    "crop_w": 44,
+    "crop_h": 30
+  },
+  {
+    "crop_id": 379,
+    "crop_file": "236990_88_310_70_11.jpg",
+    "image_id": 236990,
+    "file_name": "COCO_train2014_000000236990.jpg",
+    "bbox": [
+      88.3,
+      310.0,
+      70.09999999999998,
+      11.899999999999977
+    ],
+    "gt_text": "STDS",
+    "text_len": 4,
+    "crop_w": 78,
+    "crop_h": 19
+  },
+  {
+    "crop_id": 380,
+    "crop_file": "469798_477_275_48_13.jpg",
+    "image_id": 469798,
+    "file_name": "COCO_train2014_000000469798.jpg",
+    "bbox": [
+      477.5,
+      275.7,
+      48.799999999999955,
+      13.899999999999977
+    ],
+    "gt_text": "AIR",
+    "text_len": 3,
+    "crop_w": 57,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 381,
+    "crop_file": "250360_94_399_68_13.jpg",
+    "image_id": 250360,
+    "file_name": "COCO_train2014_000000250360.jpg",
+    "bbox": [
+      94.3,
+      399.5,
+      68.59999999999998,
+      13.300000000000011
+    ],
+    "gt_text": "photography",
+    "text_len": 11,
+    "crop_w": 76,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 382,
+    "crop_file": "193077_185_427_76_14.jpg",
+    "image_id": 193077,
+    "file_name": "COCO_train2014_000000193077.jpg",
+    "bbox": [
+      185.5,
+      427.7,
+      76.69999999999999,
+      14.100000000000023
+    ],
+    "gt_text": "SOUVLAKI",
+    "text_len": 8,
+    "crop_w": 85,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 383,
+    "crop_file": "458637_127_542_56_22.jpg",
+    "image_id": 458637,
+    "file_name": "COCO_train2014_000000458637.jpg",
+    "bbox": [
+      127.7,
+      542.3,
+      56.7,
+      22.299999999999955
+    ],
+    "gt_text": "BRITS",
+    "text_len": 5,
+    "crop_w": 65,
+    "crop_h": 30
+  },
+  {
+    "crop_id": 384,
+    "crop_file": "549122_213_18_45_42.jpg",
+    "image_id": 549122,
+    "file_name": "COCO_train2014_000000549122.jpg",
+    "bbox": [
+      213.7,
+      18.9,
+      45.80000000000001,
+      42.7
+    ],
+    "gt_text": "Kings",
+    "text_len": 5,
+    "crop_w": 54,
+    "crop_h": 51
+  },
+  {
+    "crop_id": 385,
+    "crop_file": "431977_331_301_65_15.jpg",
+    "image_id": 431977,
+    "file_name": "COCO_train2014_000000431977.jpg",
+    "bbox": [
+      331.4,
+      301.4,
+      65.0,
+      15.699999999999989
+    ],
+    "gt_text": "Candles",
+    "text_len": 7,
+    "crop_w": 73,
+    "crop_h": 24
+  },
+  {
+    "crop_id": 386,
+    "crop_file": "357461_245_124_14_11.jpg",
+    "image_id": 357461,
+    "file_name": "COCO_train2014_000000357461.jpg",
+    "bbox": [
+      245.5,
+      124.6,
+      14.199999999999989,
+      11.099999999999994
+    ],
+    "gt_text": "CHL",
+    "text_len": 3,
+    "crop_w": 22,
+    "crop_h": 19
+  },
+  {
+    "crop_id": 387,
+    "crop_file": "260248_304_21_10_30.jpg",
+    "image_id": 260248,
+    "file_name": "COCO_train2014_000000260248.jpg",
+    "bbox": [
+      304.4,
+      21.6,
+      10.600000000000023,
+      30.6
+    ],
+    "gt_text": "FRUIT",
+    "text_len": 5,
+    "crop_w": 19,
+    "crop_h": 39
+  },
+  {
+    "crop_id": 388,
+    "crop_file": "5483_121_251_55_21.jpg",
+    "image_id": 5483,
+    "file_name": "COCO_train2014_000000005483.jpg",
+    "bbox": [
+      121.1,
+      251.6,
+      55.900000000000006,
+      21.299999999999983
+    ],
+    "gt_text": "waffel",
+    "text_len": 6,
+    "crop_w": 64,
+    "crop_h": 29
+  },
+  {
+    "crop_id": 389,
+    "crop_file": "382083_106_311_44_17.jpg",
+    "image_id": 382083,
+    "file_name": "COCO_train2014_000000382083.jpg",
+    "bbox": [
+      106.1,
+      311.2,
+      44.29999999999998,
+      17.19999999999999
+    ],
+    "gt_text": "EVERY",
+    "text_len": 5,
+    "crop_w": 52,
+    "crop_h": 25
+  },
+  {
+    "crop_id": 390,
+    "crop_file": "286233_277_395_42_11.jpg",
+    "image_id": 286233,
+    "file_name": "COCO_train2014_000000286233.jpg",
+    "bbox": [
+      277.6,
+      395.2,
+      42.10000000000002,
+      11.899999999999977
+    ],
+    "gt_text": "BUSES",
+    "text_len": 5,
+    "crop_w": 50,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 391,
+    "crop_file": "493740_95_362_71_25.jpg",
+    "image_id": 493740,
+    "file_name": "COCO_train2014_000000493740.jpg",
+    "bbox": [
+      95.5,
+      362.7,
+      71.4,
+      25.100000000000023
+    ],
+    "gt_text": "STATION",
+    "text_len": 7,
+    "crop_w": 79,
+    "crop_h": 33
+  },
+  {
+    "crop_id": 392,
+    "crop_file": "47944_355_322_51_32.jpg",
+    "image_id": 47944,
+    "file_name": "COCO_train2014_000000047944.jpg",
+    "bbox": [
+      355.8,
+      322.4,
+      51.5,
+      32.80000000000001
+    ],
+    "gt_text": "The",
+    "text_len": 3,
+    "crop_w": 60,
+    "crop_h": 41
+  },
+  {
+    "crop_id": 393,
+    "crop_file": "313020_72_34_51_24.jpg",
+    "image_id": 313020,
+    "file_name": "COCO_train2014_000000313020.jpg",
+    "bbox": [
+      72.3,
+      34.3,
+      51.89999999999999,
+      24.299999999999997
+    ],
+    "gt_text": "MLB",
+    "text_len": 3,
+    "crop_w": 60,
+    "crop_h": 32
+  },
+  {
+    "crop_id": 394,
+    "crop_file": "378541_9_148_19_31.jpg",
+    "image_id": 378541,
+    "file_name": "COCO_train2014_000000378541.jpg",
+    "bbox": [
+      9.3,
+      148.4,
+      19.0,
+      31.0
+    ],
+    "gt_text": "Alan",
+    "text_len": 4,
+    "crop_w": 27,
+    "crop_h": 39
+  },
+  {
+    "crop_id": 395,
+    "crop_file": "268102_77_266_53_12.jpg",
+    "image_id": 268102,
+    "file_name": "COCO_train2014_000000268102.jpg",
+    "bbox": [
+      77.0,
+      266.9,
+      53.69999999999999,
+      12.699999999999989
+    ],
+    "gt_text": "1:27.085",
+    "text_len": 8,
+    "crop_w": 61,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 396,
+    "crop_file": "180765_277_0_70_11.jpg",
+    "image_id": 180765,
+    "file_name": "COCO_train2014_000000180765.jpg",
+    "bbox": [
+      277.9,
+      0,
+      70.39999999999998,
+      11.8
+    ],
+    "gt_text": "FARGO",
+    "text_len": 5,
+    "crop_w": 79,
+    "crop_h": 15
+  },
+  {
+    "crop_id": 397,
+    "crop_file": "160325_504_418_27_14.jpg",
+    "image_id": 160325,
+    "file_name": "COCO_train2014_000000160325.jpg",
+    "bbox": [
+      504.9,
+      418.4,
+      27.399999999999977,
+      14.699999999999989
+    ],
+    "gt_text": "STREET",
+    "text_len": 6,
+    "crop_w": 36,
+    "crop_h": 23
+  },
+  {
+    "crop_id": 398,
+    "crop_file": "176029_110_234_17_13.jpg",
+    "image_id": 176029,
+    "file_name": "COCO_train2014_000000176029.jpg",
+    "bbox": [
+      110.1,
+      234.4,
+      17.099999999999994,
+      13.699999999999989
+    ],
+    "gt_text": "8511",
+    "text_len": 4,
+    "crop_w": 25,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 399,
+    "crop_file": "290379_450_96_67_27.jpg",
+    "image_id": 290379,
+    "file_name": "COCO_train2014_000000290379.jpg",
+    "bbox": [
+      450.6,
+      96.6,
+      67.0,
+      27.799999999999997
+    ],
+    "gt_text": "END",
+    "text_len": 3,
+    "crop_w": 75,
+    "crop_h": 36
+  },
+  {
+    "crop_id": 400,
+    "crop_file": "510243_307_226_35_20.jpg",
+    "image_id": 510243,
+    "file_name": "COCO_train2014_000000510243.jpg",
+    "bbox": [
+      307.7,
+      226.1,
+      35.19999999999999,
+      20.30000000000001
+    ],
+    "gt_text": "687",
+    "text_len": 3,
+    "crop_w": 43,
+    "crop_h": 28
+  },
+  {
+    "crop_id": 401,
+    "crop_file": "44414_231_75_39_19.jpg",
+    "image_id": 44414,
+    "file_name": "COCO_train2014_000000044414.jpg",
+    "bbox": [
+      231.1,
+      75.0,
+      39.20000000000002,
+      19.900000000000006
+    ],
+    "gt_text": "h4x0",
+    "text_len": 4,
+    "crop_w": 47,
+    "crop_h": 27
+  },
+  {
+    "crop_id": 402,
+    "crop_file": "349725_277_104_71_148.jpg",
+    "image_id": 349725,
+    "file_name": "COCO_train2014_000000349725.jpg",
+    "bbox": [
+      277.7,
+      104.5,
+      71.59999999999997,
+      148.3
+    ],
+    "gt_text": "BAD",
+    "text_len": 3,
+    "crop_w": 80,
+    "crop_h": 156
+  },
+  {
+    "crop_id": 403,
+    "crop_file": "130081_589_98_38_11.jpg",
+    "image_id": 130081,
+    "file_name": "COCO_train2014_000000130081.jpg",
+    "bbox": [
+      589.5,
+      98.5,
+      38.200000000000045,
+      11.599999999999994
+    ],
+    "gt_text": "THE YEAR",
+    "text_len": 8,
+    "crop_w": 46,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 404,
+    "crop_file": "208244_289_277_21_16.jpg",
+    "image_id": 208244,
+    "file_name": "COCO_train2014_000000208244.jpg",
+    "bbox": [
+      289.7,
+      277.4,
+      21.600000000000023,
+      16.0
+    ],
+    "gt_text": "ALL",
+    "text_len": 3,
+    "crop_w": 30,
+    "crop_h": 24
+  },
+  {
+    "crop_id": 405,
+    "crop_file": "11812_530_228_12_13.jpg",
+    "image_id": 11812,
+    "file_name": "COCO_train2014_000000011812.jpg",
+    "bbox": [
+      530.7,
+      228.4,
+      12.600000000000023,
+      13.099999999999994
+    ],
+    "gt_text": "CS12",
+    "text_len": 4,
+    "crop_w": 21,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 406,
+    "crop_file": "418600_264_413_27_13.jpg",
+    "image_id": 418600,
+    "file_name": "COCO_train2014_000000418600.jpg",
+    "bbox": [
+      264.5,
+      413.6,
+      27.0,
+      13.800000000000011
+    ],
+    "gt_text": "Ospite",
+    "text_len": 6,
+    "crop_w": 35,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 407,
+    "crop_file": "97779_146_162_34_29.jpg",
+    "image_id": 97779,
+    "file_name": "COCO_train2014_000000097779.jpg",
+    "bbox": [
+      146.2,
+      162.0,
+      34.400000000000006,
+      29.900000000000006
+    ],
+    "gt_text": "FOR",
+    "text_len": 3,
+    "crop_w": 42,
+    "crop_h": 37
+  },
+  {
+    "crop_id": 408,
+    "crop_file": "355116_448_316_18_11.jpg",
+    "image_id": 355116,
+    "file_name": "COCO_train2014_000000355116.jpg",
+    "bbox": [
+      448.1,
+      316.6,
+      18.5,
+      11.5
+    ],
+    "gt_text": "500",
+    "text_len": 3,
+    "crop_w": 26,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 409,
+    "crop_file": "530124_401_251_52_67.jpg",
+    "image_id": 530124,
+    "file_name": "COCO_train2014_000000530124.jpg",
+    "bbox": [
+      401.3,
+      251.3,
+      52.69999999999999,
+      67.90000000000003
+    ],
+    "gt_text": "EASTON",
+    "text_len": 6,
+    "crop_w": 61,
+    "crop_h": 76
+  },
+  {
+    "crop_id": 410,
+    "crop_file": "63275_270_458_45_14.jpg",
+    "image_id": 63275,
+    "file_name": "COCO_train2014_000000063275.jpg",
+    "bbox": [
+      270.9,
+      458.1,
+      45.89999999999998,
+      14.600000000000023
+    ],
+    "gt_text": "Company",
+    "text_len": 7,
+    "crop_w": 54,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 411,
+    "crop_file": "508292_153_111_52_19.jpg",
+    "image_id": 508292,
+    "file_name": "COCO_train2014_000000508292.jpg",
+    "bbox": [
+      153.2,
+      111.3,
+      52.19999999999999,
+      19.60000000000001
+    ],
+    "gt_text": "TROLLEY",
+    "text_len": 7,
+    "crop_w": 60,
+    "crop_h": 27
+  },
+  {
+    "crop_id": 412,
+    "crop_file": "175202_456_78_18_10.jpg",
+    "image_id": 175202,
+    "file_name": "COCO_train2014_000000175202.jpg",
+    "bbox": [
+      456.6,
+      78.6,
+      18.5,
+      10.900000000000006
+    ],
+    "gt_text": "you",
+    "text_len": 3,
+    "crop_w": 27,
+    "crop_h": 19
+  },
+  {
+    "crop_id": 413,
+    "crop_file": "160701_79_129_55_21.jpg",
+    "image_id": 160701,
+    "file_name": "COCO_train2014_000000160701.jpg",
+    "bbox": [
+      79.0,
+      129.0,
+      55.69999999999999,
+      21.80000000000001
+    ],
+    "gt_text": "Village",
+    "text_len": 7,
+    "crop_w": 63,
+    "crop_h": 29
+  },
+  {
+    "crop_id": 414,
+    "crop_file": "552142_537_486_19_15.jpg",
+    "image_id": 552142,
+    "file_name": "COCO_train2014_000000552142.jpg",
+    "bbox": [
+      537.1,
+      486.9,
+      19.200000000000045,
+      15.5
+    ],
+    "gt_text": "PLUS",
+    "text_len": 4,
+    "crop_w": 27,
+    "crop_h": 24
+  },
+  {
+    "crop_id": 415,
+    "crop_file": "474319_352_205_28_19.jpg",
+    "image_id": 474319,
+    "file_name": "COCO_train2014_000000474319.jpg",
+    "bbox": [
+      352.8,
+      205.3,
+      28.899999999999977,
+      19.599999999999994
+    ],
+    "gt_text": "XCEL",
+    "text_len": 4,
+    "crop_w": 37,
+    "crop_h": 27
+  },
+  {
+    "crop_id": 416,
+    "crop_file": "374520_169_188_111_11.jpg",
+    "image_id": 374520,
+    "file_name": "COCO_train2014_000000374520.jpg",
+    "bbox": [
+      169.1,
+      188.3,
+      111.50000000000003,
+      11.099999999999994
+    ],
+    "gt_text": "AUSTRIAN",
+    "text_len": 8,
+    "crop_w": 119,
+    "crop_h": 19
+  },
+  {
+    "crop_id": 417,
+    "crop_file": "356445_184_275_23_18.jpg",
+    "image_id": 356445,
+    "file_name": "COCO_train2014_000000356445.jpg",
+    "bbox": [
+      184.0,
+      275.1,
+      23.80000000000001,
+      18.399999999999977
+    ],
+    "gt_text": "for",
+    "text_len": 3,
+    "crop_w": 31,
+    "crop_h": 26
+  },
+  {
+    "crop_id": 418,
+    "crop_file": "206341_217_67_28_14.jpg",
+    "image_id": 206341,
+    "file_name": "COCO_train2014_000000206341.jpg",
+    "bbox": [
+      217.0,
+      67.2,
+      28.80000000000001,
+      14.099999999999994
+    ],
+    "gt_text": "YIELD",
+    "text_len": 5,
+    "crop_w": 36,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 419,
+    "crop_file": "384595_270_213_84_50.jpg",
+    "image_id": 384595,
+    "file_name": "COCO_train2014_000000384595.jpg",
+    "bbox": [
+      270.0,
+      213.3,
+      84.0,
+      50.10000000000002
+    ],
+    "gt_text": "HEYWARD",
+    "text_len": 7,
+    "crop_w": 92,
+    "crop_h": 58
+  },
+  {
+    "crop_id": 420,
+    "crop_file": "114340_249_227_28_20.jpg",
+    "image_id": 114340,
+    "file_name": "COCO_train2014_000000114340.jpg",
+    "bbox": [
+      249.4,
+      227.7,
+      28.400000000000006,
+      20.099999999999994
+    ],
+    "gt_text": "NEED",
+    "text_len": 4,
+    "crop_w": 36,
+    "crop_h": 28
+  },
+  {
+    "crop_id": 421,
+    "crop_file": "295428_250_111_35_23.jpg",
+    "image_id": 295428,
+    "file_name": "COCO_train2014_000000295428.jpg",
+    "bbox": [
+      250.6,
+      111.5,
+      35.900000000000006,
+      23.0
+    ],
+    "gt_text": "299",
+    "text_len": 3,
+    "crop_w": 44,
+    "crop_h": 31
+  },
+  {
+    "crop_id": 422,
+    "crop_file": "378778_312_139_50_27.jpg",
+    "image_id": 378778,
+    "file_name": "COCO_train2014_000000378778.jpg",
+    "bbox": [
+      312.6,
+      139.7,
+      50.60000000000002,
+      27.5
+    ],
+    "gt_text": "CASILLA",
+    "text_len": 7,
+    "crop_w": 59,
+    "crop_h": 36
+  },
+  {
+    "crop_id": 423,
+    "crop_file": "301296_224_259_36_18.jpg",
+    "image_id": 301296,
+    "file_name": "COCO_train2014_000000301296.jpg",
+    "bbox": [
+      224.9,
+      259.9,
+      36.99999999999997,
+      18.899999999999977
+    ],
+    "gt_text": "101",
+    "text_len": 3,
+    "crop_w": 45,
+    "crop_h": 27
+  },
+  {
+    "crop_id": 424,
+    "crop_file": "222097_503_4_56_13.jpg",
+    "image_id": 222097,
+    "file_name": "COCO_train2014_000000222097.jpg",
+    "bbox": [
+      503.9,
+      4.5,
+      56.799999999999955,
+      13.899999999999999
+    ],
+    "gt_text": "RUP100",
+    "text_len": 6,
+    "crop_w": 65,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 425,
+    "crop_file": "184477_250_205_60_62.jpg",
+    "image_id": 184477,
+    "file_name": "COCO_train2014_000000184477.jpg",
+    "bbox": [
+      250.1,
+      205.9,
+      60.50000000000003,
+      62.99999999999997
+    ],
+    "gt_text": "HEWDEN",
+    "text_len": 6,
+    "crop_w": 68,
+    "crop_h": 71
+  },
+  {
+    "crop_id": 426,
+    "crop_file": "428142_344_191_70_30.jpg",
+    "image_id": 428142,
+    "file_name": "COCO_train2014_000000428142.jpg",
+    "bbox": [
+      344.0,
+      191.9,
+      70.39999999999998,
+      30.69999999999999
+    ],
+    "gt_text": "PARADEPLATA",
+    "text_len": 11,
+    "crop_w": 78,
+    "crop_h": 39
+  },
+  {
+    "crop_id": 427,
+    "crop_file": "351240_599_70_30_15.jpg",
+    "image_id": 351240,
+    "file_name": "COCO_train2014_000000351240.jpg",
+    "bbox": [
+      599.3,
+      70.0,
+      30.200000000000045,
+      15.900000000000006
+    ],
+    "gt_text": "FOR",
+    "text_len": 3,
+    "crop_w": 38,
+    "crop_h": 23
+  },
+  {
+    "crop_id": 428,
+    "crop_file": "157026_351_141_15_12.jpg",
+    "image_id": 157026,
+    "file_name": "COCO_train2014_000000157026.jpg",
+    "bbox": [
+      351.9,
+      141.3,
+      15.100000000000023,
+      12.199999999999989
+    ],
+    "gt_text": "Pork",
+    "text_len": 4,
+    "crop_w": 24,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 429,
+    "crop_file": "64896_399_90_16_10.jpg",
+    "image_id": 64896,
+    "file_name": "COCO_train2014_000000064896.jpg",
+    "bbox": [
+      399.1,
+      90.8,
+      16.5,
+      10.099999999999994
+    ],
+    "gt_text": "F11",
+    "text_len": 3,
+    "crop_w": 24,
+    "crop_h": 18
+  },
+  {
+    "crop_id": 430,
+    "crop_file": "395828_364_256_22_14.jpg",
+    "image_id": 395828,
+    "file_name": "COCO_train2014_000000395828.jpg",
+    "bbox": [
+      364.3,
+      256.8,
+      22.19999999999999,
+      14.800000000000011
+    ],
+    "gt_text": "90704",
+    "text_len": 5,
+    "crop_w": 30,
+    "crop_h": 23
+  },
+  {
+    "crop_id": 431,
+    "crop_file": "310688_329_259_16_65.jpg",
+    "image_id": 310688,
+    "file_name": "COCO_train2014_000000310688.jpg",
+    "bbox": [
+      329.2,
+      259.7,
+      16.5,
+      65.09999999999997
+    ],
+    "gt_text": "KIDS",
+    "text_len": 4,
+    "crop_w": 24,
+    "crop_h": 73
+  },
+  {
+    "crop_id": 432,
+    "crop_file": "432770_285_64_33_12.jpg",
+    "image_id": 432770,
+    "file_name": "COCO_train2014_000000432770.jpg",
+    "bbox": [
+      285.3,
+      64.3,
+      33.0,
+      12.900000000000006
+    ],
+    "gt_text": "Electro",
+    "text_len": 7,
+    "crop_w": 41,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 433,
+    "crop_file": "310020_501_335_28_41.jpg",
+    "image_id": 310020,
+    "file_name": "COCO_train2014_000000310020.jpg",
+    "bbox": [
+      501.0,
+      335.3,
+      28.5,
+      41.10000000000002
+    ],
+    "gt_text": "THE",
+    "text_len": 3,
+    "crop_w": 36,
+    "crop_h": 49
+  },
+  {
+    "crop_id": 434,
+    "crop_file": "463334_69_228_78_10.jpg",
+    "image_id": 463334,
+    "file_name": "COCO_train2014_000000463334.jpg",
+    "bbox": [
+      69.8,
+      228.2,
+      78.39999999999999,
+      10.900000000000006
+    ],
+    "gt_text": "OUMOAT",
+    "text_len": 6,
+    "crop_w": 87,
+    "crop_h": 19
+  },
+  {
+    "crop_id": 435,
+    "crop_file": "338173_286_0_99_26.jpg",
+    "image_id": 338173,
+    "file_name": "COCO_train2014_000000338173.jpg",
+    "bbox": [
+      286.8,
+      0,
+      99.59999999999997,
+      26.900000000000002
+    ],
+    "gt_text": "SERIES",
+    "text_len": 6,
+    "crop_w": 108,
+    "crop_h": 30
+  },
+  {
+    "crop_id": 436,
+    "crop_file": "182947_12_235_46_44.jpg",
+    "image_id": 182947,
+    "file_name": "COCO_train2014_000000182947.jpg",
+    "bbox": [
+      12.2,
+      235.1,
+      46.8,
+      44.400000000000006
+    ],
+    "gt_text": "UCAA",
+    "text_len": 4,
+    "crop_w": 55,
+    "crop_h": 52
+  },
+  {
+    "crop_id": 437,
+    "crop_file": "308350_378_173_38_12.jpg",
+    "image_id": 308350,
+    "file_name": "COCO_train2014_000000308350.jpg",
+    "bbox": [
+      378.1,
+      173.3,
+      38.69999999999999,
+      12.900000000000006
+    ],
+    "gt_text": "TANAH",
+    "text_len": 5,
+    "crop_w": 46,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 438,
+    "crop_file": "276766_52_410_69_12.jpg",
+    "image_id": 276766,
+    "file_name": "COCO_train2014_000000276766.jpg",
+    "bbox": [
+      52.4,
+      410.2,
+      69.4,
+      12.699999999999989
+    ],
+    "gt_text": "Emmanuel",
+    "text_len": 8,
+    "crop_w": 77,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 439,
+    "crop_file": "477749_424_451_35_11.jpg",
+    "image_id": 477749,
+    "file_name": "COCO_train2014_000000477749.jpg",
+    "bbox": [
+      424.0,
+      451.5,
+      35.10000000000002,
+      11.800000000000011
+    ],
+    "gt_text": "2012",
+    "text_len": 4,
+    "crop_w": 43,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 440,
+    "crop_file": "43016_76_392_51_12.jpg",
+    "image_id": 43016,
+    "file_name": "COCO_train2014_000000043016.jpg",
+    "bbox": [
+      76.3,
+      392.8,
+      51.5,
+      12.600000000000023
+    ],
+    "gt_text": "Christopher",
+    "text_len": 11,
+    "crop_w": 59,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 441,
+    "crop_file": "199151_311_45_86_30.jpg",
+    "image_id": 199151,
+    "file_name": "COCO_train2014_000000199151.jpg",
+    "bbox": [
+      311.6,
+      45.8,
+      86.89999999999998,
+      30.39999999999999
+    ],
+    "gt_text": "UNIQUE",
+    "text_len": 6,
+    "crop_w": 95,
+    "crop_h": 39
+  },
+  {
+    "crop_id": 442,
+    "crop_file": "262673_233_125_12_63.jpg",
+    "image_id": 262673,
+    "file_name": "COCO_train2014_000000262673.jpg",
+    "bbox": [
+      233.9,
+      125.5,
+      12.900000000000006,
+      63.599999999999994
+    ],
+    "gt_text": "SNOWBOARD",
+    "text_len": 9,
+    "crop_w": 21,
+    "crop_h": 72
+  },
+  {
+    "crop_id": 443,
+    "crop_file": "448842_80_145_67_67.jpg",
+    "image_id": 448842,
+    "file_name": "COCO_train2014_000000448842.jpg",
+    "bbox": [
+      80.3,
+      145.8,
+      67.2,
+      67.9
+    ],
+    "gt_text": "Beauchamp",
+    "text_len": 9,
+    "crop_w": 75,
+    "crop_h": 76
+  },
+  {
+    "crop_id": 444,
+    "crop_file": "235529_349_290_88_73.jpg",
+    "image_id": 235529,
+    "file_name": "COCO_train2014_000000235529.jpg",
+    "bbox": [
+      349.4,
+      290.1,
+      88.39999999999998,
+      73.60000000000002
+    ],
+    "gt_text": "Ave",
+    "text_len": 3,
+    "crop_w": 96,
+    "crop_h": 81
+  },
+  {
+    "crop_id": 445,
+    "crop_file": "362282_249_276_29_27.jpg",
+    "image_id": 362282,
+    "file_name": "COCO_train2014_000000362282.jpg",
+    "bbox": [
+      249.4,
+      276.4,
+      29.49999999999997,
+      27.399999999999977
+    ],
+    "gt_text": "1,35 c",
+    "text_len": 6,
+    "crop_w": 37,
+    "crop_h": 35
+  },
+  {
+    "crop_id": 446,
+    "crop_file": "342122_260_270_80_64.jpg",
+    "image_id": 342122,
+    "file_name": "COCO_train2014_000000342122.jpg",
+    "bbox": [
+      260.6,
+      270.0,
+      80.0,
+      64.0
+    ],
+    "gt_text": "THE",
+    "text_len": 3,
+    "crop_w": 88,
+    "crop_h": 72
+  },
+  {
+    "crop_id": 447,
+    "crop_file": "243018_245_213_85_35.jpg",
+    "image_id": 243018,
+    "file_name": "COCO_train2014_000000243018.jpg",
+    "bbox": [
+      245.0,
+      213.5,
+      85.69999999999999,
+      35.80000000000001
+    ],
+    "gt_text": "WAY",
+    "text_len": 3,
+    "crop_w": 93,
+    "crop_h": 44
+  },
+  {
+    "crop_id": 448,
+    "crop_file": "436464_251_180_69_46.jpg",
+    "image_id": 436464,
+    "file_name": "COCO_train2014_000000436464.jpg",
+    "bbox": [
+      251.3,
+      180.6,
+      69.69999999999999,
+      46.400000000000006
+    ],
+    "gt_text": "WITHOUT",
+    "text_len": 7,
+    "crop_w": 78,
+    "crop_h": 55
+  },
+  {
+    "crop_id": 449,
+    "crop_file": "247597_225_325_43_21.jpg",
+    "image_id": 247597,
+    "file_name": "COCO_train2014_000000247597.jpg",
+    "bbox": [
+      225.7,
+      325.8,
+      43.69999999999999,
+      21.30000000000001
+    ],
+    "gt_text": "Molly",
+    "text_len": 5,
+    "crop_w": 52,
+    "crop_h": 30
+  },
+  {
+    "crop_id": 450,
+    "crop_file": "497455_226_270_33_13.jpg",
+    "image_id": 497455,
+    "file_name": "COCO_train2014_000000497455.jpg",
+    "bbox": [
+      226.9,
+      270.0,
+      33.099999999999994,
+      13.5
+    ],
+    "gt_text": "jake",
+    "text_len": 4,
+    "crop_w": 42,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 451,
+    "crop_file": "105096_95_234_108_37.jpg",
+    "image_id": 105096,
+    "file_name": "COCO_train2014_000000105096.jpg",
+    "bbox": [
+      95.6,
+      234.4,
+      108.70000000000002,
+      37.599999999999994
+    ],
+    "gt_text": "Alaska",
+    "text_len": 6,
+    "crop_w": 117,
+    "crop_h": 46
+  },
+  {
+    "crop_id": 452,
+    "crop_file": "241720_89_324_52_19.jpg",
+    "image_id": 241720,
+    "file_name": "COCO_train2014_000000241720.jpg",
+    "bbox": [
+      89.9,
+      324.1,
+      52.29999999999998,
+      19.399999999999977
+    ],
+    "gt_text": "USA",
+    "text_len": 3,
+    "crop_w": 61,
+    "crop_h": 27
+  },
+  {
+    "crop_id": 453,
+    "crop_file": "278303_293_282_24_11.jpg",
+    "image_id": 278303,
+    "file_name": "COCO_train2014_000000278303.jpg",
+    "bbox": [
+      293.9,
+      282.7,
+      24.80000000000001,
+      11.600000000000023
+    ],
+    "gt_text": "CST",
+    "text_len": 3,
+    "crop_w": 33,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 454,
+    "crop_file": "299111_423_236_53_15.jpg",
+    "image_id": 299111,
+    "file_name": "COCO_train2014_000000299111.jpg",
+    "bbox": [
+      423.1,
+      236.0,
+      53.39999999999998,
+      15.300000000000011
+    ],
+    "gt_text": "ELECTRONICS",
+    "text_len": 11,
+    "crop_w": 61,
+    "crop_h": 23
+  },
+  {
+    "crop_id": 455,
+    "crop_file": "135348_391_23_34_34.jpg",
+    "image_id": 135348,
+    "file_name": "COCO_train2014_000000135348.jpg",
+    "bbox": [
+      391.2,
+      23.6,
+      34.80000000000001,
+      34.4
+    ],
+    "gt_text": "BEPP",
+    "text_len": 4,
+    "crop_w": 39,
+    "crop_h": 43
+  },
+  {
+    "crop_id": 456,
+    "crop_file": "26388_0_93_106_66.jpg",
+    "image_id": 26388,
+    "file_name": "COCO_train2014_000000026388.jpg",
+    "bbox": [
+      0.2,
+      93.4,
+      106.9,
+      66.20000000000002
+    ],
+    "gt_text": "ENT",
+    "text_len": 3,
+    "crop_w": 111,
+    "crop_h": 74
+  },
+  {
+    "crop_id": 457,
+    "crop_file": "37062_62_169_25_18.jpg",
+    "image_id": 37062,
+    "file_name": "COCO_train2014_000000037062.jpg",
+    "bbox": [
+      62.3,
+      169.6,
+      25.89999999999999,
+      18.0
+    ],
+    "gt_text": "PETTER",
+    "text_len": 6,
+    "crop_w": 34,
+    "crop_h": 26
+  },
+  {
+    "crop_id": 458,
+    "crop_file": "340459_288_257_14_18.jpg",
+    "image_id": 340459,
+    "file_name": "COCO_train2014_000000340459.jpg",
+    "bbox": [
+      288.2,
+      257.4,
+      14.600000000000023,
+      18.19999999999999
+    ],
+    "gt_text": "riot",
+    "text_len": 4,
+    "crop_w": 22,
+    "crop_h": 26
+  },
+  {
+    "crop_id": 459,
+    "crop_file": "557824_156_462_31_20.jpg",
+    "image_id": 557824,
+    "file_name": "COCO_train2014_000000557824.jpg",
+    "bbox": [
+      156.0,
+      462.5,
+      31.30000000000001,
+      20.80000000000001
+    ],
+    "gt_text": "the",
+    "text_len": 3,
+    "crop_w": 39,
+    "crop_h": 29
+  },
+  {
+    "crop_id": 460,
+    "crop_file": "464634_4_302_37_25.jpg",
+    "image_id": 464634,
+    "file_name": "COCO_train2014_000000464634.jpg",
+    "bbox": [
+      4.4,
+      302.9,
+      37.0,
+      25.899999999999977
+    ],
+    "gt_text": "NEXT",
+    "text_len": 4,
+    "crop_w": 45,
+    "crop_h": 34
+  },
+  {
+    "crop_id": 461,
+    "crop_file": "166467_17_403_106_19.jpg",
+    "image_id": 166467,
+    "file_name": "COCO_train2014_000000166467.jpg",
+    "bbox": [
+      17.3,
+      403.8,
+      106.4,
+      19.19999999999999
+    ],
+    "gt_text": "photography",
+    "text_len": 11,
+    "crop_w": 114,
+    "crop_h": 28
+  },
+  {
+    "crop_id": 462,
+    "crop_file": "347133_201_141_26_12.jpg",
+    "image_id": 347133,
+    "file_name": "COCO_train2014_000000347133.jpg",
+    "bbox": [
+      201.5,
+      141.5,
+      26.0,
+      12.5
+    ],
+    "gt_text": "DUBEE",
+    "text_len": 5,
+    "crop_w": 34,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 463,
+    "crop_file": "16246_454_22_32_24.jpg",
+    "image_id": 16246,
+    "file_name": "COCO_train2014_000000016246.jpg",
+    "bbox": [
+      454.5,
+      22.8,
+      32.60000000000002,
+      24.100000000000005
+    ],
+    "gt_text": "BOWTS",
+    "text_len": 5,
+    "crop_w": 41,
+    "crop_h": 32
+  },
+  {
+    "crop_id": 464,
+    "crop_file": "250289_305_267_63_24.jpg",
+    "image_id": 250289,
+    "file_name": "COCO_train2014_000000250289.jpg",
+    "bbox": [
+      305.1,
+      267.7,
+      63.80000000000001,
+      24.899999999999977
+    ],
+    "gt_text": "Collector",
+    "text_len": 9,
+    "crop_w": 71,
+    "crop_h": 33
+  },
+  {
+    "crop_id": 465,
+    "crop_file": "316275_389_169_74_15.jpg",
+    "image_id": 316275,
+    "file_name": "COCO_train2014_000000316275.jpg",
+    "bbox": [
+      389.6,
+      169.8,
+      74.39999999999998,
+      15.199999999999989
+    ],
+    "gt_text": "Verzion",
+    "text_len": 7,
+    "crop_w": 83,
+    "crop_h": 24
+  },
+  {
+    "crop_id": 466,
+    "crop_file": "84551_155_292_61_17.jpg",
+    "image_id": 84551,
+    "file_name": "COCO_train2014_000000084551.jpg",
+    "bbox": [
+      155.6,
+      292.6,
+      61.79999999999998,
+      17.80000000000001
+    ],
+    "gt_text": "CARIBBEAN",
+    "text_len": 9,
+    "crop_w": 70,
+    "crop_h": 26
+  },
+  {
+    "crop_id": 467,
+    "crop_file": "528299_291_130_41_26.jpg",
+    "image_id": 528299,
+    "file_name": "COCO_train2014_000000528299.jpg",
+    "bbox": [
+      291.0,
+      130.4,
+      41.10000000000002,
+      26.0
+    ],
+    "gt_text": "ROCKING",
+    "text_len": 7,
+    "crop_w": 49,
+    "crop_h": 34
+  },
+  {
+    "crop_id": 468,
+    "crop_file": "471822_280_238_22_16.jpg",
+    "image_id": 471822,
+    "file_name": "COCO_train2014_000000471822.jpg",
+    "bbox": [
+      280.2,
+      238.0,
+      22.899999999999977,
+      16.5
+    ],
+    "gt_text": "THE",
+    "text_len": 3,
+    "crop_w": 31,
+    "crop_h": 24
+  },
+  {
+    "crop_id": 469,
+    "crop_file": "236650_152_393_50_10.jpg",
+    "image_id": 236650,
+    "file_name": "COCO_train2014_000000236650.jpg",
+    "bbox": [
+      152.5,
+      393.1,
+      50.900000000000006,
+      10.199999999999989
+    ],
+    "gt_text": "PHOTO",
+    "text_len": 5,
+    "crop_w": 59,
+    "crop_h": 18
+  },
+  {
+    "crop_id": 470,
+    "crop_file": "131160_275_73_40_36.jpg",
+    "image_id": 131160,
+    "file_name": "COCO_train2014_000000131160.jpg",
+    "bbox": [
+      275.2,
+      73.7,
+      40.30000000000001,
+      36.39999999999999
+    ],
+    "gt_text": "Taksim",
+    "text_len": 6,
+    "crop_w": 48,
+    "crop_h": 45
+  },
+  {
+    "crop_id": 471,
+    "crop_file": "52440_304_623_45_15.jpg",
+    "image_id": 52440,
+    "file_name": "COCO_train2014_000000052440.jpg",
+    "bbox": [
+      304.1,
+      623.0,
+      45.39999999999998,
+      15.700000000000045
+    ],
+    "gt_text": "travel",
+    "text_len": 6,
+    "crop_w": 53,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 472,
+    "crop_file": "342130_21_63_53_43.jpg",
+    "image_id": 342130,
+    "file_name": "COCO_train2014_000000342130.jpg",
+    "bbox": [
+      21.6,
+      63.9,
+      53.99999999999999,
+      43.1
+    ],
+    "gt_text": "WORD",
+    "text_len": 4,
+    "crop_w": 62,
+    "crop_h": 52
+  },
+  {
+    "crop_id": 473,
+    "crop_file": "327895_268_107_34_21.jpg",
+    "image_id": 327895,
+    "file_name": "COCO_train2014_000000327895.jpg",
+    "bbox": [
+      268.7,
+      107.9,
+      34.5,
+      21.099999999999994
+    ],
+    "gt_text": "133",
+    "text_len": 3,
+    "crop_w": 43,
+    "crop_h": 30
+  },
+  {
+    "crop_id": 474,
+    "crop_file": "362118_218_401_54_19.jpg",
+    "image_id": 362118,
+    "file_name": "COCO_train2014_000000362118.jpg",
+    "bbox": [
+      218.8,
+      401.3,
+      54.0,
+      19.80000000000001
+    ],
+    "gt_text": "Happy",
+    "text_len": 5,
+    "crop_w": 62,
+    "crop_h": 28
+  },
+  {
+    "crop_id": 475,
+    "crop_file": "568113_109_211_18_15.jpg",
+    "image_id": 568113,
+    "file_name": "COCO_train2014_000000568113.jpg",
+    "bbox": [
+      109.5,
+      211.7,
+      18.400000000000006,
+      15.199999999999989
+    ],
+    "gt_text": "Nesquik",
+    "text_len": 7,
+    "crop_w": 26,
+    "crop_h": 23
+  },
+  {
+    "crop_id": 476,
+    "crop_file": "144703_83_33_78_37.jpg",
+    "image_id": 144703,
+    "file_name": "COCO_train2014_000000144703.jpg",
+    "bbox": [
+      83.5,
+      33.0,
+      78.1,
+      37.099999999999994
+    ],
+    "gt_text": "Steve",
+    "text_len": 5,
+    "crop_w": 86,
+    "crop_h": 45
+  },
+  {
+    "crop_id": 477,
+    "crop_file": "364467_475_121_134_26.jpg",
+    "image_id": 364467,
+    "file_name": "COCO_train2014_000000364467.jpg",
+    "bbox": [
+      475.0,
+      121.9,
+      134.10000000000002,
+      26.0
+    ],
+    "gt_text": "Chocolate",
+    "text_len": 9,
+    "crop_w": 142,
+    "crop_h": 34
+  },
+  {
+    "crop_id": 478,
+    "crop_file": "257489_256_371_108_29.jpg",
+    "image_id": 257489,
+    "file_name": "COCO_train2014_000000257489.jpg",
+    "bbox": [
+      256.3,
+      371.7,
+      108.0,
+      29.69999999999999
+    ],
+    "gt_text": "ESTATES",
+    "text_len": 7,
+    "crop_w": 116,
+    "crop_h": 38
+  },
+  {
+    "crop_id": 479,
+    "crop_file": "453167_163_196_79_10.jpg",
+    "image_id": 453167,
+    "file_name": "COCO_train2014_000000453167.jpg",
+    "bbox": [
+      163.8,
+      196.3,
+      79.80000000000001,
+      10.800000000000011
+    ],
+    "gt_text": "ausfleeken",
+    "text_len": 10,
+    "crop_w": 88,
+    "crop_h": 19
+  },
+  {
+    "crop_id": 480,
+    "crop_file": "321709_488_47_36_14.jpg",
+    "image_id": 321709,
+    "file_name": "COCO_train2014_000000321709.jpg",
+    "bbox": [
+      488.2,
+      47.3,
+      36.80000000000001,
+      14.899999999999999
+    ],
+    "gt_text": "CocaCola",
+    "text_len": 8,
+    "crop_w": 45,
+    "crop_h": 23
+  },
+  {
+    "crop_id": 481,
+    "crop_file": "19085_438_184_55_11.jpg",
+    "image_id": 19085,
+    "file_name": "COCO_train2014_000000019085.jpg",
+    "bbox": [
+      438.1,
+      184.5,
+      55.5,
+      11.199999999999989
+    ],
+    "gt_text": "SHUTTLE",
+    "text_len": 7,
+    "crop_w": 63,
+    "crop_h": 19
+  },
+  {
+    "crop_id": 482,
+    "crop_file": "473384_280_181_17_20.jpg",
+    "image_id": 473384,
+    "file_name": "COCO_train2014_000000473384.jpg",
+    "bbox": [
+      280.3,
+      181.0,
+      17.899999999999977,
+      20.5
+    ],
+    "gt_text": "The",
+    "text_len": 3,
+    "crop_w": 26,
+    "crop_h": 28
+  },
+  {
+    "crop_id": 483,
+    "crop_file": "426474_247_413_32_12.jpg",
+    "image_id": 426474,
+    "file_name": "COCO_train2014_000000426474.jpg",
+    "bbox": [
+      247.3,
+      413.4,
+      32.10000000000002,
+      12.300000000000011
+    ],
+    "gt_text": "Men's",
+    "text_len": 5,
+    "crop_w": 40,
+    "crop_h": 20
+  },
+  {
+    "crop_id": 484,
+    "crop_file": "240423_429_90_52_15.jpg",
+    "image_id": 240423,
+    "file_name": "COCO_train2014_000000240423.jpg",
+    "bbox": [
+      429.2,
+      90.9,
+      52.5,
+      15.900000000000006
+    ],
+    "gt_text": "NORTH",
+    "text_len": 5,
+    "crop_w": 60,
+    "crop_h": 24
+  },
+  {
+    "crop_id": 485,
+    "crop_file": "346021_204_350_22_13.jpg",
+    "image_id": 346021,
+    "file_name": "COCO_train2014_000000346021.jpg",
+    "bbox": [
+      204.7,
+      350.6,
+      22.0,
+      13.600000000000023
+    ],
+    "gt_text": "you",
+    "text_len": 3,
+    "crop_w": 30,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 486,
+    "crop_file": "334603_60_192_70_13.jpg",
+    "image_id": 334603,
+    "file_name": "COCO_train2014_000000334603.jpg",
+    "bbox": [
+      60.5,
+      192.9,
+      70.9,
+      13.199999999999989
+    ],
+    "gt_text": "SHIELA'S",
+    "text_len": 8,
+    "crop_w": 79,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 487,
+    "crop_file": "298458_492_25_35_10.jpg",
+    "image_id": 298458,
+    "file_name": "COCO_train2014_000000298458.jpg",
+    "bbox": [
+      492.9,
+      25.6,
+      35.5,
+      10.300000000000004
+    ],
+    "gt_text": "Muziek",
+    "text_len": 6,
+    "crop_w": 44,
+    "crop_h": 18
+  },
+  {
+    "crop_id": 488,
+    "crop_file": "259360_418_165_17_10.jpg",
+    "image_id": 259360,
+    "file_name": "COCO_train2014_000000259360.jpg",
+    "bbox": [
+      418.1,
+      165.6,
+      17.69999999999999,
+      10.800000000000011
+    ],
+    "gt_text": "NOKIA",
+    "text_len": 5,
+    "crop_w": 25,
+    "crop_h": 19
+  },
+  {
+    "crop_id": 489,
+    "crop_file": "136346_403_353_19_10.jpg",
+    "image_id": 136346,
+    "file_name": "COCO_train2014_000000136346.jpg",
+    "bbox": [
+      403.7,
+      353.7,
+      19.5,
+      10.399999999999977
+    ],
+    "gt_text": "DVH",
+    "text_len": 3,
+    "crop_w": 28,
+    "crop_h": 19
+  },
+  {
+    "crop_id": 490,
+    "crop_file": "534578_181_181_42_174.jpg",
+    "image_id": 534578,
+    "file_name": "COCO_train2014_000000534578.jpg",
+    "bbox": [
+      181.2,
+      181.1,
+      42.69999999999999,
+      174.00000000000003
+    ],
+    "gt_text": "SYNC",
+    "text_len": 4,
+    "crop_w": 50,
+    "crop_h": 182
+  },
+  {
+    "crop_id": 491,
+    "crop_file": "157215_100_252_67_12.jpg",
+    "image_id": 157215,
+    "file_name": "COCO_train2014_000000157215.jpg",
+    "bbox": [
+      100.7,
+      252.7,
+      67.99999999999999,
+      12.899999999999977
+    ],
+    "gt_text": "REGIO",
+    "text_len": 5,
+    "crop_w": 76,
+    "crop_h": 21
+  },
+  {
+    "crop_id": 492,
+    "crop_file": "79260_341_246_26_14.jpg",
+    "image_id": 79260,
+    "file_name": "COCO_train2014_000000079260.jpg",
+    "bbox": [
+      341.8,
+      246.7,
+      26.80000000000001,
+      14.100000000000023
+    ],
+    "gt_text": "POTS",
+    "text_len": 4,
+    "crop_w": 35,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 493,
+    "crop_file": "293514_336_322_62_28.jpg",
+    "image_id": 293514,
+    "file_name": "COCO_train2014_000000293514.jpg",
+    "bbox": [
+      336.2,
+      322.6,
+      62.69999999999999,
+      28.899999999999977
+    ],
+    "gt_text": "OBSERVE",
+    "text_len": 7,
+    "crop_w": 70,
+    "crop_h": 37
+  },
+  {
+    "crop_id": 494,
+    "crop_file": "26031_10_75_25_15.jpg",
+    "image_id": 26031,
+    "file_name": "COCO_train2014_000000026031.jpg",
+    "bbox": [
+      10.1,
+      75.0,
+      25.0,
+      15.299999999999997
+    ],
+    "gt_text": "ICT",
+    "text_len": 3,
+    "crop_w": 33,
+    "crop_h": 23
+  },
+  {
+    "crop_id": 495,
+    "crop_file": "501299_523_6_95_16.jpg",
+    "image_id": 501299,
+    "file_name": "COCO_train2014_000000501299.jpg",
+    "bbox": [
+      523.5,
+      6.0,
+      95.89999999999998,
+      16.4
+    ],
+    "gt_text": "WELCOME",
+    "text_len": 7,
+    "crop_w": 104,
+    "crop_h": 24
+  },
+  {
+    "crop_id": 496,
+    "crop_file": "488234_233_379_39_20.jpg",
+    "image_id": 488234,
+    "file_name": "COCO_train2014_000000488234.jpg",
+    "bbox": [
+      233.8,
+      379.3,
+      39.30000000000001,
+      20.100000000000023
+    ],
+    "gt_text": "APER",
+    "text_len": 4,
+    "crop_w": 48,
+    "crop_h": 28
+  },
+  {
+    "crop_id": 497,
+    "crop_file": "416325_342_134_59_18.jpg",
+    "image_id": 416325,
+    "file_name": "COCO_train2014_000000416325.jpg",
+    "bbox": [
+      342.4,
+      134.4,
+      59.19999999999999,
+      18.400000000000006
+    ],
+    "gt_text": "ROGET\"S",
+    "text_len": 7,
+    "crop_w": 67,
+    "crop_h": 26
+  },
+  {
+    "crop_id": 498,
+    "crop_file": "577556_415_3_40_14.jpg",
+    "image_id": 577556,
+    "file_name": "COCO_train2014_000000577556.jpg",
+    "bbox": [
+      415.6,
+      3.6,
+      40.10000000000002,
+      14.6
+    ],
+    "gt_text": "FIRE",
+    "text_len": 4,
+    "crop_w": 48,
+    "crop_h": 22
+  },
+  {
+    "crop_id": 499,
+    "crop_file": "399408_237_65_42_20.jpg",
+    "image_id": 399408,
+    "file_name": "COCO_train2014_000000399408.jpg",
+    "bbox": [
+      237.7,
+      65.7,
+      42.80000000000001,
+      20.39999999999999
+    ],
+    "gt_text": "Dog",
+    "text_len": 3,
+    "crop_w": 51,
+    "crop_h": 29
+  }
+]
