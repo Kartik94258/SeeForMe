@@ -483,9 +483,11 @@ async def ocr_stream(websocket: WebSocket):
                         pass
                 tts_queue.put_nowait(job)
             else:
-                # Once the text has been out of view for a short period, allow it
-                # to be announced again when the user points back at it.
-                if not tokens and now - last_text_seen > 2.5:
+                # Keep the current phrase deduplicated while it remains in view,
+                # but allow it to be spoken again after the user points elsewhere.
+                if tokens:
+                    last_text_seen = now
+                elif now - last_text_seen > 2.5:
                     last_text = ""
 
                 feedback = build_feedback_message(result)
