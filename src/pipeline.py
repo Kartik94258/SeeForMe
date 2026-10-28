@@ -214,7 +214,7 @@ class Pipeline:
                 "detection_s":   round(det_latency, 4),
                 "recognition_s": 0.0,
                 "total_s":       round(det_latency, 4),
-                "within_budget": True
+                "within_budget": det_latency <= self.budget_s
             },
             "n_boxes":    0,
             "n_spoken":   0,
