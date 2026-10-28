@@ -9,7 +9,12 @@ const en = {
     about: "About",
   },
   camera: {
-    scanning: "Looking for readable text...",
+    scanning: "Scanning for text...",
+    startingCamera: "Starting camera...",
+    connecting: "Connecting to OCR service...",
+    processing: "Reading text...",
+    scanTimedOut: "Scan took too long. Reconnecting to the OCR service...",
+    connectionLost: "Connection lost. Reconnecting...",
     tip: "Point the camera at printed text, hold steady for a moment, and the app will read new text aloud.",
     paused: "Paused",
     noCamera: "Camera not available",
