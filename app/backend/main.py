@@ -393,6 +393,7 @@ async def ocr_stream(websocket: WebSocket):
                     "text": job["text"],
                     "tokens": tokens,
                     "boxes": job["boxes"],
+                    "regions": job["regions"],
                     "feedback": audio_feedback,
                     "audio": audio_b64,
                     "meta": job["meta"],
@@ -420,6 +421,7 @@ async def ocr_stream(websocket: WebSocket):
                     "text": "",
                     "tokens": [],
                     "boxes": [],
+                    "regions": [],
                     "feedback": exc.detail,
                     "audio": "",
                 })
@@ -436,6 +438,7 @@ async def ocr_stream(websocket: WebSocket):
                     "text": "",
                     "tokens": [],
                     "boxes": [],
+                    "regions": [],
                     "feedback": "OCR processing failed. Please try again.",
                     "audio": "",
                 })
@@ -444,6 +447,15 @@ async def ocr_stream(websocket: WebSocket):
 
             tokens, boxes = extract_detections(result["gated_results"])
             text = " ".join(tokens)
+            regions = [
+                {
+                    "box": item.get("box", []),
+                    "text": item.get("text", ""),
+                    "confidence": float(item.get("confidence", 0.0)),
+                    "gated": bool(item.get("gated", False)),
+                }
+                for item in result["gated_results"]
+            ]
             meta = {
                 "n_boxes": result["n_boxes"],
                 "n_spoken": result["n_spoken"],
@@ -463,6 +475,7 @@ async def ocr_stream(websocket: WebSocket):
                     "text": text,
                     "tokens": tokens,
                     "boxes": boxes,
+                    "regions": regions,
                     "feedback": "",
                     "audio": "",
                     "meta": meta,
@@ -473,6 +486,7 @@ async def ocr_stream(websocket: WebSocket):
                     "text": text,
                     "tokens": tokens,
                     "boxes": boxes,
+                    "regions": regions,
                     "meta": meta,
                 }
                 if tts_queue.full():
