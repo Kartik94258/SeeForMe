@@ -34,11 +34,17 @@ export default function CameraTab({ t, onDetection }) {
     setActive(true);
   }, []);
 
+  const handlePlaybackError = useCallback((message) => {
+    setFeedback(message);
+    addLog(message, "warning");
+  }, [addLog]);
+
   const handleReplay = useCallback(() => {
-    if (!lastAudioRef.current) return;
+    if (!detectedText) return;
     stopAudio();
-    enqueue(lastAudioRef.current);
-  }, [enqueue, stopAudio]);
+    // If no MP3 was returned or the MP3 cannot play, use the browser voice.
+    enqueue(lastAudioRef.current || "", detectedText, handlePlaybackError);
+  }, [detectedText, enqueue, handlePlaybackError, stopAudio]);
 
   const handleMessage = useCallback((data) => {
     if (data.type === "processed") {
@@ -56,9 +62,9 @@ export default function CameraTab({ t, onDetection }) {
     }
 
     if (data.type === "audio") {
-      if (data.audio && audioUnlockedRef.current) {
-        lastAudioRef.current = data.audio;
-        enqueue(data.audio);
+      if (audioUnlockedRef.current && data.text) {
+        lastAudioRef.current = data.audio || "";
+        enqueue(data.audio || "", data.text, handlePlaybackError);
       }
 
       if (!data.audio && data.feedback) {
@@ -72,7 +78,7 @@ export default function CameraTab({ t, onDetection }) {
       const logType = data.feedback.includes("clear") ? "warning" : "info";
       addLog(data.feedback, logType);
     }
-  }, [onDetection, enqueue, addLog, t]);
+  }, [onDetection, enqueue, addLog, handlePlaybackError, t]);
 
   const { connected, sendFrame } = useWebSocket({
     onMessage: handleMessage,
@@ -188,7 +194,7 @@ export default function CameraTab({ t, onDetection }) {
         onReplay={handleReplay}
         onPause={pauseAudio}
         onStop={stopAudio}
-        onClear={() => { setLog([]); setDetectedText(""); setFeedback(""); stopAudio(); }}
+        onClear={() => { setLog([]); setDetectedText(""); setFeedback(""); lastAudioRef.current = ""; stopAudio(); }}
         log={log}
       />
     </div>
