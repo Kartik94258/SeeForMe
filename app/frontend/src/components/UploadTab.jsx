@@ -14,7 +14,7 @@ export default function UploadTab({ t, onDetection }) {
   const previewUrlRef = useRef(null);
   const requestRef = useRef(null);
 
-  const { play, pause, stop, replay, playing } = useAudioPlayer();
+  const { play, pause, stop, replay, playing, paused } = useAudioPlayer();
 
   useEffect(() => () => {
     requestRef.current?.abort();
@@ -147,6 +147,7 @@ export default function UploadTab({ t, onDetection }) {
         detectedText={detectedText}
         feedback={feedback}
         playing={playing}
+        paused={paused}
         onReplay={replay}
         onPause={pause}
         onStop={stop}
