@@ -4,7 +4,7 @@ import { useWebSocket }   from "../hooks/useWebSocket";
 import { useAudioQueue }  from "../hooks/useAudioQueue";
 import DetectionPanel     from "./DetectionPanel";
 
-const FRAME_INTERVAL_MS = 300;
+const FRAME_INTERVAL_MS = 150;
 
 export default function CameraTab({ t, onDetection }) {
   const [active, setActive]               = useState(false);
