@@ -58,7 +58,11 @@ export default function CameraTab({ t, onDetection }) {
       return;
     }
 
-    if (Array.isArray(data.regions)) setRegions(data.regions);
+    // Only detections/feedback update the overlay. A delayed TTS reply must not
+    // replace newer boxes with the regions from an older queued announcement.
+    if ((data.type === "text" || data.type === "feedback") && Array.isArray(data.regions)) {
+      setRegions(data.regions);
+    }
 
     // Count once, after speech synthesis, so latency includes the TTS stage.
     if (data.type === "audio" || data.type === "feedback") onDetection(data);
