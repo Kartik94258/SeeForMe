@@ -4,7 +4,9 @@ export function useAudioPlayer() {
   const audioRef = useRef(null);
   const urlRef = useRef(null);
   const lastB64 = useRef("");
+  const pausedRef = useRef(false);
   const [playing, setPlaying] = useState(false);
+  const [paused, setPaused] = useState(false);
 
   const releaseCurrent = useCallback(() => {
     const audio = audioRef.current;
@@ -18,7 +20,9 @@ export function useAudioPlayer() {
     audioRef.current = null;
     if (urlRef.current) URL.revokeObjectURL(urlRef.current);
     urlRef.current = null;
+    pausedRef.current = false;
     setPlaying(false);
+    setPaused(false);
   }, []);
 
   const play = useCallback((base64Mp3) => {
@@ -36,6 +40,9 @@ export function useAudioPlayer() {
     audioRef.current = null;
     if (urlRef.current) URL.revokeObjectURL(urlRef.current);
     urlRef.current = null;
+    pausedRef.current = false;
+    setPlaying(false);
+    setPaused(false);
 
     try {
       const blob = base64ToBlob(base64Mp3, "audio/mpeg");
@@ -48,8 +55,7 @@ export function useAudioPlayer() {
       const cleanup = () => {
         if (cleaned) return;
         cleaned = true;
-
-        // Ignore stale events if a different clip is now active.
+        // Ignore late events from a clip that has already been replaced.
         if (audioRef.current !== audio) {
           URL.revokeObjectURL(url);
           return;
@@ -60,11 +66,16 @@ export function useAudioPlayer() {
           URL.revokeObjectURL(url);
           urlRef.current = null;
         }
+        pausedRef.current = false;
         setPlaying(false);
+        setPaused(false);
       };
 
       audio.onplay = () => {
-        if (audioRef.current === audio) setPlaying(true);
+        if (audioRef.current === audio && !pausedRef.current) {
+          setPlaying(true);
+          setPaused(false);
+        }
       };
       audio.onended = cleanup;
       audio.onerror = cleanup;
@@ -76,9 +87,25 @@ export function useAudioPlayer() {
   }, [releaseCurrent]);
 
   const pause = useCallback(() => {
-    audioRef.current?.pause();
-    setPlaying(false);
-  }, []);
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (!pausedRef.current) {
+      audio.pause();
+      pausedRef.current = true;
+      setPlaying(false);
+      setPaused(true);
+      return;
+    }
+
+    pausedRef.current = false;
+    setPaused(false);
+    audio.play()
+      .then(() => {
+        if (audioRef.current === audio) setPlaying(true);
+      })
+      .catch(() => releaseCurrent());
+  }, [releaseCurrent]);
 
   const stop = useCallback(() => {
     releaseCurrent();
@@ -99,9 +126,10 @@ export function useAudioPlayer() {
     audioRef.current = null;
     if (urlRef.current) URL.revokeObjectURL(urlRef.current);
     urlRef.current = null;
+    pausedRef.current = false;
   }, []);
 
-  return { play, pause, stop, replay, playing };
+  return { play, pause, stop, replay, playing, paused };
 }
 
 function base64ToBlob(base64, mime) {
