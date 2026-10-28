@@ -394,6 +394,7 @@ async def ocr_stream(websocket: WebSocket):
                 await websocket.send_json({"type": "processed"})
                 continue
 
+            include_tts_latency(result, 0.0)
             tokens, boxes = extract_detections(result["gated_results"])
             text          = " ".join(tokens)
 
