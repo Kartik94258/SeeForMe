@@ -3,6 +3,7 @@ import { useEffect, useRef, useCallback, useState } from "react";
 export function useCamera({ active }) {
   const videoRef = useRef(null);
   const streamRef = useRef(null);
+  const canvasRef = useRef(null);
   const [error, setError] = useState(null);
   const [ready, setReady] = useState(false);
 
@@ -92,9 +93,13 @@ export function useCamera({ active }) {
       return null;
     }
 
-    const canvas = document.createElement("canvas");
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
+    // Reuse the same canvas instead of allocating one on every camera tick.
+    const canvas = canvasRef.current || document.createElement("canvas");
+    if (canvas.width !== video.videoWidth || canvas.height !== video.videoHeight) {
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+    }
+    canvasRef.current = canvas;
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return null;
