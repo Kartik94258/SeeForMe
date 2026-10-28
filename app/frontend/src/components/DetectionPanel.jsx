@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export default function DetectionPanel({ t, detectedText, feedback, playing, onReplay, onPause, onStop, onClear, log }) {
+export default function DetectionPanel({ t, detectedText, feedback, playing, paused, onReplay, onPause, onStop, onClear, log }) {
   const logRef = useRef(null);
 
   useEffect(() => {
@@ -52,15 +52,15 @@ export default function DetectionPanel({ t, detectedText, feedback, playing, onR
           </span>
           {t.detection.replay}
         </button>
-        <button className="btn-secondary" onClick={onPause} disabled={!playing}>
+        <button className="btn-secondary" onClick={onPause} disabled={!playing && !paused}>
           <span className="btn-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" className="ui-icon ui-icon-inline">
               <path d="M8 6h3v12H8zM13 6h3v12h-3z" />
             </svg>
           </span>
-          {t.detection.pause}
+          {paused ? t.detection.resume : t.detection.pause}
         </button>
-        <button className="btn-secondary" onClick={onStop} disabled={!playing}>
+        <button className="btn-secondary" onClick={onStop} disabled={!playing && !paused}>
           <span className="btn-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" className="ui-icon ui-icon-inline">
               <path d="M7 7h10v10H7z" />
