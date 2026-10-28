@@ -161,22 +161,39 @@ async def synthesize(tokens: list[str]) -> bytes:
     return buffer.getvalue()
 
 
-async def synthesize_safely(tokens: list[str]) -> tuple[bytes, str]:
+async def synthesize_safely(tokens: list[str]) -> tuple[bytes, str, float]:
     """Bound cloud TTS latency and preserve OCR text when speech is unavailable."""
+    started = time.perf_counter()
     try:
         audio_bytes = await asyncio.wait_for(
             synthesize(tokens),
             timeout=TTS_TIMEOUT_S,
         )
+        elapsed = time.perf_counter() - started
         if not audio_bytes:
-            return b"", "Speech synthesis returned no audio"
-        return audio_bytes, ""
+            return b"", "Speech synthesis returned no audio", elapsed
+        return audio_bytes, "", elapsed
     except asyncio.TimeoutError:
+        elapsed = time.perf_counter() - started
         print(f"TTS timed out after {TTS_TIMEOUT_S:.1f}s")
-        return b"", "Speech synthesis timed out"
+        return b"", "Speech synthesis timed out", elapsed
     except Exception as exc:
+        elapsed = time.perf_counter() - started
         print(f"TTS synthesis failed: {exc}")
-        return b"", "Speech synthesis failed"
+        return b"", "Speech synthesis failed", elapsed
+
+
+def include_tts_latency(result: dict, tts_seconds: float) -> None:
+    """Report OCR and TTS time separately while keeping total latency end-to-end."""
+    latency = result.get("latency")
+    if not isinstance(latency, dict):
+        return
+
+    ocr_seconds = latency.get("ocr_total_s", latency.get("total_s", 0.0))
+    latency["ocr_total_s"] = ocr_seconds
+    latency["tts_s"] = round(tts_seconds, 4)
+    latency["total_s"] = round(ocr_seconds + tts_seconds, 4)
+    latency["within_budget"] = latency["total_s"] <= getattr(pipeline, "budget_s", 2.0)
 
 
 # ---------------------------------------------------------------------------
@@ -271,10 +288,12 @@ async def ocr_image(file: UploadFile = File(...)):
 
     audio_b64 = ""
     audio_feedback = ""
+    tts_elapsed = 0.0
     if tokens:
-        audio_bytes, audio_feedback = await synthesize_safely(tokens)
+        audio_bytes, audio_feedback, tts_elapsed = await synthesize_safely(tokens)
         if audio_bytes:
             audio_b64 = base64.b64encode(audio_bytes).decode()
+    include_tts_latency(result, tts_elapsed)
 
     feedback = build_feedback_message(result) if not tokens else audio_feedback
 
@@ -306,10 +325,12 @@ async def ocr_image_base64(payload: ImagePayload):
 
     audio_b64 = ""
     audio_feedback = ""
+    tts_elapsed = 0.0
     if tokens:
-        audio_bytes, audio_feedback = await synthesize_safely(tokens)
+        audio_bytes, audio_feedback, tts_elapsed = await synthesize_safely(tokens)
         if audio_bytes:
             audio_b64 = base64.b64encode(audio_bytes).decode()
+    include_tts_latency(result, tts_elapsed)
 
     feedback = build_feedback_message(result) if not tokens else audio_feedback
 
@@ -396,7 +417,8 @@ async def ocr_stream(websocket: WebSocket):
                     "meta":     meta
                 })
 
-                audio_bytes, audio_feedback = await synthesize_safely(tokens)
+                audio_bytes, audio_feedback, tts_elapsed = await synthesize_safely(tokens)
+                include_tts_latency(result, tts_elapsed)
                 audio_b64 = base64.b64encode(audio_bytes).decode() if audio_bytes else ""
 
                 # Always send the completion message so the frontend can resume scanning.
