@@ -9,6 +9,7 @@ export function useAudioPlayer() {
   const pausedRef = useRef(false);
   const [playing, setPlaying] = useState(false);
   const [paused, setPaused] = useState(false);
+  const [audioError, setAudioError] = useState("");
 
   const stopSpeech = useCallback(() => {
     if (speechRef.current && typeof window !== "undefined" && "speechSynthesis" in window) {
@@ -45,11 +46,13 @@ export function useAudioPlayer() {
       !("speechSynthesis" in window) ||
       typeof SpeechSynthesisUtterance === "undefined"
     ) {
+      setAudioError("Audio could not play. Browser speech is not available.");
       return false;
     }
 
     try {
       window.speechSynthesis.cancel();
+      setAudioError("");
       const utterance = new SpeechSynthesisUtterance(phrase);
       utterance.lang = "en-US";
       speechRef.current = utterance;
@@ -67,6 +70,7 @@ export function useAudioPlayer() {
       utterance.onend = finish;
       utterance.onerror = (event) => {
         console.error("Browser speech fallback failed:", event.error || event);
+        setAudioError("Browser speech failed. Check your device audio settings.");
         finish();
       };
       window.speechSynthesis.speak(utterance);
@@ -76,6 +80,7 @@ export function useAudioPlayer() {
       speechRef.current = null;
       setPlaying(false);
       setPaused(false);
+      setAudioError("Speech playback is unavailable in this browser.");
       return false;
     }
   }, []);
@@ -83,6 +88,7 @@ export function useAudioPlayer() {
   const play = useCallback((base64Mp3, fallbackText = lastText.current) => {
     lastText.current = fallbackText || lastText.current;
     lastB64.current = base64Mp3 || "";
+    setAudioError("");
 
     // Stop prior HTML audio/browser speech before starting a new reading.
     const previousAudio = audioRef.current;
@@ -219,7 +225,7 @@ export function useAudioPlayer() {
     pausedRef.current = false;
   }, []);
 
-  return { play, pause, stop, replay, playing, paused };
+  return { play, pause, stop, replay, playing, paused, audioError };
 }
 
 function base64ToBlob(base64, mime) {
