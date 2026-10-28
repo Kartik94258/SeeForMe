@@ -15,8 +15,7 @@ export default function CameraTab({ t, onDetection }) {
   const [log, setLog]                     = useState([]);
   const intervalRef    = useRef(null);
 
-  const { enqueue, stop: stopAudio, pause: pauseAudio, playing, paused, isBusy } = useAudioQueue();
-  const lastAudioRef = useRef(null);
+  const { enqueue, stop: stopAudio, pause: pauseAudio, speakText, playing, paused, isBusy } = useAudioQueue();
 
   // At most one camera frame may be in flight; the server ACKs after OCR.
   const frameInFlightRef = useRef(false);
@@ -41,10 +40,10 @@ export default function CameraTab({ t, onDetection }) {
 
   const handleReplay = useCallback(() => {
     if (!detectedText) return;
-    stopAudio();
-    // If no MP3 was returned or the MP3 cannot play, use the browser voice.
-    enqueue(lastAudioRef.current || "", detectedText, handlePlaybackError);
-  }, [detectedText, enqueue, handlePlaybackError, stopAudio]);
+    // Use speechSynthesis directly within this click; replay must not depend on
+    // a cached/expired MP3 or on an earlier async audio.play() gesture.
+    speakText(detectedText, handlePlaybackError);
+  }, [detectedText, handlePlaybackError, speakText]);
 
   const handleMessage = useCallback((data) => {
     if (data.type === "processed") {
@@ -63,7 +62,6 @@ export default function CameraTab({ t, onDetection }) {
 
     if (data.type === "audio") {
       if (audioUnlockedRef.current && data.text) {
-        lastAudioRef.current = data.audio || "";
         enqueue(data.audio || "", data.text, handlePlaybackError);
       }
 
@@ -84,30 +82,6 @@ export default function CameraTab({ t, onDetection }) {
     onMessage: handleMessage,
     active,
   });
-
-  const testAudio = useCallback(async () => {
-    try {
-      const canvas = document.createElement("canvas");
-      canvas.width  = 100;
-      canvas.height = 100;
-      const ctx = canvas.getContext("2d");
-      ctx.fillStyle = "white";
-      ctx.fillRect(0, 0, 100, 100);
-      ctx.fillStyle = "black";
-      ctx.font = "20px Arial";
-      ctx.fillText("TEST", 20, 60);
-      canvas.toBlob(async (blob) => {
-        const form = new FormData();
-        form.append("file", blob, "test.jpg");
-        const res  = await fetch("http://localhost:8000/ocr/image", { method: "POST", body: form });
-        const data = await res.json();
-        alert(`text: "${data.text}" | audio: ${data.audio?.length || 0} bytes | feedback: "${data.feedback}"`);
-        if (data.audio) enqueue(data.audio);
-      }, "image/jpeg", 0.9);
-    } catch (e) {
-      alert("Test failed: " + e.message);
-    }
-  }, [enqueue]);
 
   // Keep exactly one camera frame in flight and wait for the server's OCR ACK.
   useEffect(() => {
@@ -194,7 +168,7 @@ export default function CameraTab({ t, onDetection }) {
         onReplay={handleReplay}
         onPause={pauseAudio}
         onStop={stopAudio}
-        onClear={() => { setLog([]); setDetectedText(""); setFeedback(""); lastAudioRef.current = ""; stopAudio(); }}
+        onClear={() => { setLog([]); setDetectedText(""); setFeedback(""); stopAudio(); }}
         log={log}
       />
     </div>

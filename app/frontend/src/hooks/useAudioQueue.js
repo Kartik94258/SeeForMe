@@ -80,6 +80,39 @@ export function useAudioQueue() {
     }
   }, [advanceQueue]);
 
+  // Call this directly from a user click: it starts speech synchronously, so
+  // browser autoplay policies cannot reject it merely because OCR was asynchronous.
+  const speakText = useCallback((text, onError = null) => {
+    queueRef.current = [];
+
+    const audio = currentRef.current;
+    if (audio) {
+      audio.onplay = null;
+      audio.onended = null;
+      audio.onerror = null;
+      audio.pause();
+    }
+    if (currentUrlRef.current) URL.revokeObjectURL(currentUrlRef.current);
+    currentRef.current = null;
+    currentUrlRef.current = null;
+    cleanupCurrentRef.current = null;
+
+    if (speechRef.current && typeof window !== "undefined" && "speechSynthesis" in window) {
+      speechRef.current.onend = null;
+      speechRef.current.onerror = null;
+      window.speechSynthesis.cancel();
+    }
+    speechRef.current = null;
+    isPlayingRef.current = false;
+    pausedRef.current = false;
+    if (mountedRef.current) {
+      setPlaying(false);
+      setPaused(false);
+    }
+
+    return speakFallback(text, onError);
+  }, [speakFallback]);
+
   const playNext = useCallback(() => {
     if (isPlayingRef.current || pausedRef.current || speechRef.current) return;
 
@@ -290,5 +323,5 @@ export function useAudioQueue() {
     };
   }, []);
 
-  return { enqueue, stop, pause, playing, paused, isBusy };
+  return { enqueue, stop, pause, speakText, playing, paused, isBusy };
 }

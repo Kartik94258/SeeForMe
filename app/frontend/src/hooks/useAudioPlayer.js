@@ -201,9 +201,13 @@ export function useAudioPlayer() {
 
   const stop = useCallback(() => releaseCurrent(), [releaseCurrent]);
 
+  // Replays use browser speech directly from the click handler. This avoids
+  // losing the user-activation window when an MP3 playback promise rejects.
   const replay = useCallback((fallbackText = lastText.current) => {
-    play(lastB64.current, fallbackText);
-  }, [play]);
+    lastText.current = fallbackText || lastText.current;
+    releaseCurrent();
+    speakFallback(lastText.current);
+  }, [releaseCurrent, speakFallback]);
 
   useEffect(() => () => {
     const audio = audioRef.current;
