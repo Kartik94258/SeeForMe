@@ -27,7 +27,7 @@ export default function DetectionPanel({ t, detectedText, feedback, playing, pau
         </div>
         <div className={`speaking-badge ${playing ? "active" : ""}`}>
           <span className="status-dot" />
-          {playing ? t.detection.speaking : t.detection.idle}
+          {playing ? t.detection.speaking : paused ? t.detection.paused : t.detection.idle}
         </div>
       </div>
 
@@ -38,9 +38,7 @@ export default function DetectionPanel({ t, detectedText, feedback, playing, pau
         ) : (
           <p className="detected-text placeholder">{t.detection.waiting}</p>
         )}
-        {feedback && !detectedText && (
-          <p className="feedback-text">{feedback}</p>
-        )}
+        {feedback && <p className="feedback-text">{feedback}</p>}
       </div>
 
       <div className="audio-controls">
