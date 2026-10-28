@@ -25,6 +25,7 @@ const en = {
     title: "Detected Text",
     speaking: "Speaking",
     idle: "Listening",
+    paused: "Paused",
     replay: "Replay",
     pause: "Pause",
     resume: "Resume",
