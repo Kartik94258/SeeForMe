@@ -46,7 +46,8 @@ export default function CameraTab({ t, onDetection }) {
       return;
     }
 
-    onDetection(data);
+    // The server sends both text and audio for one detection; count it once.
+    if (data.type !== "audio") onDetection(data);
 
     if (data.type === "text" && data.text) {
       setDetectedText(data.text);
