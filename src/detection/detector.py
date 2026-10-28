@@ -54,7 +54,7 @@ def run_detector(
         latency: inference time in seconds
     """
     t0 = time.perf_counter()
-    with torch.no_grad():
+    with torch.inference_mode():
         result = model([img_np])
     latency = time.perf_counter() - t0
 

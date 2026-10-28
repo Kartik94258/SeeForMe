@@ -14,6 +14,8 @@ recognition:
   confidence_threshold: 0.75   # gate: below this → silent (validated in Phase 5)
   crop_padding: 4              # pixels of padding around each detected box
   max_crops: 12                # Phase 5: cap crops per image to bound worst-case latency
+  batch_size_gpu: 4             # Recognize several words per GPU inference pass
+  batch_size_cpu: 2             # Conservative batch size for CPU-only hosting
 
 reading_order:
   row_tolerance: 0.6           # fraction of median box height for row grouping
