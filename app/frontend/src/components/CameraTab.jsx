@@ -18,9 +18,8 @@ export default function CameraTab({ t, onDetection }) {
   const { enqueue, stop: stopAudio, pause: pauseAudio, playing, isBusy } = useAudioQueue();
   const lastAudioRef = useRef(null);
 
-  // Track whether we're waiting for audio to come back from the server
-  // (text was detected, TTS is running on backend, audio not yet received)
-  const awaitingAudioRef = useRef(false);
+  // At most one camera frame may be in flight; the server ACKs after OCR.
+  const frameInFlightRef = useRef(false);
 
   const { videoRef, ready, error, captureFrame } = useCamera({ active });
 
@@ -40,21 +39,20 @@ export default function CameraTab({ t, onDetection }) {
   }, [enqueue]);
 
   const handleMessage = useCallback((data) => {
+    if (data.type === "processed") {
+      frameInFlightRef.current = false;
+      return;
+    }
+
     onDetection(data);
 
     if (data.type === "text" && data.text) {
       setDetectedText(data.text);
       setFeedback("");
       addLog(t.detection.success, "success");
-      // Text arrived — backend is now synthesizing TTS.
-      // Pause frame sending until we get the audio back.
-      awaitingAudioRef.current = true;
     }
 
     if (data.type === "audio") {
-      // The backend finished TTS (or reported an error); never leave scanning blocked.
-      awaitingAudioRef.current = false;
-
       if (data.audio && audioUnlockedRef.current) {
         lastAudioRef.current = data.audio;
         enqueue(data.audio);
@@ -110,10 +108,11 @@ export default function CameraTab({ t, onDetection }) {
       return;
     }
     intervalRef.current = setInterval(() => {
-      // Don't send if we're waiting for TTS to come back OR audio is playing
-      if (awaitingAudioRef.current || isBusy()) return;
+      // Backpressure prevents slow inference from building a queue of stale frames.
+      // Allow one frame while TTS is synthesizing; pause during spoken playback.
+      if (frameInFlightRef.current || isBusy()) return;
       const frame = captureFrame(0.6);
-      if (frame) sendFrame(frame);
+      if (frame && sendFrame(frame)) frameInFlightRef.current = true;
     }, FRAME_INTERVAL_MS);
     return () => clearInterval(intervalRef.current);
   }, [ready, captureFrame, sendFrame, isBusy]);
@@ -185,7 +184,7 @@ export default function CameraTab({ t, onDetection }) {
         onReplay={handleReplay}
         onPause={pauseAudio}
         onStop={stopAudio}
-        onClear={() => { setLog([]); setDetectedText(""); setFeedback(""); stopAudio(); awaitingAudioRef.current = false; }}
+        onClear={() => { setLog([]); setDetectedText(""); setFeedback(""); stopAudio(); frameInFlightRef.current = false; }}
         log={log}
       />
     </div>
